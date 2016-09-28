@@ -6,7 +6,7 @@ public class CestoDeLembas{
     }
     
     public boolean podeDividirEmPares(){
-        if(1 <= quantidade && quantidade <= 100 && quantidade % 2 == 0 && quantidade != 2)
+        if(2 < quantidade && quantidade <= 100 && quantidade % 2 == 0)
             return true;
         return false;
     }

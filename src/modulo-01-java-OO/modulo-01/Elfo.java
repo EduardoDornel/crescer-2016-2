@@ -41,11 +41,11 @@ public class Elfo{
     }
     
     public void atirarFlechaEmAnao(Dwarves dwarf){
-        if(flecha.getQuantidade() > 0 && dwarf.getVida() >= 10){
+        if(flecha.getQuantidade() > 0){
             atiraFlecha();
             dwarf.setVida(dwarf.getVida() - 10);
         }
         else
-            System.out.println("Flechas insuficientes ou dwarf já morreu.");
+            System.out.println("Flechas insuficientes.");
     }
 }

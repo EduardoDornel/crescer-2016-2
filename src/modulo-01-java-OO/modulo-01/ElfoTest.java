@@ -39,6 +39,7 @@ public class ElfoTest
     @Test
     public void atirarUmaFlechaGanhaExperiencia(){
         Elfo elfoTeste = new Elfo("Exemplo");
+        
         elfoTeste.atiraFlecha();
         
         assertEquals(41, elfoTeste.getFlecha().getQuantidade());
@@ -80,7 +81,7 @@ public class ElfoTest
     public void dwarfSemvida(){
         Dwarves dwarf = new Dwarves();
         Elfo elfoTeste = new Elfo("Exemplo");
-        for(int i = 0; 13 > i; i++)
+        for(int i = 0; 11 > i; i++)
             elfoTeste.atirarFlechaEmAnao(dwarf);
         
         assertEquals(0, dwarf.getVida());
