@@ -31,17 +31,11 @@ public class Elfo{
         return experiencia;
     }
     
-    public void atiraFlecha(){
+    public void atirarFlechaEmDwarf(Dwarves dwarf){
         if(flecha.getQuantidade() > 0){
             flecha.setQuantidade(flecha.getQuantidade() - 1);
             experiencia++;
-        }
-    }
-    
-    public void atirarFlechaEmAnao(Dwarves dwarf){
-        if(flecha.getQuantidade() > 0){
-            atiraFlecha();
-            dwarf.setVida(dwarf.getVida() - 10);
+            dwarf.perdeVida();
         }
     }
 }
