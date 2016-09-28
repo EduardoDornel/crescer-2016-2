@@ -40,7 +40,7 @@ public class ElfoTest
     public void atirarUmaFlechaGanhaExperiencia(){
         Elfo elfoTeste = new Elfo("Exemplo");
         
-        elfoTeste.atiraFlecha();
+        elfoTeste.atirarFlechaEmDwarf(new Dwarves());
         
         assertEquals(41, elfoTeste.getFlecha().getQuantidade());
         assertEquals(1, elfoTeste.getExperiencia());
@@ -50,7 +50,7 @@ public class ElfoTest
     public void atirarTodasFlechasGanhaExperiencia(){
         Elfo elfoTeste = new Elfo("Exemplo");
         for(int i = 0; 42 > i; i++)
-            elfoTeste.atiraFlecha();
+             elfoTeste.atirarFlechaEmDwarf(new Dwarves());
             
         assertEquals(0, elfoTeste.getFlecha().getQuantidade());
         assertEquals(42, elfoTeste.getExperiencia());
@@ -60,7 +60,7 @@ public class ElfoTest
     public void tentarAtirarFlechasZerado(){
         Elfo elfoTeste = new Elfo("Exemplo");
         for(int i = 0; 45 > i; i++)
-            elfoTeste.atiraFlecha();
+             elfoTeste.atirarFlechaEmDwarf(new Dwarves());
             
         assertEquals(0, elfoTeste.getFlecha().getQuantidade());
         assertEquals(42, elfoTeste.getExperiencia());
@@ -70,7 +70,7 @@ public class ElfoTest
     public void atirarFlechaNoDwarf(){
         Dwarves dwarf = new Dwarves();
         Elfo elfoTeste = new Elfo("Exemplo");        
-        elfoTeste.atirarFlechaEmAnao(dwarf);
+        elfoTeste.atirarFlechaEmDwarf(dwarf);
         
         assertEquals(100, dwarf.getVida());
         assertEquals(41, elfoTeste.getFlecha().getQuantidade());
@@ -82,7 +82,7 @@ public class ElfoTest
         Dwarves dwarf = new Dwarves();
         Elfo elfoTeste = new Elfo("Exemplo");
         for(int i = 0; 11 > i; i++)
-            elfoTeste.atirarFlechaEmAnao(dwarf);
+             elfoTeste.atirarFlechaEmDwarf(dwarf);
         
         assertEquals(0, dwarf.getVida());
         assertEquals(31, elfoTeste.getFlecha().getQuantidade());
@@ -96,9 +96,9 @@ public class ElfoTest
         Elfo elfoTeste = new Elfo("Exemplo");
         
         for(int i = 0; 7 > i; i++){
-            elfoTeste.atirarFlechaEmAnao(dwarf);
+             elfoTeste.atirarFlechaEmDwarf(dwarf);
             if(i < 4)
-                elfoTeste.atirarFlechaEmAnao(dwarf2);
+                elfoTeste.atirarFlechaEmDwarf(dwarf2);
         }
         
         assertEquals(40, dwarf.getVida());
