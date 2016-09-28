@@ -8,7 +8,12 @@ public class Elfo{
         this.nome = nome;
         arco = new Item("Arco", 1);
         flecha = new Item("Flechas", 42);
-        experiencia = 0;
+    }
+    
+    public Elfo(String nome, int flechas){
+        this.nome = nome;
+        arco = new Item("Arco", 1);
+        flecha = new Item("Flechas", flechas);
     }
     
     public void setNome(String nome){
@@ -29,6 +34,10 @@ public class Elfo{
     
     public int getExperiencia(){
         return experiencia;
+    }
+    
+    public String toString(){
+        return nome + " possui " + flecha.getQuantidade() + " " + flecha.getDescricao() + " e " + experiencia + " níveis de experiência.";
     }
     
     public void atirarFlechaEmDwarf(Dwarves dwarf){
