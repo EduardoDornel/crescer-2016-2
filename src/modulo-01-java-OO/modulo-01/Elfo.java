@@ -5,15 +5,14 @@ public class Elfo{
     private int experiencia;
     
     public Elfo(String nome){
-        this.nome = nome;
-        arco = new Item("Arco", 1);
-        flecha = new Item("Flechas", 42);
+        //Chamando construtor de baixo.
+        this(nome, 42);
     }
     
     public Elfo(String nome, int flechas){
         this.nome = nome;
-        arco = new Item("Arco", 1);
-        flecha = new Item("Flechas", flechas);
+        arco = new Item("arco", 1);
+        flecha = new Item("flechas", flechas);
     }
     
     public void setNome(String nome){
@@ -37,7 +36,15 @@ public class Elfo{
     }
     
     public String toString(){
-        return nome + " possui " + flecha.getQuantidade() + " " + flecha.getDescricao() + " e " + experiencia + " níveis de experiência.";
+        boolean flechaNoSingular = this.flecha.getQuantidade() == 1;
+        boolean experienciaNoSingular = this.experiencia == 1;
+        
+        return String.format("%s possui %d %s e %s %s de experiência.",
+            this.nome,
+            this.flecha.getQuantidade(),
+            flechaNoSingular ? "flecha" : "flechas",
+            this.experiencia,
+            experienciaNoSingular ? "nível" : "níveis");
     }
     
     public void atirarFlechaEmDwarf(Dwarves dwarf){
