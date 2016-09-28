@@ -36,8 +36,6 @@ public class Elfo{
             flecha.setQuantidade(flecha.getQuantidade() - 1);
             experiencia++;
         }
-        else
-            System.out.println("Flechas insuficientes.");
     }
     
     public void atirarFlechaEmAnao(Dwarves dwarf){
@@ -45,7 +43,5 @@ public class Elfo{
             atiraFlecha();
             dwarf.setVida(dwarf.getVida() - 10);
         }
-        else
-            System.out.println("Flechas insuficientes.");
     }
 }
