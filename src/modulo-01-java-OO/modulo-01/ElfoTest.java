@@ -106,4 +106,19 @@ public class ElfoTest
         assertEquals(11, elfoTeste.getExperiencia());
         assertEquals(31, elfoTeste.getFlecha().getQuantidade());
     }
+    
+    @Test
+    public void criandoElfoPassandoQuantDeFlechas(){
+        Elfo elfoTeste = new Elfo("Eduardo", 30);
+        
+        assertEquals(30, elfoTeste.getFlecha().getQuantidade());
+        assertEquals("Eduardo", elfoTeste.getNome());
+    }
+    
+    @Test
+    public void verificarToString(){
+        Elfo elfoTeste = new Elfo("Eduardo");
+        
+        assertEquals("Eduardo possui 42 Flechas e 0 níveis de experiência.", elfoTeste.toString());
+    }
 }
