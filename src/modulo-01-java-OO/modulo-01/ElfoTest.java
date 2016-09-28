@@ -18,7 +18,7 @@ public class ElfoTest
     
     @Test
     public void elfoNasceComArco(){
-        Item arco = new Item("Arco", 1);
+        Item arco = new Item("arco", 1);
         
         Elfo elfoDoTeste = new Elfo("Elrond");
         
@@ -28,7 +28,7 @@ public class ElfoTest
     
     @Test
     public void elfoNasceComFlechas(){
-        Item flecha = new Item("Flechas", 42);
+        Item flecha = new Item("flechas", 42);
         
         Elfo elfoDoTeste = new Elfo("exemplo");
         
@@ -119,7 +119,16 @@ public class ElfoTest
     public void verificarToString(){
         Elfo elfoTeste = new Elfo("Eduardo");
         
-        assertEquals("Eduardo possui 42 Flechas e 0 níveis de experiência.", elfoTeste.toString());
+        assertEquals("Eduardo possui 42 flechas e 0 níveis de experiência.", elfoTeste.toString());
+    }
+    
+    @Test
+    public void verificarToStringCom41Flechas(){
+        Elfo elfoTeste = new Elfo("Eduardo");
+        
+        elfoTeste.atirarFlechaEmDwarf(new Dwarves());
+        
+        assertEquals("Eduardo possui 41 flechas e 1 nível de experiência.", elfoTeste.toString());
     }
     
     @Test
