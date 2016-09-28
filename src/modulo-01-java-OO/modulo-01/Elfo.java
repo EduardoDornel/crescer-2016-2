@@ -32,12 +32,20 @@ public class Elfo{
     }
     
     public void atiraFlecha(){
-        flecha.setQuantidade(flecha.getQuantidade() - 1);
-        experiencia++;
+        if(flecha.getQuantidade() > 0){
+            flecha.setQuantidade(flecha.getQuantidade() - 1);
+            experiencia++;
+        }
+        else
+            System.out.println("Flechas insuficientes.");
     }
     
-    /*public void atirarFlechaRefactory(){
-        flecha.setQuantidade(flecha.getQuantidade() -1 );
-        experiencia++;
-    }*/
+    public void atirarFlechaEmAnao(Dwarves dwarf){
+        if(flecha.getQuantidade() > 0 && dwarf.getVida() >= 10){
+            atiraFlecha();
+            dwarf.setVida(dwarf.getVida() - 10);
+        }
+        else
+            System.out.println("Flechas insuficientes ou dwarf já morreu.");
+    }
 }
