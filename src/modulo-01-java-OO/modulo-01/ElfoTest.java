@@ -116,6 +116,22 @@ public class ElfoTest
     }
     
     @Test
+    public void criandoElfoPassandoFlechasNegativas(){
+        Elfo elfoTeste = new Elfo("Eduardo", -30);
+        
+        assertEquals(42, elfoTeste.getFlecha().getQuantidade());
+        assertEquals("Eduardo", elfoTeste.getNome());
+    }
+    
+       @Test
+    public void criandoElfoPassandoFlechasZeradas(){
+        Elfo elfoTeste = new Elfo("Eduardo", 0);
+        
+        assertEquals(0, elfoTeste.getFlecha().getQuantidade());
+        assertEquals("Eduardo", elfoTeste.getNome());
+    }
+    
+    @Test
     public void verificarToString(){
         Elfo elfoTeste = new Elfo("Eduardo");
         
