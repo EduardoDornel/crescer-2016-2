@@ -26,17 +26,6 @@ public class DwarvesTest
     }
     
     @Test
-    public void dwarfMorreu(){
-        Dwarves dwarf = new Dwarves();
-        
-        for(int i = 0; 15 > i; i++)
-            dwarf.perdeVida();
-            
-        assertEquals(0, dwarf.getVida());
-        assertFalse(dwarf.isVivo());
-    }
-    
-    @Test
     public void dwarfPerdeVida5Vezes(){
         Dwarves dwarf = new Dwarves();
         
@@ -44,7 +33,6 @@ public class DwarvesTest
             dwarf.perdeVida();
             
         assertEquals(60, dwarf.getVida());
-        assertTrue(dwarf.isVivo());
     }
 }
 
