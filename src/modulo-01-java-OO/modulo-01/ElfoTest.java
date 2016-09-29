@@ -193,12 +193,12 @@ public class ElfoTest
         Elfo novoElfo = new Elfo("Eduardo");
         Dwarves dwarf = new Dwarves();
         
-        for(int i = 0; 5 >= i; i++)
+        for(int i = 0; 5 > i; i++)
             novoElfo.atirarFlechaEmDwarf(dwarf);
             
         assertEquals(Status.VIVO, dwarf.getStatus());
-        assertEquals(50, dwarf.getVida());
-        assertEquals(6, novoElfo.getExperiencia());
-        assertEquals(36, novoElfo.getFlecha().getQuantidade());
+        assertEquals(60, dwarf.getVida());
+        assertEquals(5, novoElfo.getExperiencia());
+        assertEquals(37, novoElfo.getFlecha().getQuantidade());
     }    
 }
