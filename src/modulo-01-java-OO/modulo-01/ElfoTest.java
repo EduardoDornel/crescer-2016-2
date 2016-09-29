@@ -147,18 +147,6 @@ public class ElfoTest
         assertEquals("Eduardo possui 41 flechas e 1 nível de experiência.", elfoTeste.toString());
     }
     
-    @Test
-    public void dwarfMorreCom13Flechadas(){
-        Dwarves dwarf = new Dwarves();
-        Elfo novoElfo = new Elfo("Eduardo");
-        
-        for(int i = 0; 13 > i; i++)
-            novoElfo.atirarFlechaEmDwarf(dwarf);
-        
-        assertEquals(0, dwarf.getVida());
-        assertFalse(dwarf.isVivo());
-    }
-    
       @Test
     public void dwarfLeva3Flechadas(){
         Dwarves dwarf = new Dwarves();
@@ -168,7 +156,6 @@ public class ElfoTest
             novoElfo.atirarFlechaEmDwarf(dwarf);
         
         assertEquals(80, dwarf.getVida());
-        assertTrue(dwarf.isVivo());
     }
     
     @Test
@@ -177,6 +164,5 @@ public class ElfoTest
         Elfo novoElfo = new Elfo("Eduardo");
         
         assertEquals(110, dwarf.getVida());
-        assertTrue(dwarf.isVivo());
     }
 }
