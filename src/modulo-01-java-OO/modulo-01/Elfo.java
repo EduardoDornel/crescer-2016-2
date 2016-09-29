@@ -47,8 +47,16 @@ public class Elfo{
             experienciaNoSingular ? "nível" : "níveis");
     }
     
+    /*No método  receberFlecha()  (ou o que você tenha chamado), chame o método  getNumeroSorte() .
+     * Caso o resultado seja menor que 0, o  Dwarf  não deverá receber a flecha e ainda ganhará dois pontos de experiência.
+     * Senão se o número estiver entre 0 e 100 (incluindo 0 e 100), o  Dwarf  não recebe flechas e não recebe experiência. 
+     * Caso contrário, o  Dwarf  receberá a flechada (como está hoje).*/
+    
     public void atirarFlechaEmDwarf(Dwarves dwarf){
-        if(flecha.getQuantidade() > 0 && dwarf.isVivo() == true){
+        double numeroSorte = dwarf.getNumeroSorte();
+        if(numeroSorte < 0)
+            dwarf.setExperiencia(dwarf.getExperiencia() + 1);
+        else if(flecha.getQuantidade() > 0 && numeroSorte > 100){
             flecha.setQuantidade(flecha.getQuantidade() - 1);
             experiencia++;
             dwarf.perdeVida();
