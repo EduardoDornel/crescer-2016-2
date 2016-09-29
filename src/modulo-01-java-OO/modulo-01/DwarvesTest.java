@@ -52,7 +52,7 @@ public class DwarvesTest
     }
     
     @Test
-    public void umeroSorteRetorna33(){
+    public void numeroSorteRetorna33(){
          Dwarves dwarf = new Dwarves("Seixas", new DataTerceiraEra(1, 1, 2015));
          
          assertEquals(33.0, dwarf.getNumeroSorte(), 0.001);
@@ -66,6 +66,60 @@ public class DwarvesTest
         dwarf.perdeVida();
         
         assertEquals(-3333.0, dwarf.getNumeroSorte(), 0.001);
+    }
+    
+    @Test
+    public void numeroSorteRetorna101DeNovo(){
+        Dwarves dwarf = new Dwarves("Seixas", new DataTerceiraEra(1, 1, 2016));
+        
+        assertEquals(101.0, dwarf.getNumeroSorte(), 0.001);
+    }
+    
+    @Test
+    public void dwarfNasceVivo(){
+        Dwarves dwarf = new Dwarves("Seixas", new DataTerceiraEra(1, 1, 2016));
+        
+        assertEquals(Status.VIVO, dwarf.getStatus());
+    }
+    
+    @Test
+    public void dwarfNasceVivoSemPassarParametros(){
+        Dwarves dwarf = new Dwarves();
+        
+        assertEquals(Status.VIVO, dwarf.getStatus());
+    }
+    
+    @Test
+    public void dwarfMorreNaDecimaPrimeiraFlechada(){
+        Dwarves dwarf = new Dwarves();      
+        
+        for(int i =0; 11 >= i; i++)
+            dwarf.perdeVida();
+            
+        assertEquals(Status.MORTO, dwarf.getStatus());            
+    }
+    
+    @Test
+    public void dwarfGanhaDuasExperiencias(){
+        Dwarves dwarf = new Dwarves("Seixas", new DataTerceiraEra(1, 1, 2016));
+        
+        dwarf.perdeVida();
+        dwarf.perdeVida();
+        dwarf.perdeVida();
+        
+        assertEquals(2, dwarf.getExperiencia());        
+    }
+    
+    @Test
+    public void dwarfGanhaQuatroExperiencias(){
+        Dwarves dwarf = new Dwarves("Seixas", new DataTerceiraEra(1, 1, 2016));
+        
+        dwarf.perdeVida();
+        dwarf.perdeVida();
+        dwarf.perdeVida();
+        dwarf.perdeVida();
+        
+        assertEquals(4, dwarf.getExperiencia());          
     }
 }
 
