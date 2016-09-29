@@ -3,7 +3,11 @@ public class Dwarves{
     private int vida = 110;
     private DataTerceiraEra dataNascimento;
     private int experiencia;
+    private Status status;
     
+    {
+        status = Status.VIVO;
+    }
     public Dwarves(){
         dataNascimento = new DataTerceiraEra(1, 1, 1);
     }
@@ -25,11 +29,17 @@ public class Dwarves{
     
     public void perdeVida(){
         double numero = this.getNumeroSorte();
-        if(numero < 0)
+        if(vida == 0)
+            status = Status.MORTO;
+        else if(numero < 0)
             experiencia += 2;
-        if(numero > 100)
-            vida -=10;
+        else if(status != Status.MORTO && numero > 100)
+            vida -=10;            
     }   
+    
+    public Status getStatus(){
+        return status;
+    }
     
     public int getExperiencia(){
         return experiencia;
