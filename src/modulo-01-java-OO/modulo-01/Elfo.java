@@ -3,6 +3,7 @@ public class Elfo{
     private Item arco;
     private Item flecha;
     private int experiencia;
+    private Status status;
     
     public Elfo(String nome){
         //Chamando construtor de baixo.
@@ -13,6 +14,11 @@ public class Elfo{
         this.nome = nome;
         arco = new Item("arco", 1);
         flecha = new Item("flechas", flechas >= 0 ? flechas: 42);
+        status = Status.VIVO;
+    }
+    
+    public Status getStatus(){
+        return status;
     }
     
     public void setNome(String nome){
@@ -53,13 +59,10 @@ public class Elfo{
      * Caso contrário, o  Dwarf  receberá a flechada (como está hoje).*/
     
     public void atirarFlechaEmDwarf(Dwarves dwarf){
-        double numeroSorte = dwarf.getNumeroSorte();
-        if(numeroSorte < 0)
-            dwarf.setExperiencia(dwarf.getExperiencia() + 1);
-        else if(flecha.getQuantidade() > 0 && numeroSorte > 100){
+            dwarf.perdeVida();
+        if(flecha.getQuantidade() > 0 && dwarf.getNumeroSorte() > 100){
             flecha.setQuantidade(flecha.getQuantidade() - 1);
             experiencia++;
-            dwarf.perdeVida();
         }
     }
 }
