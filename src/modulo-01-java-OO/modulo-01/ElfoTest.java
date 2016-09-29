@@ -51,21 +51,16 @@ public class ElfoTest
     public void atirarTodasFlechasGanhaExperiencia(){
         Elfo elfoTeste = new Elfo("Exemplo");
         Dwarves dwarf = new Dwarves();
+        Dwarves dwarf2 = new Dwarves();
+        Dwarves dwarf3 = new Dwarves();
+        Dwarves dwarf4 = new Dwarves();
         
-        for(int i = 0; 42 > i; i++)
+        for(int i = 0; 42 > i; i++){
              elfoTeste.atirarFlechaEmDwarf(dwarf);
-            
-        assertEquals(0, elfoTeste.getFlecha().getQuantidade());
-        assertEquals(42, elfoTeste.getExperiencia());
-    }
-    
-    @Test
-    public void tentarAtirarFlechasZerado(){
-        Elfo elfoTeste = new Elfo("Exemplo");
-        Dwarves dwarf = new Dwarves();
-        
-        for(int i = 0; 45 > i; i++)
-             elfoTeste.atirarFlechaEmDwarf(dwarf);
+             elfoTeste.atirarFlechaEmDwarf(dwarf2);
+             elfoTeste.atirarFlechaEmDwarf(dwarf3);
+             elfoTeste.atirarFlechaEmDwarf(dwarf4);
+        }
             
         assertEquals(0, elfoTeste.getFlecha().getQuantidade());
         assertEquals(42, elfoTeste.getExperiencia());
@@ -178,4 +173,32 @@ public class ElfoTest
         
         assertEquals(Status.VIVO, novoElfo.getStatus());
     }
+    
+    @Test
+    public void matandoUmDwarf(){
+        Elfo novoElfo = new Elfo("Eduardo");
+        Dwarves dwarf = new Dwarves();
+        
+        for(int i = 0; 15 >= i; i++)
+            novoElfo.atirarFlechaEmDwarf(dwarf);
+            
+        assertEquals(Status.MORTO, dwarf.getStatus());
+        assertEquals(0, dwarf.getVida());
+        assertEquals(11, novoElfo.getExperiencia());
+        assertEquals(31, novoElfo.getFlecha().getQuantidade());
+    }
+       
+    @Test
+    public void atirandoFlechasMasNaoMatandoODwarf(){
+        Elfo novoElfo = new Elfo("Eduardo");
+        Dwarves dwarf = new Dwarves();
+        
+        for(int i = 0; 5 >= i; i++)
+            novoElfo.atirarFlechaEmDwarf(dwarf);
+            
+        assertEquals(Status.VIVO, dwarf.getStatus());
+        assertEquals(50, dwarf.getVida());
+        assertEquals(6, novoElfo.getExperiencia());
+        assertEquals(36, novoElfo.getFlecha().getQuantidade());
+    }    
 }
