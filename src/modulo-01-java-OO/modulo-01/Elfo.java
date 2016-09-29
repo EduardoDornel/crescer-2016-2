@@ -1,7 +1,6 @@
 public class Elfo{
     private String nome;
-    private Item arco;
-    private Item flecha;
+    private Item arco, flecha;
     private int experiencia;
     private Status status;
     
