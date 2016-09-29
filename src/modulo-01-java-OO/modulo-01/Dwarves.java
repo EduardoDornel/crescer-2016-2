@@ -1,12 +1,16 @@
+import java.util.ArrayList;
+
 public class Dwarves{
     private String nome;
     private int vida = 110;
     private DataTerceiraEra dataNascimento;
     private int experiencia;
     private Status status;
+    private Inventario inventario = new Inventario();
     
     {
         status = Status.VIVO;
+        inventario.adicionarItem(new Item("arco", 1));
     }
     public Dwarves(){
         dataNascimento = new DataTerceiraEra(1, 1, 1);
@@ -15,6 +19,14 @@ public class Dwarves{
     public Dwarves(String nome, DataTerceiraEra dataNascimento){
         this.nome = nome;
         this.dataNascimento = dataNascimento;
+    }
+    
+    public void adicionarItem(Item item){
+        inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item){
+        inventario.removerItem(item);
     }
     
     public double getNumeroSorte(){
