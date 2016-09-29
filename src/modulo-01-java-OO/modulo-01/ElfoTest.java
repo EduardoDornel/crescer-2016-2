@@ -39,8 +39,9 @@ public class ElfoTest
     @Test
     public void atirarUmaFlechaGanhaExperiencia(){
         Elfo elfoTeste = new Elfo("Exemplo");
+        Dwarves dwarf = new Dwarves();
         
-        elfoTeste.atirarFlechaEmDwarf(new Dwarves());
+        elfoTeste.atirarFlechaEmDwarf(dwarf);
         
         assertEquals(41, elfoTeste.getFlecha().getQuantidade());
         assertEquals(1, elfoTeste.getExperiencia());
@@ -49,8 +50,10 @@ public class ElfoTest
     @Test
     public void atirarTodasFlechasGanhaExperiencia(){
         Elfo elfoTeste = new Elfo("Exemplo");
+        Dwarves dwarf = new Dwarves();
+        
         for(int i = 0; 42 > i; i++)
-             elfoTeste.atirarFlechaEmDwarf(new Dwarves());
+             elfoTeste.atirarFlechaEmDwarf(dwarf);
             
         assertEquals(0, elfoTeste.getFlecha().getQuantidade());
         assertEquals(42, elfoTeste.getExperiencia());
@@ -59,8 +62,10 @@ public class ElfoTest
     @Test
     public void tentarAtirarFlechasZerado(){
         Elfo elfoTeste = new Elfo("Exemplo");
+        Dwarves dwarf = new Dwarves();
+        
         for(int i = 0; 45 > i; i++)
-             elfoTeste.atirarFlechaEmDwarf(new Dwarves());
+             elfoTeste.atirarFlechaEmDwarf(dwarf);
             
         assertEquals(0, elfoTeste.getFlecha().getQuantidade());
         assertEquals(42, elfoTeste.getExperiencia());
@@ -141,8 +146,9 @@ public class ElfoTest
     @Test
     public void verificarToStringCom41Flechas(){
         Elfo elfoTeste = new Elfo("Eduardo");
+        Dwarves dwarf = new Dwarves();
         
-        elfoTeste.atirarFlechaEmDwarf(new Dwarves());
+        elfoTeste.atirarFlechaEmDwarf(dwarf);
         
         assertEquals("Eduardo possui 41 flechas e 1 nível de experiência.", elfoTeste.toString());
     }
@@ -164,5 +170,12 @@ public class ElfoTest
         Elfo novoElfo = new Elfo("Eduardo");
         
         assertEquals(110, dwarf.getVida());
+    }
+    
+    @Test
+    public void elfoNasceVivo(){
+        Elfo novoElfo = new Elfo("Eduardo");
+        
+        assertEquals(Status.VIVO, novoElfo.getStatus());
     }
 }
