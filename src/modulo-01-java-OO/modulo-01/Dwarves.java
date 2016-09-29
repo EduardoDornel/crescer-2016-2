@@ -31,10 +31,11 @@ public class Dwarves{
         double numero = this.getNumeroSorte();
         if(vida == 0)
             status = Status.MORTO;
-        else if(numero < 0)
+        if(numero < 0)
             experiencia += 2;
-        else if(status != Status.MORTO && numero > 100)
-            vida -=10;            
+        else if(status != Status.MORTO && numero > 100){
+            vida -=10;
+        }
     }   
     
     public Status getStatus(){
