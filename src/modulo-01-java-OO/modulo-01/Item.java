@@ -7,6 +7,10 @@ public class Item{
         this.quantidade = quantidade;
     }
     
+    public void aumentarUnidades(int unidades){
+        quantidade += unidades;
+    }
+    
     public void setQuantidade(int quantidade){
         this.quantidade = quantidade;
     }
