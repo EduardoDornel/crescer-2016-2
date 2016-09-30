@@ -10,7 +10,6 @@ public class Dwarves{
     
     {
         status = Status.VIVO;
-        inventario.adicionarItem(new Item("arco", 1));
     }
     public Dwarves(){
         dataNascimento = new DataTerceiraEra(1, 1, 1);
@@ -39,6 +38,13 @@ public class Dwarves{
         return numeroSorte;
     }
     
+    public void tentarSorte(){
+        if(getNumeroSorte() == -3333.0){
+            for(int i = 0; inventario.getItens().size() > i; i++)   
+                inventario.getItem(i).setQuantidade(inventario.getItem(i).getQuantidade() + 1000);
+        }
+    }
+    
     public void perdeVida(){
         double numero = this.getNumeroSorte();
         if(vida == 0)
@@ -49,6 +55,10 @@ public class Dwarves{
             vida -=10;
         }
     }   
+    
+    public Inventario getInventario(){
+        return inventario;
+    }
     
     public Status getStatus(){
         return status;
