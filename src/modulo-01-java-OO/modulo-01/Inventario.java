@@ -15,6 +15,11 @@ public class Inventario{
         itens.remove(item);
     }
     
+    public void dwarfComMuitaSorte(){
+        for(int i = 0; itens.size() > i; i++)
+            itens.get(i).dwarfComMuitaSorte();
+    }
+    
     public void aumentarUnidadesDosItens(int unidades){
         for(int i = 0; itens.size() > i; i++)
             itens.get(i).aumentarUnidades(1000);
@@ -39,5 +44,37 @@ public class Inventario{
         }
         //return itens.isEmpty() ? null : itens.get(indice);
         return maiorQuantidade;
+    }
+    
+    public void ordenar(TipoOrdenacao tipo){
+        ordenarItensAscendente();
+        if(tipo == TipoOrdenacao.DESCENDENTE){
+            ArrayList<Item> temp = new ArrayList<>();  
+          
+            for (int i = itens.size() - 1; i >= 0; i--)
+                temp.add(itens.get(i));  
+                
+            itens = temp;  
+        }
+    }
+    
+    public void ordenarItensAscendente(){
+        Item menorAtual = new Item("", Integer.MAX_VALUE);
+        ArrayList<Item> itensOrdenados = new ArrayList<>();        
+        int indice = 0;
+        
+        while(itens.size() != 0){
+            for(int j = 0; itens.size() > j; j++){
+                if(itens.get(j).getQuantidade() < menorAtual.getQuantidade()){
+                    menorAtual = itens.get(j);
+                    indice = j;
+                }
+            }
+            itensOrdenados.add(menorAtual);
+            menorAtual = new Item("", Integer.MAX_VALUE);
+            itens.remove(indice);
+            indice = 0;
+        }
+        itens = itensOrdenados;
     }
 }

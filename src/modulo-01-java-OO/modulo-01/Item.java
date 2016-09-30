@@ -11,6 +11,13 @@ public class Item{
         quantidade += unidades;
     }
     
+    public void dwarfComMuitaSorte(){
+        int valorDaMultiplicacao = 0;
+        for(int i = 0; i <= quantidade; i++)
+            valorDaMultiplicacao += i;
+        quantidade += 1000 * valorDaMultiplicacao;
+    } 
+    
     public void setQuantidade(int quantidade){
         this.quantidade = quantidade;
     }
