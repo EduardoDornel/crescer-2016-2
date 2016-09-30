@@ -48,7 +48,7 @@ public class InventarioTest
         inventario.adicionarItem(new Item("revolver", 5));
         inventario.adicionarItem(new Item("mosquete", 1));
         
-        assertEquals("pistola, revolver, mosquete.", inventario.getDescricoesItens());
+        assertEquals("pistola, revolver, mosquete", inventario.getDescricoesItens());
     }
     
     @Test
