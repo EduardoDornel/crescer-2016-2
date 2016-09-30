@@ -3,11 +3,7 @@ import java.util.ArrayList;
 public class Inventario{
     ArrayList<Item> itens = new ArrayList<>();
     
-    public Item getItem(int index){
-        return itens.get(index);
-    }
-    
-    public ArrayList getItens(){
+    public ArrayList<Item> getItens(){
         return itens;
     }
     
