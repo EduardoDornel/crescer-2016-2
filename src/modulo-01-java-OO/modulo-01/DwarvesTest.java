@@ -132,8 +132,8 @@ public class DwarvesTest
         dwarf.perdeVida();
         dwarf.tentarSorte();
         
-        assertEquals(1010, dwarf.getInventario().getItem(0).getQuantidade());
-        assertEquals(1003, dwarf.getInventario().getItem(1).getQuantidade());
+        assertEquals(1010, dwarf.getInventario().getItens().get(0).getQuantidade());
+        assertEquals(1003, dwarf.getInventario().getItens().get(1).getQuantidade());
     }
     
     @Test
@@ -144,8 +144,8 @@ public class DwarvesTest
         
         dwarf.tentarSorte();
         
-        assertEquals(10, dwarf.getInventario().getItem(0).getQuantidade());
-        assertEquals(3, dwarf.getInventario().getItem(1).getQuantidade());
+        assertEquals(10, dwarf.getInventario().getItens().get(0).getQuantidade());
+        assertEquals(3, dwarf.getInventario().getItens().get(1).getQuantidade());
     }
 }
 

@@ -12,8 +12,8 @@ public class InventarioTest
         Inventario inventario = new Inventario();
         inventario.adicionarItem(new Item("mosquete", 1));
         
-        assertEquals("mosquete", inventario.getItem(0).getDescricao());
-        assertEquals(1, inventario.getItem(0).getQuantidade());
+        assertEquals("mosquete", inventario.getItens().get(0).getDescricao());
+        assertEquals(1, inventario.getItens().get(0).getQuantidade());
     }
     
     @Test
@@ -23,8 +23,8 @@ public class InventarioTest
         inventario.adicionarItem(new Item("revolver", 5));
         inventario.adicionarItem(new Item("mosquete", 1));
         
-        assertEquals("mosquete", inventario.getItem(2).getDescricao());
-        assertEquals(1, inventario.getItem(2).getQuantidade());
+        assertEquals("mosquete", inventario.getItens().get(2).getDescricao());
+        assertEquals(1, inventario.getItens().get(2).getQuantidade());
     }
     
     @Test
@@ -33,12 +33,12 @@ public class InventarioTest
         Item pistola = new Item("pistola", 3);
         inventario.adicionarItem(pistola);
         
-        assertEquals(pistola, inventario.getItem(0));
+        assertEquals(pistola, inventario.getItens().get(0));
         
         inventario.removerItem(pistola);
         Item bomba = new Item("bomba", 10);
         inventario.adicionarItem(bomba);
-        assertEquals(bomba, inventario.getItem(0));
+        assertEquals(bomba, inventario.getItens().get(0));
     }
     
     @Test
