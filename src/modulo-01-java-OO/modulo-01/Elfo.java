@@ -35,12 +35,12 @@ public class Elfo{
     }
     
     public String toString(){
-        boolean flechaNoSingular = inventario.getItem(1).getQuantidade() == 1;
+        boolean flechaNoSingular = inventario.getItens().get(1).getQuantidade() == 1;
         boolean experienciaNoSingular = this.experiencia == 1;
         
         return String.format("%s possui %d %s e %s %s de experiência.",
             this.nome,
-            inventario.getItem(1).getQuantidade(),
+            inventario.getItens().get(1).getQuantidade(),
             flechaNoSingular ? "flecha" : "flechas",
             this.experiencia,
             experienciaNoSingular ? "nível" : "níveis");
@@ -48,8 +48,8 @@ public class Elfo{
 
     public void atirarFlechaEmDwarf(Dwarves dwarf){
             dwarf.perdeVida();
-        if(inventario.getItem(1).getQuantidade() > 0 && dwarf.getNumeroSorte() > 100 && dwarf.getStatus() != Status.MORTO){
-            inventario.getItem(1).setQuantidade(inventario.getItem(1).getQuantidade() - 1);
+        if(inventario.getItens().get(1).getQuantidade() > 0 && dwarf.getNumeroSorte() > 100 && dwarf.getStatus() != Status.MORTO){
+            inventario.getItens().get(1).setQuantidade(inventario.getItens().get(1).getQuantidade() - 1);
             experiencia++;
         }
     }
