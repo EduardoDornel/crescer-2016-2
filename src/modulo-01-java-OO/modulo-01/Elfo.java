@@ -1,8 +1,8 @@
 public class Elfo{
     private String nome;
-    private Item arco, flecha;
     private int experiencia;
     private Status status;
+    private Inventario inventario = new Inventario();
     
     {
         status = Status.VIVO;
@@ -14,8 +14,8 @@ public class Elfo{
     
     public Elfo(String nome, int flechas){
         this.nome = nome;
-        arco = new Item("arco", 1);
-        flecha = new Item("flechas", flechas >= 0 ? flechas: 42);
+        inventario.adicionarItem(new Item("arco", 1));
+        inventario.adicionarItem(new Item("flechas", flechas >= 0 ? flechas: 42));
     }
     
     public Status getStatus(){
@@ -25,30 +25,26 @@ public class Elfo{
     public void setNome(String nome){
         this.nome = nome;
     }
-    
-    public Item getFlecha(){
-        return flecha;
-    }
-    
+   
     public String getNome(){
         return nome;
-    }
-    
-    public Item getArco(){
-        return arco;
     }
     
     public int getExperiencia(){
         return experiencia;
     }
     
+    public Inventario getInventario(){
+        return inventario;
+    }
+    
     public String toString(){
-        boolean flechaNoSingular = this.flecha.getQuantidade() == 1;
+        boolean flechaNoSingular = inventario.getItem(1).getQuantidade() == 1;
         boolean experienciaNoSingular = this.experiencia == 1;
         
         return String.format("%s possui %d %s e %s %s de experiência.",
             this.nome,
-            this.flecha.getQuantidade(),
+            inventario.getItem(1).getQuantidade(),
             flechaNoSingular ? "flecha" : "flechas",
             this.experiencia,
             experienciaNoSingular ? "nível" : "níveis");
@@ -61,8 +57,8 @@ public class Elfo{
     
     public void atirarFlechaEmDwarf(Dwarves dwarf){
             dwarf.perdeVida();
-        if(flecha.getQuantidade() > 0 && dwarf.getNumeroSorte() > 100 && dwarf.getStatus() != Status.MORTO){
-            flecha.setQuantidade(flecha.getQuantidade() - 1);
+        if(inventario.getItem(1).getQuantidade() > 0 && dwarf.getNumeroSorte() > 100 && dwarf.getStatus() != Status.MORTO){
+            inventario.getItem(1).setQuantidade(inventario.getItem(1).getQuantidade() - 1);
             experiencia++;
         }
     }
