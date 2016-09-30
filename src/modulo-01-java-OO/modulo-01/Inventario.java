@@ -19,11 +19,10 @@ public class Inventario{
         String descricoes = "";
         for(int i = 0; itens.size() > i; i++){
             descricoes += itens.get(i).getDescricao();
-            if(i + 1 == itens.size())
-                descricoes += ".";
-            else
+            if(i + 1 != itens.size())
                 descricoes += ", ";
         }
+        // return descricoes isEmpty() ? descricoes : descricoes.substring(0, resultado.length() -1);
         return descricoes;
     }
     
