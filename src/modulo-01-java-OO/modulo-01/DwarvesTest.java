@@ -121,5 +121,31 @@ public class DwarvesTest
         
         assertEquals(4, dwarf.getExperiencia());          
     }
+    
+    @Test
+    public void dwarfGanha1000UnidadesDeCadaItem(){
+        Dwarves dwarf = new Dwarves("dwarf", new DataTerceiraEra(10, 10, 2016));
+        dwarf.adicionarItem(new Item("moedas",10));
+        dwarf.adicionarItem(new Item("pocao", 3));
+        
+        dwarf.perdeVida();
+        dwarf.perdeVida();
+        dwarf.tentarSorte();
+        
+        assertEquals(1010, dwarf.getInventario().getItem(0).getQuantidade());
+        assertEquals(1003, dwarf.getInventario().getItem(1).getQuantidade());
+    }
+    
+    @Test
+    public void dwarfNaoGanha1000UnidadesDeCadaItem(){
+        Dwarves dwarf = new Dwarves("dwarf", new DataTerceiraEra(10, 10, 2016));
+        dwarf.adicionarItem(new Item("moedas",10));
+        dwarf.adicionarItem(new Item("pocao", 3));
+        
+        dwarf.tentarSorte();
+        
+        assertEquals(10, dwarf.getInventario().getItem(0).getQuantidade());
+        assertEquals(3, dwarf.getInventario().getItem(1).getQuantidade());
+    }
 }
 
