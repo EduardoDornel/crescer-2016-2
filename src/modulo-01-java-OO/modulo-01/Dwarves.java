@@ -39,9 +39,8 @@ public class Dwarves{
     }
     
     public void tentarSorte(){
-        if(getNumeroSorte() == -3333.0){
-            for(int i = 0; inventario.getItens().size() > i; i++)   
-                inventario.getItens().get(i).setQuantidade(inventario.getItens().get(i).getQuantidade() + 1000);
+        if(getNumeroSorte() == -3333.0){  
+            inventario.aumentarUnidadesDosItens(1000);
         }
     }
     
