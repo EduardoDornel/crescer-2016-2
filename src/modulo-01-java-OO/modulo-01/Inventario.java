@@ -15,6 +15,11 @@ public class Inventario{
         itens.remove(item);
     }
     
+    public void aumentarUnidadesDosItens(int unidades){
+        for(int i = 0; itens.size() > i; i++)
+            itens.get(i).aumentarUnidades(1000);
+    }
+    
     public String getDescricoesItens(){
         String descricoes = "";
         for(int i = 0; itens.size() > i; i++){
@@ -32,6 +37,7 @@ public class Inventario{
             if(itens.get(i).getQuantidade() > maiorQuantidade.getQuantidade())
                 maiorQuantidade = itens.get(i);
         }
+        //return itens.isEmpty() ? null : itens.get(indice);
         return maiorQuantidade;
     }
 }
