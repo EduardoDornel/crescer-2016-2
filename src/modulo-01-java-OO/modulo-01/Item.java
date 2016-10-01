@@ -13,7 +13,7 @@ public class Item{
     
     public void dwarfComMuitaSorte(){
         int valorDaMultiplicacao = 0;
-        for(int i = 0; i <= quantidade; i++)
+        for(int i = 0; i <= Math.abs(quantidade); i++)
             valorDaMultiplicacao += i;
         quantidade += 1000 * valorDaMultiplicacao;
     } 
