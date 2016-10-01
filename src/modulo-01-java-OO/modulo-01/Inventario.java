@@ -22,7 +22,7 @@ public class Inventario{
     
     public void aumentarUnidadesDosItens(int unidades){
         for(int i = 0; itens.size() > i; i++)
-            itens.get(i).aumentarUnidades(1000);
+            itens.get(i).aumentarUnidades(unidades);
     }
     
     public String getDescricoesItens(){
