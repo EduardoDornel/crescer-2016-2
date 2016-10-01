@@ -147,5 +147,6 @@ public class DwarvesTest
         assertEquals(10, dwarf.getInventario().getItens().get(0).getQuantidade());
         assertEquals(3, dwarf.getInventario().getItens().get(1).getQuantidade());
     }
+    
+    
 }
-
