@@ -20,4 +20,25 @@ public class ItemTest
         
         assertEquals(300, novoItem.getQuantidade());
     }
+    
+    @Test
+    public void aumentar1000UnidadesItem() {
+        Item item = new Item("item", 5);
+        item.aumentarUnidades(1000);
+        assertEquals(1005, item.getQuantidade());
+    }
+    
+    @Test
+    public void aumentar0UnidadesItem() {
+        Item item = new Item("item", 5);
+        item.aumentarUnidades(0);
+        assertEquals(5, item.getQuantidade());
+    }
+    
+    @Test
+    public void diminuirUnidadeItem() {
+        Item item = new Item("item", 5);
+        item.aumentarUnidades(-5);
+        assertEquals(0, item.getQuantidade());
+    }
 }
