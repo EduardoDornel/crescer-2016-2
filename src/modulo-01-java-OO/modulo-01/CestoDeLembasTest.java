@@ -33,4 +33,11 @@ public class CestoDeLembasTest
         
         assertTrue(cs.podeDividirEmPares());
     }
+    
+    @Test
+    public void dividirCestoComMenos6Paes() {
+        CestoDeLembas cesto = new CestoDeLembas(-6);
+        
+        assertFalse(cesto.podeDividirEmPares());
+    }
 }
