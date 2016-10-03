@@ -21,25 +21,25 @@ public class HobbitContador{
        return total;
     }
     public int minimoMultiplo(int linha, int coluna){  
-        int i,j;  
-        j = 1;
+        int pos, mmc;  
+        mmc = 1;
            
         if(linha == coluna){  
-            j = linha;  
+            mmc = linha;  
                }else{  
-                  for (i=2;((linha > 1) || coluna > 1); i++) {  
-                     while(((linha % i) == 0) || ((coluna % i) == 0)){  
-                        if((linha % i) == 0){  
-                            linha = linha/i;      
+                  for (pos=2;((linha > 1) || coluna > 1); pos++) {  
+                     while(((linha % pos) == 0) || ((coluna % pos) == 0)){  
+                        if((linha % pos) == 0){  
+                            linha = linha/pos;      
                         }  
-                        if((coluna % i) == 0){  
-                            coluna = coluna/i;  
+                        if((coluna % pos) == 0){  
+                            coluna = coluna/pos;  
                         }  
-                        j = j*i;  
+                        mmc = mmc*pos;  
                     }  
                  }  
                }  
-           return j;  
+           return mmc;  
     }  
     
 }
