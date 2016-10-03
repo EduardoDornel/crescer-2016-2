@@ -37,7 +37,7 @@ public class ElfoTest
     @Test
     public void atirarUmaFlechaGanhaExperiencia(){
         Elfo elfoTeste = new Elfo("Exemplo");
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         
         elfoTeste.atirarFlechaEmDwarf(dwarf);
         
@@ -48,10 +48,10 @@ public class ElfoTest
     @Test
     public void atirarTodasFlechasGanhaExperiencia(){
         Elfo elfoTeste = new Elfo("Exemplo");
-        Dwarves dwarf = new Dwarves();
-        Dwarves dwarf2 = new Dwarves();
-        Dwarves dwarf3 = new Dwarves();
-        Dwarves dwarf4 = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
+        Dwarves dwarf2 = new Dwarves("dwarf");
+        Dwarves dwarf3 = new Dwarves("dwarf");
+        Dwarves dwarf4 = new Dwarves("dwarf");
         
         for(int i = 0; 42 > i; i++){
              elfoTeste.atirarFlechaEmDwarf(dwarf);
@@ -66,7 +66,7 @@ public class ElfoTest
     
     @Test
     public void atirarFlechaNoDwarf(){
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         Elfo elfoTeste = new Elfo("Exemplo");        
         elfoTeste.atirarFlechaEmDwarf(dwarf);
         
@@ -77,7 +77,7 @@ public class ElfoTest
     
     @Test
     public void dwarfSemvida(){
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         Elfo elfoTeste = new Elfo("Exemplo");
         for(int i = 0; 11 > i; i++)
              elfoTeste.atirarFlechaEmDwarf(dwarf);
@@ -89,8 +89,8 @@ public class ElfoTest
     
     @Test
     public void atirarFlechasEmVariosDwarves(){
-        Dwarves dwarf = new Dwarves();
-        Dwarves dwarf2 = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
+        Dwarves dwarf2 = new Dwarves("dwarf");
         Elfo elfoTeste = new Elfo("Exemplo");
         
         for(int i = 0; 7 > i; i++){
@@ -139,7 +139,7 @@ public class ElfoTest
     @Test
     public void verificarToStringCom41Flechas(){
         Elfo elfoTeste = new Elfo("Eduardo");
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         
         elfoTeste.atirarFlechaEmDwarf(dwarf);
         
@@ -148,7 +148,7 @@ public class ElfoTest
     
       @Test
     public void dwarfLeva3Flechadas(){
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         Elfo novoElfo = new Elfo("Eduardo");
         
         for(int i = 0; 3 > i; i++)
@@ -159,7 +159,7 @@ public class ElfoTest
     
     @Test
     public void dwarfNaoLevaFlechada(){
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         Elfo novoElfo = new Elfo("Eduardo");
         
         assertEquals(110, dwarf.getVida());
@@ -175,7 +175,7 @@ public class ElfoTest
     @Test
     public void matandoUmDwarf(){
         Elfo novoElfo = new Elfo("Eduardo");
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         
         for(int i = 0; 15 >= i; i++)
             novoElfo.atirarFlechaEmDwarf(dwarf);
@@ -189,7 +189,7 @@ public class ElfoTest
     @Test
     public void atirandoFlechasMasNaoMatandoODwarf(){
         Elfo novoElfo = new Elfo("Eduardo");
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         
         for(int i = 0; 5 > i; i++)
             novoElfo.atirarFlechaEmDwarf(dwarf);
