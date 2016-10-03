@@ -12,6 +12,7 @@ public class Item{
     }
     
     public void dwarfComMuitaSorte(){
+        //Pesquisar progressão aritmética e usar aqui
         int valorDaMultiplicacao = 0;
         for(int i = 0; i <= Math.abs(quantidade); i++)
             valorDaMultiplicacao += i;
