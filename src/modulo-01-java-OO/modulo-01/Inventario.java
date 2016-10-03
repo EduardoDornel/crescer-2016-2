@@ -57,7 +57,7 @@ public class Inventario{
             itens = temp;  
         }
     }
-    
+    //CRIAR TESTES PARA ORDENAÇÃO DE ITENS
     public void ordenarItensAscendente(){
         Item menorAtual = new Item("", Integer.MAX_VALUE);
         ArrayList<Item> itensOrdenados = new ArrayList<>();        
