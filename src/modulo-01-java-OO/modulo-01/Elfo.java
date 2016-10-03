@@ -1,37 +1,14 @@
-public class Elfo{
-    private String nome;
-    private int experiencia;
-    private Status status;
-    private Inventario inventario = new Inventario();
+public class Elfo extends Personagem{
     
-    {
-        inventario.adicionarItem(new Item("arco", 1));
-        status = Status.VIVO;
-    }
     public Elfo(String nome){
         //Chamando construtor de baixo.
         this(nome, 42);
     }
     
     public Elfo(String nome, int flechas){
-        this.nome = nome;
+        super(nome);
+        inventario.adicionarItem(new Item("arco", 1));
         inventario.adicionarItem(new Item("flechas", flechas >= 0 ? flechas: 42));
-    }
-    
-    public Status getStatus(){
-        return status;
-    }
-   
-    public String getNome(){
-        return nome;
-    }
-    
-    public int getExperiencia(){
-        return experiencia;
-    }
-    
-    public Inventario getInventario(){
-        return inventario;
     }
     
     public String toString(){
