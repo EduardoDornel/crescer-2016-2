@@ -1,22 +1,17 @@
 import java.util.ArrayList;
 
-public class Dwarves{
-    private String nome;
-    private int vida = 110;
+public class Dwarves extends Personagem{
     private DataTerceiraEra dataNascimento;
-    private int experiencia;
-    private Status status;
-    private Inventario inventario = new Inventario();
     
     {
-        status = Status.VIVO;
+        vida = 110;
     }
-    public Dwarves(){
-        dataNascimento = new DataTerceiraEra(1, 1, 1);
+    public Dwarves(String nome){
+        this(nome, new DataTerceiraEra(1, 1, 1));
     }
     
     public Dwarves(String nome, DataTerceiraEra dataNascimento){
-        this.nome = nome;
+        super(nome);
         this.dataNascimento = dataNascimento;
     }
     
@@ -55,24 +50,7 @@ public class Dwarves{
         }
     }   
     
-    public Inventario getInventario(){
-        return inventario;
-    }
-    
-    public Status getStatus(){
-        return status;
-    }
-    
-    public int getExperiencia(){
-        return experiencia;
-    }
-    
     public DataTerceiraEra getDataNascimento(){
         return dataNascimento;
     }
-    
-    public int getVida(){
-        return vida;
-    }
-    
 }
