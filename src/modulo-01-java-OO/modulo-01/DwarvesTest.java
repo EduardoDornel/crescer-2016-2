@@ -10,14 +10,14 @@ public class DwarvesTest
   
     @Test
     public void criandoDwarf(){
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         
         assertEquals(110, dwarf.getVida());
     }
     
     @Test
     public void dwarfPerdeVida11Vezes(){
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         
         for(int i = 0; 11 > i; i++)
             dwarf.perdeVida();
@@ -27,7 +27,7 @@ public class DwarvesTest
     
     @Test
     public void dwarfPerdeVida5Vezes(){
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         
         for(int i = 0; 5 > i; i++)
             dwarf.perdeVida();
@@ -84,14 +84,14 @@ public class DwarvesTest
     
     @Test
     public void dwarfNasceVivoSemPassarParametros(){
-        Dwarves dwarf = new Dwarves();
+        Dwarves dwarf = new Dwarves("dwarf");
         
         assertEquals(Status.VIVO, dwarf.getStatus());
     }
     
     @Test
     public void dwarfMorreNaDecimaPrimeiraFlechada(){
-        Dwarves dwarf = new Dwarves();      
+        Dwarves dwarf = new Dwarves("dwarf");      
         
         for(int i =0; 11 >= i; i++)
             dwarf.perdeVida();
