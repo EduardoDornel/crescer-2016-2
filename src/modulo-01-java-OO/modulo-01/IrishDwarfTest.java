@@ -55,7 +55,7 @@ public class IrishDwarfTest
     public void criandoDwarf(){
         Dwarves dwarf = new IrishDwarf("ed");
         
-        assertEquals(110, dwarf.getVida());
+        assertEquals(110, dwarf.getVida(), 0.01);
     }
     
     @Test
@@ -65,7 +65,7 @@ public class IrishDwarfTest
         for(int i = 0; 11 > i; i++)
             dwarf.perdeVida();
             
-        assertEquals(0, dwarf.getVida());
+        assertEquals(0, dwarf.getVida(), 0.01);
     }
     
     @Test
@@ -75,7 +75,7 @@ public class IrishDwarfTest
         for(int i = 0; 5 > i; i++)
             dwarf.perdeVida();
             
-        assertEquals(60, dwarf.getVida());
+        assertEquals(60, dwarf.getVida(), 0.01);
     }
     
     @Test
