@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Dwarves extends Personagem{
-    private DataTerceiraEra dataNascimento;
+    protected DataTerceiraEra dataNascimento;
     
     {
         vida = 110;
@@ -13,14 +13,6 @@ public class Dwarves extends Personagem{
     public Dwarves(String nome, DataTerceiraEra dataNascimento){
         super(nome);
         this.dataNascimento = dataNascimento;
-    }
-    
-    public void adicionarItem(Item item){
-        inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item){
-        inventario.removerItem(item);
     }
     
     public double getNumeroSorte(){
