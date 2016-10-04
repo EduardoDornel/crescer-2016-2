@@ -9,6 +9,14 @@ public class Personagem{
         this.status = Status.VIVO;
     }
     
+    public void adicionarItem(Item item){
+        inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item){
+        inventario.removerItem(item);
+    }
+    
     public String getNome(){
         return nome;
     }
