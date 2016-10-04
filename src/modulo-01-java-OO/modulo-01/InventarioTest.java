@@ -149,4 +149,110 @@ public class InventarioTest
         assertEquals("Espada de aço", item.getDescricao());
         assertEquals(2, item.getQuantidade());
     }
+    
+    @Test
+    public void ordenarDescendente2Itens(){
+        Elfo novoElfo = new Elfo("ed");
+        
+        novoElfo.getInventario().ordenar(TipoOrdenacao.DESCENDENTE);
+        
+        assertEquals(42, novoElfo.getInventario().getItens().get(0).getQuantidade());
+        assertEquals(1, novoElfo.getInventario().getItens().get(1).getQuantidade());
+    }
+    
+        @Test
+    public void ordenarDescendente4Itens(){
+        Elfo novoElfo = new Elfo("ed");
+        
+        novoElfo.adicionarItem(new Item("Pistola", 20));
+        novoElfo.adicionarItem(new Item("Revólver", 38));
+                
+        novoElfo.getInventario().ordenar(TipoOrdenacao.DESCENDENTE);
+        
+        assertEquals(42, novoElfo.getInventario().getItens().get(0).getQuantidade());
+        assertEquals(38, novoElfo.getInventario().getItens().get(1).getQuantidade());
+        assertEquals(20, novoElfo.getInventario().getItens().get(2).getQuantidade());
+        assertEquals(1, novoElfo.getInventario().getItens().get(3).getQuantidade());
+    }
+    
+        @Test
+    public void ordenarDescendenteVariosItens(){
+        Elfo novoElfo = new Elfo("ed");
+        
+        novoElfo.adicionarItem(new Item("Pistola", 200));
+        novoElfo.adicionarItem(new Item("Revólver", 300));
+        novoElfo.adicionarItem(new Item("Pistola", 600));
+        novoElfo.adicionarItem(new Item("Revólver", 500));
+        novoElfo.adicionarItem(new Item("Pistola", 100));
+        novoElfo.adicionarItem(new Item("Revólver", 400));
+        novoElfo.adicionarItem(new Item("Pistola", 50));
+        novoElfo.adicionarItem(new Item("Revólver", 800));
+        novoElfo.adicionarItem(new Item("Pistola", 900));
+        novoElfo.adicionarItem(new Item("Revólver", 700));
+        
+        novoElfo.getInventario().ordenar(TipoOrdenacao.DESCENDENTE);
+        
+        assertEquals(1, novoElfo.getInventario().getItens().get(11).getQuantidade());
+        assertEquals(42, novoElfo.getInventario().getItens().get(10).getQuantidade());
+        assertEquals(50, novoElfo.getInventario().getItens().get(9).getQuantidade());
+        assertEquals(100, novoElfo.getInventario().getItens().get(8).getQuantidade());
+        assertEquals(200, novoElfo.getInventario().getItens().get(7).getQuantidade());
+        assertEquals(300, novoElfo.getInventario().getItens().get(6).getQuantidade());
+        assertEquals(400, novoElfo.getInventario().getItens().get(5).getQuantidade());
+        assertEquals(500, novoElfo.getInventario().getItens().get(4).getQuantidade());
+        assertEquals(600, novoElfo.getInventario().getItens().get(3).getQuantidade());
+        assertEquals(700, novoElfo.getInventario().getItens().get(2).getQuantidade());
+        assertEquals(800, novoElfo.getInventario().getItens().get(1).getQuantidade());
+        assertEquals(900, novoElfo.getInventario().getItens().get(0).getQuantidade());
+    }
+    
+    @Test
+    public void ordenarAscendente4Itens(){
+        Elfo novoElfo = new Elfo("ed");
+        
+        novoElfo.adicionarItem(new Item("Pistola", 20));
+        novoElfo.adicionarItem(new Item("Revólver", 38));
+                
+        novoElfo.getInventario().ordenar(TipoOrdenacao.ASCENDENTE);
+        
+        assertEquals(1, novoElfo.getInventario().getItens().get(0).getQuantidade());
+        assertEquals(20, novoElfo.getInventario().getItens().get(1).getQuantidade());
+        assertEquals(38, novoElfo.getInventario().getItens().get(2).getQuantidade());
+        assertEquals(42, novoElfo.getInventario().getItens().get(3).getQuantidade());
+    }
+    
+    @Test
+    public void ordenarAscendenteMuitosItens(){
+        Elfo novoElfo = new Elfo("ed");
+        
+        novoElfo.adicionarItem(new Item("Pistola", 20));
+        novoElfo.adicionarItem(new Item("Revólver", 38));
+        novoElfo.adicionarItem(new Item("Pistola", 200));
+        novoElfo.adicionarItem(new Item("Revólver", 300));
+        novoElfo.adicionarItem(new Item("Pistola", 600));
+        novoElfo.adicionarItem(new Item("Revólver", 500));
+        novoElfo.adicionarItem(new Item("Pistola", 100));
+        novoElfo.adicionarItem(new Item("Revólver", 400));
+        novoElfo.adicionarItem(new Item("Pistola", 50));
+        novoElfo.adicionarItem(new Item("Revólver", 800));
+        novoElfo.adicionarItem(new Item("Pistola", 900));
+        novoElfo.adicionarItem(new Item("Revólver", 700));
+        
+        novoElfo.getInventario().ordenar(TipoOrdenacao.ASCENDENTE);
+        
+        assertEquals(1, novoElfo.getInventario().getItens().get(0).getQuantidade());
+        assertEquals(20, novoElfo.getInventario().getItens().get(1).getQuantidade());
+        assertEquals(38, novoElfo.getInventario().getItens().get(2).getQuantidade());
+        assertEquals(42, novoElfo.getInventario().getItens().get(3).getQuantidade());
+        assertEquals(50, novoElfo.getInventario().getItens().get(4).getQuantidade());
+        assertEquals(100, novoElfo.getInventario().getItens().get(5).getQuantidade());
+        assertEquals(200, novoElfo.getInventario().getItens().get(6).getQuantidade());
+        assertEquals(300, novoElfo.getInventario().getItens().get(7).getQuantidade());
+        assertEquals(400, novoElfo.getInventario().getItens().get(8).getQuantidade());
+        assertEquals(500, novoElfo.getInventario().getItens().get(9).getQuantidade());
+        assertEquals(600, novoElfo.getInventario().getItens().get(10).getQuantidade());
+        assertEquals(700, novoElfo.getInventario().getItens().get(11).getQuantidade());
+        assertEquals(800, novoElfo.getInventario().getItens().get(12).getQuantidade());
+        assertEquals(900, novoElfo.getInventario().getItens().get(13).getQuantidade());
+    }
 }
