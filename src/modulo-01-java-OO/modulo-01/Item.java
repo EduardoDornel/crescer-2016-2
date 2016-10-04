@@ -19,6 +19,10 @@ public class Item{
         quantidade += 1000 * valorDaMultiplicacao;
     } 
     
+    public void setDescricao(String descricao){
+        this.descricao = descricao;
+    }
+    
     public void setQuantidade(int quantidade){
         this.quantidade = quantidade;
     }
@@ -29,5 +33,10 @@ public class Item{
     
     public String getDescricao(){
         return descricao;
+    }
+    
+    @Override
+    public boolean equals(Object obj){
+        return this.descricao.equals(((Item)obj).getDescricao()) && this.quantidade == ((Item)obj).getQuantidade();
     }
 }
