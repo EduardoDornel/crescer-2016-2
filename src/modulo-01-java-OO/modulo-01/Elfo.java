@@ -7,6 +7,7 @@ public class Elfo extends Personagem{
     
     public Elfo(String nome, int flechas){
         super(nome);
+        vida = 100;
         inventario.adicionarItem(new Item("arco", 1));
         inventario.adicionarItem(new Item("flechas", flechas >= 0 ? flechas: 42));
     }
