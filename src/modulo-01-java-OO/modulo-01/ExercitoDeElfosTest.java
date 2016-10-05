@@ -139,5 +139,26 @@ public class ExercitoDeElfosTest
         
         assertEquals(dark, exercito.buscar(Status.MORTO).get(0));
     }
+    
+    @Test
+    public void buscarVivoSeSohTemMorto(){
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        ElfoNoturno dark = new ElfoNoturno("noturnos", 110);
+        exercito.alistarElfo(dark); 
+        
+        for(int i = 0; 90 >= i; i++)
+            dark.atirarFlechaEmDwarf(new Dwarves("dwarf")); 
+            
+        assertEquals(0, exercito.buscar(Status.VIVO).size());            
+    }
+    
+    @Test
+    public void buscarMortoSeSohTemVivo(){
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        ElfoNoturno dark = new ElfoNoturno("noturnos", 110);
+        exercito.alistarElfo(dark); 
+            
+        assertEquals(0, exercito.buscar(Status.MORTO).size()); 
+    }
 }
     
