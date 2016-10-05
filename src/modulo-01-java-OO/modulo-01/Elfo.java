@@ -1,7 +1,8 @@
 public class Elfo extends Personagem{
-    
+    private static int contadorDeElfos;
     {
         vida = 100;
+        Elfo.contadorDeElfos++;
     }
     
     public Elfo(String nome){
@@ -13,6 +14,11 @@ public class Elfo extends Personagem{
         super(nome);
         inventario.adicionarItem(new Item("arco", 1));
         inventario.adicionarItem(new Item("flechas", flechas >= 0 ? flechas: 42));
+    }
+    
+    protected void finalize() throws Throwable{
+        super.finalize();
+        Elfo.contadorDeElfos--;
     }
     
     public String toString(){
@@ -33,5 +39,9 @@ public class Elfo extends Personagem{
             inventario.getItens().get(1).setQuantidade(inventario.getItens().get(1).getQuantidade() - 1);
             experiencia++;
         }
+    }
+    
+    public static int getContadorDeElfos(){
+        return Elfo.contadorDeElfos;
     }
 }
