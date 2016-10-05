@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Dwarves extends Personagem{
-    protected DataTerceiraEra dataNascimento;
-    
+    protected final DataTerceiraEra dataNascimento;
+    public final static double ALTURA_MAXIMA = 1.32;
     {
         vida = 110;
     }
