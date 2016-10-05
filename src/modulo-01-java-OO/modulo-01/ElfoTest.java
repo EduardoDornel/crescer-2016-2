@@ -6,6 +6,11 @@ import org.junit.Test;
 
 public class ElfoTest
 {
+    @After
+    public void tearDown(){
+        System.gc();
+    }
+    
     @Test
     public void elfoNasceComNome(){
         //Arrange
@@ -199,4 +204,18 @@ public class ElfoTest
         assertEquals(5, novoElfo.getExperiencia());
         assertEquals(37, novoElfo.getInventario().getItens().get(1).getQuantidade());
     }    
+    
+    @Test
+    public void criarElfoIncrementaContador(){
+        new Elfo("Elfo");
+        assertEquals(1, Elfo.getContadorDeElfos());
+    }
+    
+    @Test
+    public void criarVariosElfosIncrementaContador(){
+        new Elfo("Elfo");
+        new Elfo("Elfo");
+        new Elfo("Elfo");  
+        assertEquals(3, Elfo.getContadorDeElfos());
+    }
 }
