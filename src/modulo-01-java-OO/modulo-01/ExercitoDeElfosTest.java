@@ -16,7 +16,7 @@ public class ExercitoDeElfosTest
     @Test
     public void alistarElfoVerde(){
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
-        Elfo green = new ElfosVerdes("elfo verde");
+        Elfo green = new ElfoVerde("elfo verde");
         
         exercito.alistarElfo(green);
         
@@ -26,7 +26,7 @@ public class ExercitoDeElfosTest
     @Test
     public void alistarElfoNoturno(){
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
-        Elfo dark = new ElfosNoturnos("noturnos");
+        Elfo dark = new ElfoNoturno("noturnos");
         
         exercito.alistarElfo(dark);
         
@@ -47,11 +47,11 @@ public class ExercitoDeElfosTest
     public void alistarMuitosElfos(){
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
-        ElfosNoturnos dark = new ElfosNoturnos("noturnos");
-        ElfosVerdes green = new ElfosVerdes("elfo verde");
-        ElfosNoturnos dark2 = new ElfosNoturnos("noturnos2");
+        ElfoNoturno dark = new ElfoNoturno("noturnos");
+        ElfoVerde green = new ElfoVerde("elfo verde");
+        ElfoNoturno dark2 = new ElfoNoturno("noturnos2");
         Elfo elfo2 = new Elfo("elfo");
-        ElfosVerdes green2 = new ElfosVerdes("elfo verde2");   
+        ElfoVerde green2 = new ElfoVerde("elfo verde2");   
         
         exercito.alistarElfo(elfo);
         exercito.alistarElfo(dark2);   
@@ -67,11 +67,11 @@ public class ExercitoDeElfosTest
     public void buscarPorNomeExistente(){
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
-        Elfo dark = new ElfosNoturnos("noturnos");
-        Elfo green = new ElfosVerdes("elfo verde");
-        Elfo dark2 = new ElfosNoturnos("noturnos2");
+        Elfo dark = new ElfoNoturno("noturnos");
+        Elfo green = new ElfoVerde("elfo verde");
+        Elfo dark2 = new ElfoNoturno("noturnos2");
         Elfo elfo2 = new Elfo("elfo");
-        Elfo green2 = new ElfosVerdes("elfo verde2");   
+        Elfo green2 = new ElfoVerde("elfo verde2");   
         
         exercito.alistarElfo(elfo);
         exercito.alistarElfo(dark2);   
@@ -90,11 +90,11 @@ public class ExercitoDeElfosTest
     public void buscarNomeNaoExistente(){
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
-        ElfosNoturnos dark = new ElfosNoturnos("noturnos");
-        ElfosVerdes green = new ElfosVerdes("elfo verde");
-        ElfosNoturnos dark2 = new ElfosNoturnos("noturnos");
+        ElfoNoturno dark = new ElfoNoturno("noturnos");
+        ElfoVerde green = new ElfoVerde("elfo verde");
+        ElfoNoturno dark2 = new ElfoNoturno("noturnos");
         Elfo elfo2 = new Elfo("elfo");
-        ElfosVerdes green2 = new ElfosVerdes("elfo verde");   
+        ElfoVerde green2 = new ElfoVerde("elfo verde");   
         
         exercito.alistarElfo(elfo);
         exercito.alistarElfo(dark2);   
@@ -110,11 +110,11 @@ public class ExercitoDeElfosTest
     public void buscarPorStatusVivo(){
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
-        ElfosNoturnos dark = new ElfosNoturnos("noturnos");
-        ElfosVerdes green = new ElfosVerdes("elfo verde");
-        ElfosNoturnos dark2 = new ElfosNoturnos("noturnos");
+        ElfoNoturno dark = new ElfoNoturno("noturnos");
+        ElfoVerde green = new ElfoVerde("elfo verde");
+        ElfoNoturno dark2 = new ElfoNoturno("noturnos");
         Elfo elfo2 = new Elfo("elfo");
-        ElfosVerdes green2 = new ElfosVerdes("elfo verde");   
+        ElfoVerde green2 = new ElfoVerde("elfo verde");   
         
         exercito.alistarElfo(elfo);
         exercito.alistarElfo(dark2);   
@@ -129,8 +129,8 @@ public class ExercitoDeElfosTest
     @Test
     public void buscarPorStatusMorto(){
         ExercitoDeElfos exercito = new ExercitoDeElfos();
-        ElfosNoturnos dark = new ElfosNoturnos("noturnos", 110);
-        ElfosVerdes green = new ElfosVerdes("elfo verde");
+        ElfoNoturno dark = new ElfoNoturno("noturnos", 110);
+        ElfoVerde green = new ElfoVerde("elfo verde");
         
         exercito.alistarElfo(dark);
         exercito.alistarElfo(green);
