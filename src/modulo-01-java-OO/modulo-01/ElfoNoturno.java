@@ -1,10 +1,10 @@
-public class ElfosNoturnos extends Elfo{
+public class ElfoNoturno extends Elfo{
     
-    public ElfosNoturnos(String nome){
+    public ElfoNoturno(String nome){
         super(nome);
     }
     
-    public ElfosNoturnos(String nome, int flechas){
+    public ElfoNoturno(String nome, int flechas){
         super(nome, flechas);
     }
     
