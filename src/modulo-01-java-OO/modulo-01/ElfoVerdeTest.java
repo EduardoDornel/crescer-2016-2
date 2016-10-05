@@ -9,7 +9,7 @@ public class ElfoVerdeTest
 {
    @Test
    public void elfoVerdeGanhaDuasExperiencias(){
-       ElfoVerde green = new ElfoVerde("elfo");
+       Elfo green = new ElfoVerde("elfo");
        
        green.atirarFlechaEmDwarf(new Dwarves("dwarf"));
        
@@ -18,7 +18,7 @@ public class ElfoVerdeTest
    
    @Test
    public void elfoVerdeGanha10Experiencias(){
-       ElfoVerde green = new ElfoVerde("elfo");
+       Elfo green = new ElfoVerde("elfo");
        
        green.atirarFlechaEmDwarf(new Dwarves("dwarf"));
        green.atirarFlechaEmDwarf(new Dwarves("dwarf"));
@@ -31,7 +31,7 @@ public class ElfoVerdeTest
    
    @Test
    public void elfoVerdeNaoGanhaExperiencia(){
-       ElfoVerde green = new ElfoVerde("elfo");
+       Elfo green = new ElfoVerde("elfo");
        
        assertEquals(0, green.getExperiencia());
    }
