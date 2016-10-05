@@ -5,11 +5,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ElfosNoturnosTest
+public class ElfoNoturnoTest
 {
     @Test
     public void elfoNoturnoGanha3experciencias(){
-        ElfosNoturnos dark = new ElfosNoturnos("elfo");
+        ElfoNoturno dark = new ElfoNoturno("elfo");
         
         dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));
         
@@ -18,7 +18,7 @@ public class ElfosNoturnosTest
     
     @Test
     public void elfoNoturnoGanha15experciencias(){
-        ElfosNoturnos dark = new ElfosNoturnos("elfo");
+        ElfoNoturno dark = new ElfoNoturno("elfo");
         
         dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));
         dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));
@@ -31,14 +31,14 @@ public class ElfosNoturnosTest
     
     @Test
     public void elfoNoturnoNaoGanhaExperciencia(){
-        ElfosNoturnos dark = new ElfosNoturnos("elfo");
+        ElfoNoturno dark = new ElfoNoturno("elfo");
         
         assertEquals(0, dark.getExperiencia());
     }
     
     @Test
     public void elfoNoturnoPerde5PorCentoDeVida(){
-        ElfosNoturnos dark = new ElfosNoturnos("elfo");
+        ElfoNoturno dark = new ElfoNoturno("elfo");
         
         dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));
         
@@ -47,7 +47,7 @@ public class ElfosNoturnosTest
     
     @Test
     public void elfoNoturnoPerde15PorCentoDeVida(){
-        ElfosNoturnos dark = new ElfosNoturnos("elfo");
+        ElfoNoturno dark = new ElfoNoturno("elfo");
         
         dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));
         dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));
@@ -58,7 +58,7 @@ public class ElfosNoturnosTest
     
     @Test
     public void elfoNoturnoLanca42Flechas(){
-        ElfosNoturnos dark = new ElfosNoturnos("elfo");
+        ElfoNoturno dark = new ElfoNoturno("elfo");
         
         for(int i = 0; 90 >= i; i++)
             dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));      
@@ -69,7 +69,7 @@ public class ElfosNoturnosTest
     
     @Test
     public void elfoNoturnoMorre(){
-        ElfosNoturnos dark = new ElfosNoturnos("elfo", 100);
+        ElfoNoturno dark = new ElfoNoturno("elfo", 100);
         
         for(int i = 0; 90 >= i; i++)
             dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));      
@@ -80,7 +80,7 @@ public class ElfosNoturnosTest
     
     @Test
     public void elfoNoturnoNaoMorreCom89flechadas(){
-        ElfosNoturnos dark = new ElfosNoturnos("elfo");
+        ElfoNoturno dark = new ElfoNoturno("elfo");
         
         for(int i = 0; 89 >= i; i++)
             dark.atirarFlechaEmDwarf(new Dwarves("dwarf"));      

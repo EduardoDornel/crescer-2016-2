@@ -5,11 +5,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ElfosVerdesTest
+public class ElfoVerdeTest
 {
    @Test
    public void elfoVerdeGanhaDuasExperiencias(){
-       ElfosVerdes green = new ElfosVerdes("elfo");
+       ElfoVerde green = new ElfoVerde("elfo");
        
        green.atirarFlechaEmDwarf(new Dwarves("dwarf"));
        
@@ -18,7 +18,7 @@ public class ElfosVerdesTest
    
    @Test
    public void elfoVerdeGanha10Experiencias(){
-       ElfosVerdes green = new ElfosVerdes("elfo");
+       ElfoVerde green = new ElfoVerde("elfo");
        
        green.atirarFlechaEmDwarf(new Dwarves("dwarf"));
        green.atirarFlechaEmDwarf(new Dwarves("dwarf"));
@@ -31,7 +31,7 @@ public class ElfosVerdesTest
    
    @Test
    public void elfoVerdeNaoGanhaExperiencia(){
-       ElfosVerdes green = new ElfosVerdes("elfo");
+       ElfoVerde green = new ElfoVerde("elfo");
        
        assertEquals(0, green.getExperiencia());
    }

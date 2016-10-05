@@ -1,4 +1,4 @@
-public class ElfosVerdes extends Elfo{
+public class ElfoVerde extends Elfo{
     
     {
         inventario.getItens().clear();
@@ -6,11 +6,11 @@ public class ElfosVerdes extends Elfo{
         inventario.adicionarItem(new Item("Arco e Flecha de Vidro", 42));
     }
   
-    public ElfosVerdes(String nome){
+    public ElfoVerde(String nome){
         this(nome, 42);
     }
     
-    public ElfosVerdes(String nome, int flechas){
+    public ElfoVerde(String nome, int flechas){
         super(nome);
         inventario.getItens().get(1).setQuantidade(flechas);
     }

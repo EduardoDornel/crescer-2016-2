@@ -8,7 +8,7 @@ public class ExercitoDeElfos{
     }
     
     public void alistarElfo(Elfo elfo){
-        if(elfo instanceof ElfosVerdes || elfo instanceof ElfosNoturnos)
+        if(elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno)
             listaElfos.add(elfo);
     }
     
