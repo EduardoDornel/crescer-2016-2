@@ -9,7 +9,7 @@ public class BatalhaoDeElfos{
     
     public void alistarElfo(Elfo elfo){
         if(elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno)
-            batalhao.put("Elfo " + batalhao.size(), elfo);
+            batalhao.put(elfo.getNome() , elfo);
     }
     
     public Elfo buscar(String nome){
@@ -18,9 +18,12 @@ public class BatalhaoDeElfos{
     
     public HashMap<String, Elfo> buscar(Status status){
         HashMap<String, Elfo> batalhaoComStatus = new HashMap<>();
-        for(int i = 0; i < batalhao.size(); i++){
-            if(batalhao.get(i).getStatus() == status)
-                batalhaoComStatus.put("batalhao " + batalhaoComStatus.size(), batalhao.get(i));
+ 
+        for (String keyElfo : batalhao.keySet()){
+            Elfo elfoComStatus = batalhao.get(keyElfo);
+            if(elfoComStatus.getStatus() == status){
+                batalhaoComStatus.put(elfoComStatus.getNome(), elfoComStatus);            
+            }
         }
         return batalhaoComStatus;
     }
