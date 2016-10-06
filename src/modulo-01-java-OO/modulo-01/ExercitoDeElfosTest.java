@@ -10,7 +10,7 @@ public class ExercitoDeElfosTest
     public void exercitoDeElfoNasceComArrayListZerado(){
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         
-        assertEquals(0, exercito.getListaElfos().size());
+        assertEquals(0, exercito.getBatalhao().size());
     }
     
     @Test
@@ -20,7 +20,7 @@ public class ExercitoDeElfosTest
         
         exercito.alistarElfo(green);
         
-        assertEquals(green, exercito.getListaElfos().get(0));
+        assertEquals(green, exercito.getBatalhao().get(0));
     }
     
     @Test
@@ -30,7 +30,7 @@ public class ExercitoDeElfosTest
         
         exercito.alistarElfo(dark);
         
-        assertEquals(dark, exercito.getListaElfos().get(0));    
+        assertEquals(dark, exercito.getBatalhao().get(0));    
     }
     
     @Test
@@ -40,7 +40,7 @@ public class ExercitoDeElfosTest
         
         exercito.alistarElfo(elfo);
         
-        assertEquals(0, exercito.getListaElfos().size());    
+        assertEquals(0, exercito.getBatalhao().size());    
     }
     
     @Test
@@ -60,7 +60,7 @@ public class ExercitoDeElfosTest
         exercito.alistarElfo(elfo2);
         exercito.alistarElfo(green2);
         
-        assertEquals(4, exercito.getListaElfos().size());
+        assertEquals(4, exercito.getBatalhao().size());
     }
     
     @Test
@@ -123,7 +123,7 @@ public class ExercitoDeElfosTest
         exercito.alistarElfo(elfo2);
         exercito.alistarElfo(green2);
         
-        assertEquals(exercito.getListaElfos(), exercito.buscar(Status.VIVO));
+        assertEquals(exercito.getBatalhao(), exercito.buscar(Status.VIVO));
     }
     
     @Test

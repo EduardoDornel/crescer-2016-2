@@ -1,9 +1,9 @@
 import java.util.*;
 
-public class ExercitoDeElfos{
+public class ExercitoDeElfos implements Exercito{
     ArrayList<Elfo> listaElfos = new ArrayList<>();
     
-    public ArrayList<Elfo> getListaElfos(){
+    public ArrayList<Elfo> getBatalhao(){
         return listaElfos;
     }
     
