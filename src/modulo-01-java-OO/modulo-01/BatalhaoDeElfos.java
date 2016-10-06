@@ -13,7 +13,7 @@ public class BatalhaoDeElfos{
     }
     
     public Elfo buscar(String nome){
-        return batalhao.containsKey(nome) ? batalhao.get(nome) : null;
+        return batalhao.get(nome);
     }
     
     public HashMap<String, Elfo> buscar(Status status){
