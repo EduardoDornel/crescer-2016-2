@@ -1,5 +1,5 @@
 
-
+import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -14,7 +14,7 @@ public class ExercitoDeElfosTest
     }
     
     @Test
-    public void alistarElfoVerde(){
+    public void alistarElfoVerde()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo green = new ElfoVerde("elfo verde");
         
@@ -24,7 +24,7 @@ public class ExercitoDeElfosTest
     }
     
     @Test
-    public void alistarElfoNoturno(){
+    public void alistarElfoNoturno()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo dark = new ElfoNoturno("noturnos");
         
@@ -33,8 +33,8 @@ public class ExercitoDeElfosTest
         assertEquals(dark, exercito.getBatalhao().get(0));    
     }
     
-    @Test
-    public void alistarElfoNormal(){
+    @Test(expected=NaoPodeAlistarException.class)
+    public void alistarElfoNormal()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
         
@@ -43,8 +43,8 @@ public class ExercitoDeElfosTest
         assertEquals(0, exercito.getBatalhao().size());    
     }
     
-    @Test
-    public void alistarMuitosElfos(){
+    @Test(expected=NaoPodeAlistarException.class)
+    public void alistarMuitosElfos()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
         Elfo dark = new ElfoNoturno("noturnos");
@@ -63,8 +63,8 @@ public class ExercitoDeElfosTest
         assertEquals(4, exercito.getBatalhao().size());
     }
     
-    @Test
-    public void buscarPorNomeExistente(){
+    @Test(expected=NaoPodeAlistarException.class)
+    public void buscarPorNomeExistente()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
         Elfo dark = new ElfoNoturno("noturnos");
@@ -86,8 +86,8 @@ public class ExercitoDeElfosTest
         assertEquals(green2, exercito.buscarPeloNome("elfo verde2"));
     }
     
-    @Test
-    public void buscarNomeNaoExistente(){
+    @Test(expected=NaoPodeAlistarException.class)
+    public void buscarNomeNaoExistente()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
         Elfo dark = new ElfoNoturno("noturnos");
@@ -106,8 +106,8 @@ public class ExercitoDeElfosTest
         assertNull(exercito.buscarPeloNome("jose"));
     }
     
-    @Test
-    public void buscarPorStatusVivo(){
+    @Test(expected=NaoPodeAlistarException.class)
+    public void buscarPorStatusVivo()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();       
         Elfo elfo = new Elfo("elfo");
         Elfo dark = new ElfoNoturno("noturnos");
@@ -127,7 +127,7 @@ public class ExercitoDeElfosTest
     }
     
     @Test
-    public void buscarPorStatusMorto(){
+    public void buscarPorStatusMorto()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         Elfo dark = new ElfoNoturno("noturnos", 110);
         Elfo green = new ElfoVerde("elfo verde");
@@ -141,7 +141,7 @@ public class ExercitoDeElfosTest
     }
     
     @Test
-    public void buscarVivoSeSohTemMorto(){
+    public void buscarVivoSeSohTemMorto()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         Elfo dark = new ElfoNoturno("noturnos", 110);
         exercito.alistarElfo(dark); 
@@ -153,12 +153,64 @@ public class ExercitoDeElfosTest
     }
     
     @Test
-    public void buscarMortoSeSohTemVivo(){
+    public void buscarMortoSeSohTemVivo()throws NaoPodeAlistarException{
         ExercitoDeElfos exercito = new ExercitoDeElfos();
         Elfo dark = new ElfoNoturno("noturnos", 110);
         exercito.alistarElfo(dark); 
             
         assertEquals(0, exercito.buscar(Status.MORTO).size()); 
     }
+    
+    @Test
+    public void ordenarAtaqueElfoVerdePrimeiroElfoNoturnoPorUltimoVariosElfos() throws NaoPodeAlistarException{
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+
+        for(int i = 0; i < 20; i++){
+            if(i % 2 == 0)
+                exercito.alistarElfo(new ElfoVerde("elfo verde"));
+            else
+                exercito.alistarElfo(new ElfoNoturno("elfo noturno"));                
+        }
+        
+        List<Elfo> exercitoOrdenado = new ArrayList<>();
+        
+        exercitoOrdenado = exercito.getOrdemDeAtaque(exercito.getBatalhao());
+        
+        assertTrue(exercitoOrdenado.get(0) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(1) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(2) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(3) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(4) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(5) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(6) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(7) instanceof ElfoVerde);        
+        assertTrue(exercitoOrdenado.get(8) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(9) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(10) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(11) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(12) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(13) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(14) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(15) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(16) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(17) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(18) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(19) instanceof ElfoNoturno);
+    }
+    
+    @Test
+    public void ordenarAtaqueElfoVerdePrimeiroElfoNoturnoPorUltimoUmElfoPraCadaLado() throws NaoPodeAlistarException{
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno"));      
+        exercito.alistarElfo(new ElfoVerde("elfo verde"));
+        
+        List<Elfo> exercitoOrdenado = new ArrayList<>();
+        
+        exercitoOrdenado = exercito.getOrdemDeAtaque(exercito.getBatalhao());
+        
+        assertTrue(exercitoOrdenado.get(0) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(1) instanceof ElfoNoturno);
+    }      
 }
     
