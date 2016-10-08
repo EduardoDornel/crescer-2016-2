@@ -33,17 +33,47 @@ public class ExercitoDeElfos implements Exercito, EstrategiasDeAtaque{
     }
     
     public List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes){
-        List<Elfo> atacantesOrdenados = new ArrayList<>();
-        ArrayList<Elfo> atacantesParametro = (ArrayList)atacantes;
+        List<Elfo> atacantesOrdenadoss = new ArrayList<>();
         for(int i = 0; i < atacantes.size(); i++){
-            if(atacantesParametro.get(i).getStatus() != Status.VIVO)
-                atacantesParametro.remove(i);            
-            else if(atacantesParametro.get(i) instanceof ElfoVerde){
-                atacantesOrdenados.add(atacantesParametro.get(i));                
-                atacantesParametro.remove(i);
+            if(atacantes.get(i).getStatus() != Status.VIVO){
+                atacantes.remove(i); 
+                i--;
+            }
+            else if(atacantes.get(i) instanceof ElfoVerde){
+                atacantesOrdenadoss.add(atacantes.get(i));                
+                atacantes.remove(i);
+                i--;
             }
         }
-        atacantesOrdenados.addAll(atacantesParametro);
-        return atacantesOrdenados;        
+        atacantesOrdenadoss.addAll(atacantes);
+        return atacantesOrdenadoss;        
     }
-}
+    
+    public List<Elfo> ataqueIntercalado(List<Elfo> atacantes){
+        List<Elfo> atacantesOrdenados = new ArrayList<>();
+        List<Elfo> atacantesParametro = getOrdemDeAtaque(atacantes);
+        int contaElfoVerde = 0, contaElfoNoturno = 0;
+        for(int i = 0; i < atacantesParametro.size(); i++){
+            if(atacantesParametro.get(i).getStatus() != Status.VIVO)
+                atacantesParametro.remove(i);       
+            else if(atacantesParametro.get(i) instanceof ElfoVerde)
+                contaElfoVerde++;
+            else if(atacantesParametro.get(i) instanceof ElfoNoturno)
+                contaElfoNoturno++;
+        }     
+        if(contaElfoVerde == contaElfoNoturno){
+            int tamanhoDaLista = atacantesParametro.size() / 2;
+            int comecoDaLista = 0;
+            int finalDaLista = atacantesParametro.size() - 1;
+            while(tamanhoDaLista != 0){
+                atacantesOrdenados.add(atacantesParametro.get(comecoDaLista));
+                atacantesOrdenados.add(atacantesParametro.get(finalDaLista));
+                comecoDaLista++;
+                finalDaLista--;
+                tamanhoDaLista--;
+            }
+        }else
+            return null;
+        return atacantesOrdenados;
+        }
+    }   
