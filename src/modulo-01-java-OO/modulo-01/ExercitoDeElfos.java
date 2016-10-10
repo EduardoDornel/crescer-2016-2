@@ -91,7 +91,8 @@ public class ExercitoDeElfos implements Exercito, EstrategiasDeAtaque{
             int quantidadeAMais = contaElfosNoturnos - (int)(atacantesOrdenados.size()*0.3);
             if(atacantesOrdenados.get(j) instanceof ElfoNoturno){
                 atacantesOrdenados.remove(j);              
-                j = atacantesOrdenados.size();           
+                j = atacantesOrdenados.size(); 
+                contaElfosNoturnos--;
             }
             j++;
         }
