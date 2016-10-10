@@ -21,7 +21,6 @@ public class ExercitoDeElfos implements Exercito, EstrategiasDeAtaque{
         }
         return null;
     }
-    
         
     public ArrayList<Elfo> buscar(Status status) {
         ArrayList<Elfo> listaElfosComStatus = new ArrayList<>();
@@ -73,7 +72,29 @@ public class ExercitoDeElfos implements Exercito, EstrategiasDeAtaque{
                 tamanhoDaLista--;
             }
         }else
-            return null;
+            return null;        
         return atacantesOrdenados;
         }
-    }   
+        
+    public List<Elfo> ataqueLittleMumu(List<Elfo> atacantes){
+        List<Elfo> atacantesOrdenados = new LinkedList<>();
+        int contaElfosNoturnos = 0;
+        for(int i = 0; i < atacantes.size(); i++){
+            if(atacantes.get(i).getInventario().getItens().get(1).getQuantidade() > 0 && atacantes.get(i).getStatus() == Status.VIVO && (atacantes.get(i) instanceof ElfoNoturno || atacantes.get(i) instanceof ElfoVerde)){
+                atacantesOrdenados.add(atacantes.get(i));
+                if(atacantes.get(i) instanceof ElfoNoturno)
+                    contaElfosNoturnos ++;
+            }
+        }
+        int j = 0;
+        while(atacantesOrdenados.size() * 0.3 < contaElfosNoturnos){
+            int quantidadeAMais = contaElfosNoturnos - (int)(atacantesOrdenados.size()*0.3);
+            if(atacantesOrdenados.get(j) instanceof ElfoNoturno){
+                atacantesOrdenados.remove(j);              
+                j = atacantesOrdenados.size();           
+            }
+            j++;
+        }
+        return atacantesOrdenados;
+    }
+}   
