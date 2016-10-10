@@ -306,5 +306,60 @@ public class ExercitoDeElfosTest
         
         assertNull(exercitoOrdenado);       
     }    
+    
+    @Test
+    public void ataqueLittleMumuCom3ElfosInaptosE5Aptos()throws NaoPodeAlistarException{
+        ExercitoDeElfos exercito = new ExercitoDeElfos();                
+        
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno", 30));      
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 10));
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno", 20));         
+        exercito.alistarElfo(new ElfoVerde("elfo verde",0));      
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 10));
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno", 20));  
+        exercito.alistarElfo(new ElfoVerde("greenElf", 400));
+        
+        List<Elfo> exercitoOrdenado = new ArrayList<>();
+        exercitoOrdenado = exercito.ataqueLittleMumu(exercito.getBatalhao());     
+        
+        assertEquals(4, exercitoOrdenado.size());
+        assertTrue(exercitoOrdenado.get(0) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(1) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(2) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(3) instanceof ElfoVerde);
+    }
+    
+    @Test
+    public void ataqueLittleMumuCom6ElfosInaptosE9Aptos()throws NaoPodeAlistarException{
+        ExercitoDeElfos exercito = new ExercitoDeElfos();  
+        
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 10));
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno", 30));      
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 10));
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 50));                
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno", 20));         
+        exercito.alistarElfo(new ElfoVerde("elfo verde",0));      
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 10));
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno", 20));  
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 400));
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 10));        
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno",0));      
+        exercito.alistarElfo(new ElfoVerde("elfo verde", 10));
+        exercito.alistarElfo(new ElfoNoturno("elfo noturno", 20));         
+        
+        List<Elfo> exercitoOrdenado = new ArrayList<>();
+        exercitoOrdenado = exercito.ataqueLittleMumu(exercito.getBatalhao());     
+        
+        assertEquals(9, exercitoOrdenado.size());
+        assertTrue(exercitoOrdenado.get(0) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(1) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(2) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(3) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(4) instanceof ElfoNoturno);
+        assertTrue(exercitoOrdenado.get(5) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(6) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(7) instanceof ElfoVerde);
+        assertTrue(exercitoOrdenado.get(8) instanceof ElfoNoturno);
+    }    
 }
     
