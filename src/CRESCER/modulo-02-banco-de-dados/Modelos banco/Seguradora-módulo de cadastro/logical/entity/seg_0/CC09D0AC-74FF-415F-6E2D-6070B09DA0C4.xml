@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CC09D0AC-74FF-415F-6E2D-6070B09DA0C4" name="PessoaJuridica">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>74A4C59D-9424-B0AD-D78C-7409C2E27E3D</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Pessoa IDPessoa" id="2C9F7171-B15E-A6EB-C107-3EBD8039006E">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>235F22DE-D5B7-0C12-E601-21EB21D5E21E</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<referedAttribute>256D2F26-1FB1-6E8D-D028-6EC2BD73503F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CNPJ" id="05A0D01D-9F58-080F-AF95-DF077B8F4BA0">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>8EF0BDA7-CEE4-C18E-E39B-1DA68F4DD40A</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="InscEstadual" id="39478C56-81C1-40DB-CFEC-D130AA5D6965">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>5E4ED66E-48B5-83FC-BA30-BEAB33C460E6</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="37CD7B8C-4396-8231-9694-4E9CEAD86D23" name="PessoaJuridica PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>28FDC420-70DA-0290-0F69-63138B32B478</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2C9F7171-B15E-A6EB-C107-3EBD8039006E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

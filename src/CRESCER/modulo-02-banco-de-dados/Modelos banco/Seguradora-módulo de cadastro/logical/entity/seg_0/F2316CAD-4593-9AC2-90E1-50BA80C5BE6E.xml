@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F2316CAD-4593-9AC2-90E1-50BA80C5BE6E" name="Contrato">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>23A2CE0D-5316-755D-BAAB-134C68B2BB38</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDPeriodoDeVigencia" id="75D9EED9-8F6D-511A-9572-292319036B33">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>7998C834-A2BD-1653-EEE7-A86AA05B82C5</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<referedAttribute>E66E5169-DD01-3E2B-73E7-ED37B1FC15E5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDContrato" id="A8050241-55E3-F2FB-3E87-B23442A06332">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>1FAA1EA9-50D2-F78D-EA35-3B1D3896480B</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Beneficiario" id="6958630A-27D3-9373-E91F-38D538B9814C">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>FE65CA4D-862D-27A7-1F14-1B9A1A9CF91D</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDSeguro" id="484AE3B9-4890-AE59-A998-B076C063BCDF">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:24:35 UTC</createdTime>
+<generatorID>99F77F0A-7925-02DC-1B83-4FED987FE45F</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<referedAttribute>4B69DE97-167D-35FC-405B-2623A3B3CECD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="54950AF9-35B2-C67D-9B91-193D2BCD82FC" name="Contrato PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>7C5267B2-8039-7C6C-3D5B-212C50511819</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A8050241-55E3-F2FB-3E87-B23442A06332</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

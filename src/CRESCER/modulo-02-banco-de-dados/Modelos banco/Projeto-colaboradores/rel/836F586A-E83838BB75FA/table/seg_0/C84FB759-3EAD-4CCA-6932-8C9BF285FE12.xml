@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C84FB759-3EAD-4CCA-6932-8C9BF285FE12" name="Colaborador">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:32:40 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDColaborador" id="C7A60FD0-1A45-FA50-7D94-C4A8AB54218C">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:39:37 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ParticipacaoPerc" id="090FFC79-5910-AB6A-5EC4-B64545BB1F52">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:39:37 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="DE5E84AB-2965-FE0F-E249-878376BE0DD1">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:40:02 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="90E6DB48-B6E8-FEC4-99B1-15658CBDE3AD" name="Colaborador_PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:39:37 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C7A60FD0-1A45-FA50-7D94-C4A8AB54218C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

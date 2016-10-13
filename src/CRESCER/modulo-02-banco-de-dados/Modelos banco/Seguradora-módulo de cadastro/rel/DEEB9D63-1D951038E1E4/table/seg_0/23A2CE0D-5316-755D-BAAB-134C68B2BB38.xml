@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="23A2CE0D-5316-755D-BAAB-134C68B2BB38" name="Contrato">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:11:39 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDPeriodoDeVigencia" id="2A4E8FAB-B3A7-CC2A-96C9-3E9D84BC575B">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:14:54 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F9F02517-83FB-BF3A-4B39-2045C29C69C9" referredColumn="52C09D2C-D454-3728-6939-B9A1855A6C54"/>
+</associations>
+</Column>
+<Column name="IDContrato" id="1FAA1EA9-50D2-F78D-EA35-3B1D3896480B">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:17:19 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Beneficiario" id="FE65CA4D-862D-27A7-1F14-1B9A1A9CF91D">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:17:44 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDSeguro" id="E6680652-8F7F-F750-373E-A20D352DE849">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:24:42 UTC</createdTime>
+<generatorID>484AE3B9-4890-AE59-A998-B076C063BCDF</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7C527C55-1272-835A-89B8-5ADBAA697A92" referredColumn="BB0ACF56-6757-AF1F-960C-650E9A7F5E1D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7C5267B2-8039-7C6C-3D5B-212C50511819" name="Contrato_PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:15:59 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1FAA1EA9-50D2-F78D-EA35-3B1D3896480B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="13DAB9FC-A822-65A8-E10F-D1823EBEC770" name="Contrato__IDX">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:24:42 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>99F77F0A-7925-02DC-1B83-4FED987FE45F</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="E6680652-8F7F-F750-373E-A20D352DE849"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="06D7C4BF-6E1D-8405-B4FC-BE96B5CD8A37" name="Contrato_PeriodoDeVigencia_FK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:14:54 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A4E8FAB-B3A7-CC2A-96C9-3E9D84BC575B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B0CDAF7F-941D-5712-F77D-06BC6A328538" name="Contrato_Seguro_FK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:24:42 UTC</createdTime>
+<generatorID>99F77F0A-7925-02DC-1B83-4FED987FE45F</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6680652-8F7F-F750-373E-A20D352DE849"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

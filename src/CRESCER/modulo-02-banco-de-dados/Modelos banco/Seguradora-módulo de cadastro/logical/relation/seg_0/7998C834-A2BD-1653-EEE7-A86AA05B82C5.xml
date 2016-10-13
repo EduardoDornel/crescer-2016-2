@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Contrato PeriodoDeVigencia FK" directorySegmentName="seg_0" id="7998C834-A2BD-1653-EEE7-A86AA05B82C5">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>F9F02517-83FB-BF3A-4B39-2045C29C69C9</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<sourcePk>AF807FDA-1DA1-9731-672F-28130E6A0833</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F2F905DF-0659-3CAA-60A1-987FF5006AA8</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F2316CAD-4593-9AC2-90E1-50BA80C5BE6E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

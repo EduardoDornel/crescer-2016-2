@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_8" directorySegmentName="seg_0" id="C2844D22-B928-B04F-159B-4D046EE51985">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:51 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<sourcePk>54950AF9-35B2-C67D-9B91-193D2BCD82FC</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F2316CAD-4593-9AC2-90E1-50BA80C5BE6E</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>F0FDCCA0-DCF1-D7A2-A693-C5DC3FB8FD68</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

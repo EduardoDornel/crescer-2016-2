@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0BF3875C-9860-0AC1-D7DC-31923F7A0AA2" name="PeriodoDeVigencia">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:11:46 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDPeriodoDeVigencia" id="52C09D2C-D454-3728-6939-B9A1855A6C54">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:14:37 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataInicio" id="AD0AFD79-A861-419E-F6AF-C7839C663EEC">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:14:37 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataFim" id="DD571134-86EC-F2C5-41DE-57EC48FD4C55">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:14:37 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E3A5EA3-EBAD-50A8-D81E-08144CC22F30" name="PeriodoDeVigencia_PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:14:37 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="52C09D2C-D454-3728-6939-B9A1855A6C54"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

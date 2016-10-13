@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FDC216F4-78C8-4E9B-F9A5-E1E188DCCC41" name="SeguroCarro">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:05:11 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Seguro_IDSeguro" id="337CF4C7-C5A5-CA29-A9BE-EBD4D45CC146">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:10:36 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F8DC319-6944-5367-E951-007B2A6D41C1" referredColumn="BB0ACF56-6757-AF1F-960C-650E9A7F5E1D"/>
+</associations>
+</Column>
+<Column name="Placa" id="E3C32254-D240-2B4E-D25F-4BDABB1102EE">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:26:06 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B4034914-33ED-70CD-F3E1-4D621266A226" name="SeguroCarro_PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:11:13 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="337CF4C7-C5A5-CA29-A9BE-EBD4D45CC146"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4EC7B80F-A72E-DB43-14B2-1309938BAAE7" name="SeguroCarro_Seguro_FK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:10:36 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="337CF4C7-C5A5-CA29-A9BE-EBD4D45CC146"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

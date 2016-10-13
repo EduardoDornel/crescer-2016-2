@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2844E440-8550-4E74-3606-0598883EAF92" name="SeguroCasa">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>91791B17-39C0-F9E0-6B4F-AC3F7AAF9040</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Seguro IDSeguro" id="BBFF134A-F3E3-720B-06D5-FCEFE72D0ED4">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>54C909AA-D90F-8AF5-185E-8FC36091567C</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<referedAttribute>4B69DE97-167D-35FC-405B-2623A3B3CECD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C61B4573-CF4F-F7C7-A45B-3E152ADBCA1E" name="SeguroCasa_PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>F10D154B-D833-3052-DDD7-0FBECBA86E71</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BBFF134A-F3E3-720B-06D5-FCEFE72D0ED4</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

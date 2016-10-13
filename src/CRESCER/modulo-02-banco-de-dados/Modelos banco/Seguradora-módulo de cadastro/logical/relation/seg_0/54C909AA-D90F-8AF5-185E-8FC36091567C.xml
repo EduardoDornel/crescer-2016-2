@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SeguroCasa Seguro FK" directorySegmentName="seg_0" id="54C909AA-D90F-8AF5-185E-8FC36091567C">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>EF714204-5D4E-FAF8-4F25-FDA7DA7427BB</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<sourcePk>2D1577F0-12FB-4633-4272-706AF62D244A</sourcePk>
+<dominantRole>F0FDCCA0-DCF1-D7A2-A693-C5DC3FB8FD68</dominantRole>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F0FDCCA0-DCF1-D7A2-A693-C5DC3FB8FD68</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>2844E440-8550-4E74-3606-0598883EAF92</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

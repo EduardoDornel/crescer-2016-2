@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Seguradora-módulo de cadastro" id="D51C6193-A73E-727F-C6B5-109433994077" version="3.5">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 16:49:20 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>D51C6193-A73E-727F-C6B5-109433994077</designId>
+</OSDM_Design>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F2F905DF-0659-3CAA-60A1-987FF5006AA8" name="PeriodoDeVigencia">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>0BF3875C-9860-0AC1-D7DC-31923F7A0AA2</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDPeriodoDeVigencia" id="E66E5169-DD01-3E2B-73E7-ED37B1FC15E5">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>52C09D2C-D454-3728-6939-B9A1855A6C54</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataInicio" id="076A8915-BB61-4D17-8CC0-D89AEBF5F51A">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>AD0AFD79-A861-419E-F6AF-C7839C663EEC</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataFim" id="6E26F32E-CBDD-A488-92CB-BE122A2513BC">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>DD571134-86EC-F2C5-41DE-57EC48FD4C55</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AF807FDA-1DA1-9731-672F-28130E6A0833" name="PeriodoDeVigencia PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 18:21:32 UTC</createdTime>
+<generatorID>8E3A5EA3-EBAD-50A8-D81E-08144CC22F30</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E66E5169-DD01-3E2B-73E7-ED37B1FC15E5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

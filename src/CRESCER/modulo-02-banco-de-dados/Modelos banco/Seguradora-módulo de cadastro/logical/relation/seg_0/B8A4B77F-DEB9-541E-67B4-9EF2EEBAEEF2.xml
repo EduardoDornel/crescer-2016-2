@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PessoaFisica Pessoa FK" directorySegmentName="seg_0" id="B8A4B77F-DEB9-541E-67B4-9EF2EEBAEEF2">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:18:31 UTC</createdTime>
+<generatorID>91CC1C46-B1A3-E3E2-CD5D-F25D27652AFA</generatorID>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<engineerTo>
+<item key="DEEB9D63-ADE4-66F1-2EE3-1D951038E1E4" value="true"/>
+</engineerTo>
+<sourcePk>D280FAD6-5DFA-69A3-DF78-ACAA5E2BCA1D</sourcePk>
+<dominantRole>71241A91-584A-775C-020B-2E9D41021918</dominantRole>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>71241A91-584A-775C-020B-2E9D41021918</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>479C74B4-CEB5-CA78-C26F-93071B5A59AE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

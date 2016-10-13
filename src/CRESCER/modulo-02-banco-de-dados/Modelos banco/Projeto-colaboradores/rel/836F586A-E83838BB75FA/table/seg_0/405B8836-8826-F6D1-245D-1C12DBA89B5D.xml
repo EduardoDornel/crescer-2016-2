@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="405B8836-8826-F6D1-245D-1C12DBA89B5D" name="Data">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:35:57 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDData" id="4B084E1D-7A75-633D-523B-89018E993CFE">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:35:57 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Inicial" id="5D0CF2C4-7459-12B3-3451-481FD81C86BF">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:35:57 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FimPrevisto" id="132C6622-02B9-636B-EDFC-EEEDC39E98B2">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:35:57 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FimReal" id="08E81015-852E-A5D5-2480-00A464456FF4">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:35:57 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9906D18A-096C-8F4A-8F1F-3DF37721B04C" name="Data_PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 22:35:57 UTC</createdTime>
+<ownerDesignName>Projeto-colaboradores</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B084E1D-7A75-633D-523B-89018E993CFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

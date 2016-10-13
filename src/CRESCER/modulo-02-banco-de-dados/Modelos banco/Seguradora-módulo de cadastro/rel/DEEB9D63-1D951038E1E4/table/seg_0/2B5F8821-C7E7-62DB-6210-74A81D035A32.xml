@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2B5F8821-C7E7-62DB-6210-74A81D035A32" name="PessoaFisica">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 16:50:01 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Pessoa_IDPessoa" id="B2643285-23EB-4D87-9498-59F865325423">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 16:51:47 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="91CC1C46-B1A3-E3E2-CD5D-F25D27652AFA" referredColumn="E1EDA832-2919-D143-73BD-0708FEB6C0CF"/>
+</associations>
+</Column>
+<Column name="CPF" id="7A004945-00C5-702C-A44E-0E469DA70947">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:01:53 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RG" id="DE585A7D-0161-2F90-FE38-2BBA765697DA">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 17:01:53 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CE2FE79B-3F16-74D0-FE7B-FE7FCCC886EC" name="PessoaFisica_PK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 16:53:12 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2643285-23EB-4D87-9498-59F865325423"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5D56BC1D-52F3-9F38-0FD0-CC3420E8C159" name="PessoaFisica_Pessoa_FK">
+<createdBy>Eduardo</createdBy>
+<createdTime>2016-10-12 16:51:46 UTC</createdTime>
+<ownerDesignName>Seguradora-módulo de cadastro</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2643285-23EB-4D87-9498-59F865325423"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
