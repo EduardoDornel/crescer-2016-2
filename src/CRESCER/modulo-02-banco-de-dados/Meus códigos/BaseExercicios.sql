@@ -8,23 +8,28 @@ select * from ProdutoMaterial
 
 select count(1) as pedidosSetembro2016
 from Pedido
-where dataPedido between convert(datetime, '2016/09/01', 101) and convert(datetime, '2016/09/30', 101)
+where dataPedido between convert(datetime, '01/09/2016', 103) and
+						 convert(datetime, '30/09/2016', 103) + .99999
 
 select Nome
 from Produto pro
 INNER JOIN ProdutoMaterial prodM ON prodM.IDMaterial = 15836 and prodM.IDProduto = pro.IDProduto
 
+--create index IX_ProdutoMaterial_Material on ProdutoMaterial (IDMaterial) 
+-- ^ criar indice para alguma coluna.. na hora da pesquisa pelo indice ele se parece com uma pesquisa binária
+-- sempre crio quando tiver chave estrangeira ou quando a coluna for usada por um filtro
+
 select nome 
 from Cliente
-where RazaoSocial LIKE '%LTDA' or nome LIKE '%LTDA'
+where RazaoSocial LIKE '%LTDA%' or nome LIKE '%LTDA%'
 
 Insert into Produto(Nome, precoCusto, PrecoVenda, Situacao)
 values('Galocha Maragato', 35.67, 77.95, 'A')
 
---5
-/*select pro.nome
+select pro.nome
 from Produto pro
-LEFT OUTER JOIN PedidoItem pedItem ON pro.IDProduto = pedItem.IDProduto */
+LEFT OUTER JOIN PedidoItem pedItem ON pro.IDProduto = pedItem.IDProduto 
+where pedItem.IDProduto is null
 
 --6(Não funciona)
 select top 1 UF , count(*)as contaUf

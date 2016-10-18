@@ -39,8 +39,11 @@ INNER JOIN Departamento depGer ON depGer.IDDepartamento = ger.IDDepartamento
 SELECT * INTO EmpregadoReajuste FROM Empregado
 
 Update EmpregadoReajuste
-set salario = ((salario * 14.5)/100) + salario
-where IDDepartamento = 10 or IDDepartamento = 30
+set salario = salario * 0.145 + salario
+where exists(select 1
+			 from departamento
+			 where departamento.idDepartamento = empregado.idDepartamento
+			 and departamento.localizacao = 'Sao Paulo');
 
 select sum(novoEmp.Salario) - sum(emp.Salario) as diferenca
 	   from Empregado emp
