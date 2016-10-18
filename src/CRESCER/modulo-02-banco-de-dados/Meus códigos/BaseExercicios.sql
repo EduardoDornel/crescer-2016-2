@@ -14,12 +14,13 @@ where dataPedido between convert(datetime, '01/09/2016', 103) and
 select Nome
 from Produto pro
 INNER JOIN ProdutoMaterial prodM ON prodM.IDMaterial = 15836 and prodM.IDProduto = pro.IDProduto
+--Aqui é melhor usar uma subQuery..
 
 --create index IX_ProdutoMaterial_Material on ProdutoMaterial (IDMaterial) 
 -- ^ criar indice para alguma coluna.. na hora da pesquisa pelo indice ele se parece com uma pesquisa binária
 -- sempre crio quando tiver chave estrangeira ou quando a coluna for usada por um filtro
 
-select nome 
+select nome, RazaoSocial
 from Cliente
 where RazaoSocial LIKE '%LTDA%' or nome LIKE '%LTDA%'
 
@@ -28,8 +29,9 @@ values('Galocha Maragato', 35.67, 77.95, 'A')
 
 select pro.nome
 from Produto pro
-LEFT OUTER JOIN PedidoItem pedItem ON pro.IDProduto = pedItem.IDProduto 
+LEFT JOIN PedidoItem pedItem ON pro.IDProduto = pedItem.IDProduto 
 where pedItem.IDProduto is null
+-- left join não é indicado(usar subquery)..
 
 --6(Não funciona)
 select top 1 UF , count(*)as contaUf
