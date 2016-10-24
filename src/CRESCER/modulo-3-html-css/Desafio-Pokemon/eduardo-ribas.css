@@ -1,0 +1,152 @@
+body{
+   /* background-color: paleturquoise;*/
+}
+
+header span:first-child{
+    display: none;
+}
+
+header h1{
+    /*color: rgb(221,200,0); amarelo mais escuro*/ 
+	text-align: center;
+    border-radius: 20px;
+    width: 600px;
+    margin: 0px auto;
+    margin-bottom: 15px;
+    color: yellow;
+    padding: 10px;
+    background-color: darkblue;
+    height: 40px;
+    overflow: hidden;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: all 1s;
+}
+
+header h1:hover {
+    color: darkblue;
+    background-color: yellow
+    }
+
+
+/*.logo{
+    AQUI VAI O LOGO POKEMON
+}*/
+
+.autenticacao{
+    display: none;
+}
+nav{
+    background-color: yellow;
+    height: 20px;
+    margin-bottom: 30px;
+    border: 2px solid darkblue;
+    border-radius: 15px;
+    padding: auto;
+    overflow: hidden;
+    transition: all 1s;
+    }
+
+nav a{
+     margin: 0px auto;
+    text-decoration: none;
+    color: darkblue;  
+    padding: 60px;
+}
+nav a span{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;  
+}
+nav:hover{
+    background-color: darkblue;
+    border: solid yellow;
+}
+nav a:hover{
+    color: yellow;
+}
+
+.whatever{
+    height: 1px;
+    background-color: darkslategray;
+}
+.historia-pokemon{
+    margin-top: 30px;
+    background-color: green; 
+    height: 260px;
+    overflow: hidden;
+}
+
+.historia-pokemon h1{
+    margin-left: 20px;
+    color: yellow;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 45px;
+}
+
+.historia-pokemon p{
+    margin-left: 20px;
+    color: yellow;
+}
+
+.historia-pokemon p a{
+    text-decoration: none;
+    color: white;
+}
+
+.historia-pokemon p span{
+    font-weight: bold;
+}
+
+.historia-digimon{
+    display: none;
+}
+
+.content .personagens h2:nth-of-type(2){
+    display: none;
+}
+
+.content .personagens ul:nth-of-type(2){
+    display: none;
+}
+
+.content .personagens h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.content{
+    position: relative;
+    overflow: auto;
+    padding: 10%;
+}
+
+.digiescolhidos{
+    display: none;
+}
+/***********************/
+.personagens ul{
+    float: left;
+    display: inline;
+    list-style-type: none;
+}
+
+.personagens ul li:before {
+    content: url("C:/Users/Eduardo.Dornel.000/Downloads/wolverine.jpg");
+}
+.personagens ul li:after{
+    content: url("C:/Users/Eduardo.Dornel.000/Downloads/blanka.png");
+}
+
+.treinadores-pokemon{
+    display: static;
+    width: 30%;
+    height: auto;
+    float: right;
+    overflow-y: auto;
+    margin-top: 170px;
+}
+
+footer{
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 20px;
+}
