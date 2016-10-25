@@ -1,18 +1,12 @@
 function gerarPiramide(niveis){
-  var cifrao = "R$";
-  for ( var i = 1; i <= niveis; ++i )  {
-    var naTela = "";
-    for ( var coluna = 1; coluna <= i; ++coluna ){
-      naTela += cifrao;
-    }
-    console.log(naTela);
+  for ( let i = 1; i <= niveis; ++i )  {
+    console.log(Array(i+1).join('R$'));
   }
 }
-gerarPiramide(9);
 
 function diglettDig(){
-  var diglett = 'Diglett dig';
-  var trio = 'trio trio trio';
+  let diglett = 'Diglett dig';
+  let trio = 'trio trio trio';
   for (var i = 1; i <= 100; i++) {
     if(i % 3 === 0 && i % 5 === 0)
       console.log(diglett +', ' + trio);
@@ -20,9 +14,44 @@ function diglettDig(){
         console.log(diglett);
         else if(i % 5 === 0)
           console.log(trio);
-          else {
+          else{
             console.log(i);
-        }
+          }
       }
     }
-diglettDig();
+
+function find(array, funcao){
+  if(typeof funcao === "function"){
+    let retorno = [];
+    for (let i = 0, len = array.length; i < len; i++) {
+      if(funcao(array[i])){
+        retorno.push(array[i]);
+      }
+    }
+    return retorno;
+  }
+  return [];
+}
+
+function subtrair(num1){
+  return function(num2){
+    return num1 - num2;
+  }
+}
+
+function iguais(obj1, obj2){
+
+  function ehObjeto(obj){
+    return typeof obj === 'object';
+  }
+
+  if(ehObjeto(obj1) && ehObjeto(obj2)){
+    for(let prop  in obj1){
+      let saoIguais = iguais(obj1[prop], obj2[prop]);
+      if(!saoIguais)
+        return false;
+    }
+      return true;
+  }
+  return obj1 === obj2;
+}
