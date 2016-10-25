@@ -41,6 +41,9 @@ function subtrair(num1){
 
 function iguais(obj1, obj2){
 
+  if(Object.keys(obj1).length !== Object.keys(obj2).length)
+    return false;
+
   function ehObjeto(obj){
     return typeof obj === 'object';
   }
