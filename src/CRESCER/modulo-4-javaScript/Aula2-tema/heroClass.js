@@ -35,17 +35,12 @@ seriesPorLongevidade(){
       (acumulador, series) => acumulador.concat(series)
       , []);
 
-      return todasSeries
-        .sort(
-          (serie1, serie2) =>{
-            let diff = (serie2.endYear - serie2.startYear) - (serie1.endYear - serie1.startYear);
-            return diff;
-          });
+      let diff = serie => serie.endYear - serie.startYear;
 
-
+      return todasSeries.sort((serie1, serie2) => diff(serie2) - diff(serie1));
 }
 
-comicMaisCara(array){
+comicMaisCara(array){//ALTERAR E USAR MAP COM REDUCE
   var maisCaro = 0;
   var objMaisCaro;
   function precoTotal(arrayDePreco){
