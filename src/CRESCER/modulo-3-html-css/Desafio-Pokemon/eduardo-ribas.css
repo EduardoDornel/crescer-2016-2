@@ -29,7 +29,8 @@ header h1:hover {
 
 
 /*.logo{
-    AQUI VAI O LOGO POKEMON
+  background: url(images/pokemon-logo.png) no-repeat left;
+    height: 500px;
 }*/
 
 .autenticacao{
@@ -65,9 +66,10 @@ nav a:hover{
 }
 
 .whatever{
-    height: 1px;
-    background-color: darkslategray;
+    background: url(images/pokemon-capa.jpg) no-repeat center;
+    height: 500px;
 }
+
 .historia-pokemon{
     margin-top: 30px;
     background-color: green; 
@@ -109,7 +111,7 @@ nav a:hover{
     display: none;
 }
 
-.content .personagens h2{
+personagens h2{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -122,15 +124,37 @@ nav a:hover{
 .digiescolhidos{
     display: none;
 }
-/***********************/
+
 .personagens ul{
     text-align: center;
     float: left;
     display: inline;
     list-style-type: none;
-    overflow: scroll;
-    width: 300px;
+    overflow-y: scroll;
+    width: 200px;
     height: 500px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,139,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,139,0.4); 
 }
 
 .personagens ul li:before {
@@ -150,8 +174,5 @@ nav a:hover{
 }
 
 footer{
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 20px;
+    display: none;
 }
