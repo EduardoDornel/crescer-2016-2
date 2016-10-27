@@ -1,37 +1,51 @@
 class Herois{
-  constructor(array = []) {
-       this.arrayDeHerois = new Array();
-       for (let prop in array) {
-           this.arrayDeHerois.push(array[prop]);
-       }
+
+  constructor(array) {
+       this.arrayDeHerois = array;
    }
+
+foraDaGuerraCivil(){
+  return this.arrayDeHerois.filter(heroi =>
+        heroi.events.items.filter(e => e.name.contem('CiVIl war', true)).length === 0
+      )
 }
 
-function foraDaGuerraCivil(){
- // return this.arrayDeHerois.filter(heroi => heroi.events.items.filter(e => e.name.indexOf('Civil War')).length === 0)
+maisPublicado() {
+  return this.arrayDeHerois
+    .sort((heroi1, heroi2) =>
+      heroi2.comics.available - heroi1.comics.available
+    )[0];
 }
 
-function maisPublicado(array) {
-  var maiorQtd;
-  maiorQtd = array[0];
-
-  for (let prop in array) {
-    if(array[prop].comics.available > maiorQtd.comics.available)
-      maiorQtd = array[prop];
-  }
-  return maiorQtd;
+mediaPaginas(){
+  return this.arrayDeHerois.reduce(
+      (acumulador, heroi) =>
+          acumulador +
+          heroi.comics.items.reduce(
+            (acumuladorComic, comic) =>
+              acumuladorComic + comic.pageCount
+          , 0)
+      , 0) / this.arrayDeHerois.length;
 }
 
-function mediaPaginas(array){
- //var total = array.comics.items.reduce(pagecount);
- //return total / array.comics.items.length;
+seriesPorLongevidade(){
+  let todasSeries =
+    this.arrayDeHerois.map(heroi => heroi.series.items)
+    .reduce(
+      (acumulador, series) => acumulador.concat(series)
+      , []);
+
+      return todasSeries
+        .sort(
+          (serie1, serie2) =>{
+            let diff = (serie2.endYear - serie2.startYear) - (serie1.endYear - serie1.startYear);
+            return diff;
+          });
+
+
 }
 
-function seriesPorLongevidade(array){
-    //
-}
-
-function comicMaisCara(array){
+comicMaisCara(array){
   var maisCaro = 0;
   var objMaisCaro;
   function precoTotal(arrayDePreco){
@@ -41,14 +55,15 @@ function comicMaisCara(array){
     return total;
   }
 
-  maisCaro = precoTotal(array[0]);
-  objMaisCaro = array[0].comics;
-  for (var i = 1, leng = array.length; i < leng; i++) {
-    var precoDestaPosicao = precoTotal(array[i]);
-    if(precoDestaPosicao > maisCaro){
-      maisCaro = precoDestaPosicao;
-      objMaisCaro = array[i].comics;
+    maisCaro = precoTotal(array[0]);
+    objMaisCaro = array[0].comics;
+    for (var i = 1, leng = array.length; i < leng; i++) {
+      var precoDestaPosicao = precoTotal(array[i]);
+      if(precoDestaPosicao > maisCaro){
+        maisCaro = precoDestaPosicao;
+        objMaisCaro = array[i].comics;
+      }
     }
+    return objMaisCaro;
   }
-  return objMaisCaro;
 }
