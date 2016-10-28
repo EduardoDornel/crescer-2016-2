@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarioKart
+namespace MarioKart.Karts
 {
     public abstract class Kart
     {
@@ -14,21 +14,21 @@ namespace MarioKart
             this.KartCorredor = corredor;
         }
 
-        private int somatorioBonusEquipamentos;
-        Corredor KartCorredor { get; set; }
-        List<IEquipamentos> ListaEquipamentos{ get; set; }
-        int Velocidade {
+        internal int somatorioBonusEquipamentos;
+        public Corredor KartCorredor { get; set; }
+        public List<IEquipamentos> ListaEquipamentos{ get; set; }
+        public virtual int Velocidade {
             get
             {
                 for (int i = 0; i < ListaEquipamentos.Count; i++)
                 {
                     somatorioBonusEquipamentos += ListaEquipamentos[i].Bonus;
                 }
-                return 3 + BonusHabilidade(KartCorredor) + somatorioBonusEquipamentos; // faltou a soma dos bonus de tds equipamentos
+                return 3 + BonusHabilidade(this.KartCorredor) + somatorioBonusEquipamentos;
             }
         }
 
-        private int BonusHabilidade(Corredor piloto)
+        internal int BonusHabilidade(Corredor piloto)
         {
             if (piloto.NivelHab == NivelHabilidade.Noob)
                 return 3;
@@ -36,6 +36,10 @@ namespace MarioKart
                 return 5;
             else
                 return 6 + ListaEquipamentos.Count;
+        }
+
+        public void equipar(IEquipamentos equipament) {
+            ListaEquipamentos.Add(equipament);
         }
     }
 }

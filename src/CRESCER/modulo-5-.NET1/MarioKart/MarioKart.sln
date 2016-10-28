@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioKart", "MarioKart\MarioKart.csproj", "{0221C87E-FAD2-4217-9B04-0258104BBDCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioKartTest", "MarioKartTest\MarioKartTest.csproj", "{09381B9A-5E1D-4E24-B5B6-498D1663FAB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0221C87E-FAD2-4217-9B04-0258104BBDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0221C87E-FAD2-4217-9B04-0258104BBDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0221C87E-FAD2-4217-9B04-0258104BBDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09381B9A-5E1D-4E24-B5B6-498D1663FAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09381B9A-5E1D-4E24-B5B6-498D1663FAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09381B9A-5E1D-4E24-B5B6-498D1663FAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09381B9A-5E1D-4E24-B5B6-498D1663FAB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

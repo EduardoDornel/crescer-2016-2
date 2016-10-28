@@ -44,7 +44,8 @@
     <Compile Include="Equipamentos\IEquipamentos.cs" />
     <Compile Include="Equipamentos\MotorBaseDeLava.cs" />
     <Compile Include="Equipamentos\PneusCouroDeDragao.cs" />
-    <Compile Include="Kart.cs" />
+    <Compile Include="Karts\Kart.cs" />
+    <Compile Include="Karts\Sonar.cs" />
     <Compile Include="NivelHabilidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
