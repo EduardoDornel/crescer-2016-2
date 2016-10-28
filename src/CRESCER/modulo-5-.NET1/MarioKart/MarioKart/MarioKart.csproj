@@ -41,10 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Corredor.cs" />
+    <Compile Include="Equipamentos\FogueteDePlutonio.cs" />
     <Compile Include="Equipamentos\IEquipamentos.cs" />
     <Compile Include="Equipamentos\MotorBaseDeLava.cs" />
     <Compile Include="Equipamentos\PneusCouroDeDragao.cs" />
+    <Compile Include="Equipamentos\UltraPack.cs" />
+    <Compile Include="Karts\Dinam.cs" />
     <Compile Include="Karts\Kart.cs" />
+    <Compile Include="Karts\Light.cs" />
     <Compile Include="Karts\Sonar.cs" />
     <Compile Include="NivelHabilidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
