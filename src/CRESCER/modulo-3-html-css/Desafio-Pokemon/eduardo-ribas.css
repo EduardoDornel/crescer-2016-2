@@ -32,6 +32,7 @@ header h1:hover {
 .autenticacao{
     display: none;
 }
+
 nav{
     background-color: yellow;
     height: 20px;
@@ -62,7 +63,7 @@ nav a:hover{
 }
 
 .whatever{
-    background: url(images/pokemon-capa.jpg) no-repeat center;
+    background: url(images/pokemon-capa.jpg) center;
     height: 500px;
     border-radius: 20px;
     width: 100%;
@@ -115,9 +116,7 @@ nav a:hover{
 }
 
 .content .personagens h2{
-    position: relative;
-    left: 120px;
-    top: 10px;
+    font-size: 22px;
     color: darkblue;
 }
 
@@ -133,19 +132,34 @@ nav a:hover{
      list-style-type: none;
 }
 
-.personagens ul{
-    text-align: center;
+.personagens{
+    background-color: aquamarine;
+    border-radius: 20px;
+    position: absolute;
+    top: 960px;
+    width: 400px;
+    height: 380px;
     float: left;
     display: inline;
     overflow-y: scroll;
-    width: 200px;
-    height: 400px;
-    position: relative;
-    left: 80px;
+    overflow-x: hidden;
+    left: 60px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.personagens > ul > li{
+    margin: 5px;
+    background-color: mediumaquamarine;
+        border-radius: 5px;
+
 }
 
 .personagens ul li:hover{
-    list-style-type: decimal;
+    background-color: black;
+    color: aquamarine;
+    border-radius: 5px;
 }
 
 .treinadores-pokemon h3{
@@ -153,19 +167,33 @@ nav a:hover{
 }
 
 .treinadores-pokemon{
-    width: 280px;
-    height: auto;
+    width: 600px;
+    height: 365px;
     float: right;
-    overflow-y: auto;
-    margin-top: 50px;
-    position: relative;
-    right: 80px;
+    overflow-y: scroll;
+    margin-top: 20px;
+    right: 60px;
+    background-color: aquamarine;
+    padding: 30px;
+    border-radius: 25px;
+      position: absolute;
 }
 
-.treinadores-pokemon li:first-child:hover{
-    content:url(ash.jpg);
-    position: relative;
-    left: 400px;
+.treinadores-pokemon ul li{
+    background-repeat:no-repeat;
+     padding-bottom: 5px;
+}
+
+.treinadores-pokemon li:first-child:hover:after{
+    content: url('images/ash.jpg');
+    display: block;
+    position: absolute;
+    right: 260px;
+    max-width:150px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+    top: 10px;
 }
 
 ::-webkit-scrollbar {
