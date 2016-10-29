@@ -118,6 +118,8 @@ nav a:hover{
 .content .personagens h2{
     font-size: 22px;
     color: darkblue;
+    position: relative;
+    right: 90px;
 }
 
 .content{
@@ -137,7 +139,7 @@ nav a:hover{
     border-radius: 20px;
     position: absolute;
     top: 960px;
-    width: 400px;
+    width: 480px;
     height: 380px;
     float: left;
     display: inline;
@@ -149,11 +151,11 @@ nav a:hover{
 
 }
 
-.personagens > ul > li{
+.personagens ul li{
     margin: 5px;
     background-color: mediumaquamarine;
-        border-radius: 5px;
-
+    border-radius: 5px;
+    width: 150px;
 }
 
 .personagens ul li:hover{
@@ -180,15 +182,15 @@ nav a:hover{
 }
 
 .treinadores-pokemon ul li{
+    padding-bottom: 5px;   
     background-repeat:no-repeat;
-     padding-bottom: 5px;
+    width: 140px;
 }
 
 .treinadores-pokemon ul li:hover{
      background-color: black;
     color: aquamarine;
     border-radius: 5px;
-    width: 140px;
 }
 
 .treinadores-pokemon li:first-child:hover:after{
