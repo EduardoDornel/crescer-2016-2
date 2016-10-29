@@ -184,17 +184,141 @@ nav a:hover{
      padding-bottom: 5px;
 }
 
+.treinadores-pokemon ul li:hover{
+     background-color: black;
+    color: aquamarine;
+    border-radius: 5px;
+    width: 140px;
+}
+
 .treinadores-pokemon li:first-child:hover:after{
     content: url('images/ash.jpg');
     display: block;
     position: absolute;
+    top: 10px;
     right: 260px;
     max-width:150px;
     max-height:100px;
-    width: auto;
-    height: auto;
-    top: 10px;
+    transform: scale(0.5);
 }
+
+.treinadores-pokemon li:nth-of-type(2):hover:after{
+    content: url('images/misty.gif');
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 220px;
+    max-width:150px;
+    max-height:100px;
+    transform: scale(0.5);
+}
+
+.treinadores-pokemon li:nth-of-type(3):hover:after{
+    content: url('images/brock.gif');
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 220px;
+    max-width:150px;
+    max-height:100px;
+    transform: scale(0.5);
+}
+
+.treinadores-pokemon li:nth-of-type(4):hover:after{
+    content: url('images/tracey.png');
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 200px;
+    max-width:150px;
+    max-height:100px;
+    transform: scale(0.8);
+}
+
+.treinadores-pokemon li:nth-of-type(5):hover:after{
+    content: url('images/may.png');
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 260px;
+    max-width:150px;
+    max-height:100px;
+    transform: scale(0.5);
+}
+
+.treinadores-pokemon li:nth-of-type(6):hover:after{
+    content: url('images/max.png');
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 250px;
+    max-width:150px;
+    max-height:100px;
+}
+
+.treinadores-pokemon li:nth-of-type(7):hover:after{
+    content: url('images/dawn.png');
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 250px;
+    max-width:150px;
+    max-height:100px;
+}
+
+.treinadores-pokemon li:nth-of-type(8):hover:after{
+    content: url('images/iris.png');
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 235px;
+    max-width:150px;
+    max-height:100px;
+}
+
+.treinadores-pokemon li:nth-of-type(9):hover:after{
+    content: url('images/cilan.png');
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 235px;
+    max-width:150px;
+    max-height:100px;
+}
+
+.treinadores-pokemon li:nth-of-type(10):hover:after{
+    content: url('images/clemont.png');
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 235px;
+    max-width:150px;
+    max-height:100px;
+    transform: scale(0.8);
+}
+
+.treinadores-pokemon li:nth-of-type(11):hover:after{
+    content: url('images/bonnie.png');
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 235px;
+    max-width:150px;
+    max-height:100px;
+    transform: scale(0.8);
+}
+
+.treinadores-pokemon li:nth-of-type(12):hover:after{
+    content: url('images/serena.png');
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 235px;
+    max-width:150px;
+    max-height:100px;
+    transform: scale(0.8);
+}
+
 
 ::-webkit-scrollbar {
     width: 12px;
