@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MarioKart.Equipamentos;
 
 namespace MarioKart.Karts
 {
     public class Dinam : Kart
     {
-        public Dinam(Corredor corredor) : base(corredor)
+        public Dinam(Corredor corredor, List<IEquipamentos> listaEquipamentos = null) : base(corredor, listaEquipamentos)
         {
         }
 

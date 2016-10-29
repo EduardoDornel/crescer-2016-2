@@ -10,8 +10,7 @@ namespace MarioKartTest
         [TestMethod]
         public void CorredorNasceComNomeENivelHabilidadeNoob()
         {
-            Corredor Piloto = new Corredor("rubens");
-            Piloto.NivelHab = NivelHabilidade.Noob;
+            Corredor Piloto = new Corredor("yoshi", NivelHabilidade.Noob);
 
             Assert.AreEqual(Piloto.NivelHab, NivelHabilidade.Noob);
         }
@@ -19,8 +18,7 @@ namespace MarioKartTest
         [TestMethod]
         public void CorredorNasceComNomeENivelHabilidadeMediano()
         {
-            Corredor Piloto = new Corredor("lewis");
-            Piloto.NivelHab = NivelHabilidade.Mediano;
+            Corredor Piloto = new Corredor("luigi", NivelHabilidade.Mediano);
 
             Assert.AreEqual(Piloto.NivelHab, NivelHabilidade.Mediano);
         }
@@ -29,8 +27,7 @@ namespace MarioKartTest
         public void CorredorNasceComNomeENivelHabilidadeProfissional()
 
         {
-            Corredor Piloto = new Corredor("weber");
-            Piloto.NivelHab = NivelHabilidade.Profissional;
+            Corredor Piloto = new Corredor("lewis", NivelHabilidade.Profissional);
 
             Assert.AreEqual(Piloto.NivelHab, NivelHabilidade.Profissional);
         }

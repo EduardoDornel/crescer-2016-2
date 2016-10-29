@@ -9,9 +9,10 @@ namespace MarioKart.Karts
 {
     public abstract class Kart
     {
-        public Kart(Corredor corredor)
+        public Kart(Corredor corredor, List<IEquipamentos> listaEquipamentos = null)
         {
             this.KartCorredor = corredor;
+            this.ListaEquipamentos = listaEquipamentos;
         }
 
         internal int somatorioBonusEquipamentos;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarioKart.Equipamentos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace MarioKart.Karts
 {
     public class Sonar : Kart
     {
-        public Sonar(Corredor corredor) : base(corredor)
+        public Sonar(Corredor corredor, List<IEquipamentos> listaEquipamentos = null) : base(corredor, listaEquipamentos)
         {
         }
 

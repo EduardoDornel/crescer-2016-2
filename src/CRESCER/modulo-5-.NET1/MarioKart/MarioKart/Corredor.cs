@@ -8,9 +8,10 @@ namespace MarioKart
 {
     public class Corredor
     {
-        public Corredor(String nome)
+        public Corredor(String nome, NivelHabilidade nivelHabilidade)
         {
             this.Nome = nome;
+            this.NivelHab = nivelHabilidade;
         }
         public String Nome { get; private set; }
         public NivelHabilidade NivelHab{ get; set; }

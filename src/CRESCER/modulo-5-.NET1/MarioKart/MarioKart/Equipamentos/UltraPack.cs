@@ -19,7 +19,7 @@ namespace MarioKart.Equipamentos
             get
             {
                 double equipBonus = Convert.ToDouble(Equipamento.Bonus * 0.2);
-                return Convert.ToInt32(Equipamento.Bonus + Convert.ToDouble(Math.Ceiling(equipBonus)));
+                return Convert.ToInt32(Equipamento.Bonus + Math.Ceiling(equipBonus));
             }
         }
     }
