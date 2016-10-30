@@ -1,15 +1,16 @@
 ﻿using MarioKart.Equipamentos;
+using MarioKart.Karts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarioKart.Karts
+namespace MarioKart.Hibridos
 {
     public class SkyFusion : Kart, IEquipamentos
     {
-        public SkyFusion(Corredor corredor, List<IEquipamentos> listaEquipamentos = null) : base(corredor, listaEquipamentos)
+        public SkyFusion(Corredor corredor) : base(corredor)
         {
         }
 

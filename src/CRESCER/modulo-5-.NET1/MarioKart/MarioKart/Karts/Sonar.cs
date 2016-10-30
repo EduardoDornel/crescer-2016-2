@@ -9,7 +9,7 @@ namespace MarioKart.Karts
 {
     public class Sonar : Kart
     {
-        public Sonar(Corredor corredor, List<IEquipamentos> listaEquipamentos = null) : base(corredor, listaEquipamentos)
+        public Sonar(Corredor corredor) : base(corredor)
         {
         }
 

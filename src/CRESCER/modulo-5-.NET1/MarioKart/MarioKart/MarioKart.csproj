@@ -49,11 +49,12 @@
     <Compile Include="Karts\Dinam.cs" />
     <Compile Include="Karts\Kart.cs" />
     <Compile Include="Karts\Light.cs" />
-    <Compile Include="Karts\SkyFusion.cs" />
+    <Compile Include="Hibridos\SkyFusion.cs" />
     <Compile Include="Karts\Sonar.cs" />
     <Compile Include="NivelHabilidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

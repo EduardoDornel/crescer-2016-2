@@ -9,7 +9,7 @@ namespace MarioKart.Karts
 {
     public class Dinam : Kart
     {
-        public Dinam(Corredor corredor, List<IEquipamentos> listaEquipamentos = null) : base(corredor, listaEquipamentos)
+        public Dinam(Corredor corredor) : base(corredor)
         {
         }
 
@@ -22,9 +22,7 @@ namespace MarioKart.Karts
                     somatorioBonusEquipamentos += ListaEquipamentos[i].Bonus;
                 }
                 //dobra o bônus de velocidade que o kart ganha do corredor (e apenas do corredor).
-                int bonusCorredor = KartCorredor.NivelHab == NivelHabilidade.Noob ? 3 :
-                                KartCorredor.NivelHab == NivelHabilidade.Mediano ? 5 : 6;
-                return 3 + BonusHabilidade(base.KartCorredor) + somatorioBonusEquipamentos;
+                return 3 + (BonusHabilidade(base.KartCorredor) * 2) + somatorioBonusEquipamentos;
             }
         }
     }
