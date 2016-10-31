@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Street Fighter</title>
+    <link href="~/Content/estilizar.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="menu">
+        <a href="index.html">
+            <Span>
+                <strong>Inicio</strong>
+            </Span>
+        </a>
+        <a href="https://goo.gl/eWJ3gp">
+            <Span>
+                <strong>Noticias</strong>
+            </Span>
+        </a>
+        <a href="~/Models/FichaTecnicaModel.cs">
+            <Span>
+                <strong>Ficha Técnica</strong>
+            </Span>
+        </a>
+        <a href="sobre.html">
+            <Span>
+                <strong>Sobre</strong>
+            </Span>
+        </a>
+    </div>
+
+        <div>
+            @RenderBody()
+        </div>
+
+</body>
+</html>
