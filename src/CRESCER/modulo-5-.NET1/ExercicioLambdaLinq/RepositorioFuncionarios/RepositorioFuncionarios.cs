@@ -111,27 +111,48 @@ namespace Repositorio
 
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
         {
+            return Funcionarios.Where(func => (2016 - func.DataNascimento.Year) >= (idade - 5)
+                                                    && (2016 - func.DataNascimento.Year) <= (idade + 5)).ToList();
             throw new NotImplementedException();
 
         }
 
         public double SalarioMedio(TurnoTrabalho? turno = null)
         {
-            throw new NotImplementedException();
+            return Funcionarios.Average(func => func.Cargo.Salario);
         }
 
         public IList<Funcionario> AniversariantesDoMes()
         {
+            return Funcionarios.Where(func => func.DataNascimento.Month == DateTime.Now.Month).ToList();
             throw new NotImplementedException();
         }
 
         public IList<dynamic> BuscaRapida()
         {
+            var funcionariosBuscaRapida = from func in Funcionarios
+                                          select new
+                                          {
+                                              NomeFuncionario = func.Nome,
+                                              CargoTitulo = func.Cargo.Titulo
+                                          };
+            return new List<dynamic>(funcionariosBuscaRapida);
             throw new NotImplementedException();
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
         {
+            /*Deve retornar a quantidade de funcionários por turno, para isso, 
+             * devolver o resultado na estrutura de uma lista cujo objeto tenha 
+             * as propriedades Turno e Quantidade.*/
+            IList<dynamic> funcPorTurno;
+
+            return Funcionarios.GroupBy(func => func.TurnoTrabalho).Select(f =>
+                 new
+                 {
+                   Turno = f.Key,
+                   Quantidade = f.Count()
+                 }).ToList<dynamic>();
             throw new NotImplementedException();
         }
 
