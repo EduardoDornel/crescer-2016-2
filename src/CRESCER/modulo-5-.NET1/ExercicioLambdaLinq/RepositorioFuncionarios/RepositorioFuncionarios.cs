@@ -119,7 +119,8 @@ namespace Repositorio
 
         public double SalarioMedio(TurnoTrabalho? turno = null)
         {
-            return Funcionarios.Average(func => func.Cargo.Salario);
+            return this.Funcionarios.Where(func => !turno.HasValue || func.TurnoTrabalho == turno.Value)
+                                                .Average(f => f.Cargo.Salario);
         }
 
         public IList<Funcionario> AniversariantesDoMes()
@@ -130,14 +131,13 @@ namespace Repositorio
 
         public IList<dynamic> BuscaRapida()
         {
-            var funcionariosBuscaRapida = from func in Funcionarios
-                                          select new
-                                          {
-                                              NomeFuncionario = func.Nome,
-                                              CargoTitulo = func.Cargo.Titulo
-                                          };
-            return new List<dynamic>(funcionariosBuscaRapida);
-            throw new NotImplementedException();
+            return this.Funcionarios
+                        .Select(func => (dynamic)new
+                        {
+                            NomeFuncionario = func.Nome,
+                            TituloCargo = func.Cargo.Titulo
+                        })
+                        .ToList();
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
@@ -158,7 +158,21 @@ namespace Repositorio
 
         public dynamic FuncionarioMaisComplexo()
         {
-            throw new NotImplementedException();
+            CultureInfo ptCulture = new CultureInfo("pt-BR");
+            CultureInfo entCulture = new CultureInfo("en-US");
+
+            return this.Funcionarios
+                    .Where(f => f.Cargo.Titulo != "Desenvolvedor Júnior" && f.TurnoTrabalho != TurnoTrabalho.Tarde)
+                    .OrderByDescending(f => Regex.Replace(f.Nome, "aouieyAOUIEY", "").Length)
+                    .Select(f =>
+                    new
+                    {
+                        Nome = f.Nome,
+                        DataNascimento = f.DataNascimento.ToString("dd/MM/yyyy"),
+                        SalarioRS = f.Cargo.Salario.ToString("C", ptCulture),
+                        SalarioUS = f.Cargo.Salario.ToString("C", entCulture),
+                        QuantidadeMesmoCargo = this.Funcionarios.Count(c => c.Cargo.Equals(f.Cargo))
+                    }).First();
         }
     }
 }
