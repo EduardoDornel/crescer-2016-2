@@ -7,6 +7,7 @@ namespace StreetFighter.Web.Models
 {
     public class FichaTecnicaModel
     {
+        public string Nome { get; set; }
         public string Imagem { get; set;}
         public string PrimeiraAparicao { get; set; }
         public DateTime DataNascimento { get; set; }

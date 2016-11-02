@@ -17,6 +17,7 @@ namespace StreetFighter.Web.Controllers
         public ActionResult FichaTecnica()
         {
             var FichaTec = new FichaTecnicaModel();
+            FichaTec.Nome = "Blanka";
             FichaTec.Imagem = "/Content/Images/blanka.png";
             FichaTec.PrimeiraAparicao = "Street Fighter II The World Warrior (1991)";
             FichaTec.DataNascimento = Convert.ToDateTime("12/02/1966");
@@ -24,7 +25,7 @@ namespace StreetFighter.Web.Controllers
             FichaTec.Peso = 96;
             FichaTec.Origem = "Brasil (lugar de nascença é provável como sendo Tailândia)";
             FichaTec.GolpesEspeciais = "Electric Thunder,Rolling Attack.";
-           // FichaTec.PersonagemOculto;
+            FichaTec.PersonagemOculto = true;
             return View(FichaTec);
         }
 
