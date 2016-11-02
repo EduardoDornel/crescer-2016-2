@@ -17,25 +17,38 @@ namespace StreetFighter.Web.Controllers
         public ActionResult FichaTecnica()
         {
             var FichaTec = new FichaTecnicaModel();
+            FichaTec.Imagem = "/Content/Images/blanka.png";
             FichaTec.PrimeiraAparicao = "Street Fighter II The World Warrior (1991)";
             FichaTec.DataNascimento = Convert.ToDateTime("12/02/1966");
             FichaTec.Altura = 192;
             FichaTec.Peso = 96;
-            FichaTec.Medidas = "B198, C120, Q172";
-            FichaTec.TipoSanguineo = "B";
-            FichaTec.HabilidadesEspeciais = "Caçar, Eletricidade";
-            FichaTec.Gosta = "Frutas tropicais, Pirarucu, Sua mãe";
-            FichaTec.Desgosta = "Army ants (espécie de formiga)";
-            FichaTec.EstiloDeLuta = "Luta Selvagem autodidata (ArmyAnts) / Capoeira";
             FichaTec.Origem = "Brasil (lugar de nascença é provável como sendo Tailândia)";
-            FichaTec.FalaDeVitória = "\"Ver você em ação é uma piada!\"";
-            FichaTec.SSF2Nickname = "\"A selvagem criança da natureza\"";
-            FichaTec.SFA3Nickname = "\"A animal pessoa amazônica\"";
-            FichaTec.SF4Nickname = "\"Guerreiro da selva\"";
-            FichaTec.SFA3Stage = "Ramificação do Rio Madeira -pantano, Brasil(ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?)";
-            FichaTec.SF2Stage = "Bacia do rio Amazonas (Brasil).";
             FichaTec.GolpesEspeciais = "Electric Thunder,Rolling Attack.";
+           // FichaTec.PersonagemOculto;
             return View(FichaTec);
+        }
+
+        public ActionResult Cadastro()
+        {
+            AdicionarPaises();
+
+            return View();
+        }
+
+        public ActionResult Salvar(CadastroModel model)
+        {
+            AdicionarPaises();
+
+            if (ModelState.IsValid)
+            {
+                ViewBag.Mensagem = "Cadastro concluído com sucesso.";
+                return View("Detalhe", model);
+            }
+            else
+            {
+                ModelState.AddModelError("", "Algo de errado não está certo!");
+                return View("Cadastro");
+            }
         }
 
         public ActionResult Sobre()
@@ -48,6 +61,20 @@ namespace StreetFighter.Web.Controllers
             SobreMim.GitHub = "https://github.com/EduardoDornel";
             SobreMim.Historia = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
             return View(SobreMim);
+        }
+
+        private void AdicionarPaises()
+        {
+            ViewData["Origem"] = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value = "BR", Text = "Brasil" },
+                new SelectListItem() { Value = "ES", Text = "Espanha" },
+                new SelectListItem() { Value = "AU", Text = "Austrália" },
+                new SelectListItem() { Value = "JP", Text = "Japão" },
+                new SelectListItem() { Value = "DN", Text = "Dinamarca" },
+                new SelectListItem() { Value = "MX", Text = "México" },
+                new SelectListItem() { Value = "MR", Text = "Marrocos" }
+            };
         }
     }
 }
