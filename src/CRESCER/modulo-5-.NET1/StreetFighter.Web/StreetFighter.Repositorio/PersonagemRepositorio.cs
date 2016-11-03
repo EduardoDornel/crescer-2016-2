@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace StreetFighter.Repositorio
 {
     public class PersonagemRepositorio
-    {
+    {    
         public List<Personagem> ListarPersonagens(string filtro)
         {
             return null;

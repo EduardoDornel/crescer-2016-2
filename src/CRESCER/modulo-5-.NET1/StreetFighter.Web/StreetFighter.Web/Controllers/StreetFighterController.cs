@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using StreetFighter.Web.Models;
+using StreetFighter.Dominio;
 
 namespace StreetFighter.Web.Controllers
 {
@@ -14,18 +15,23 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-        public ActionResult FichaTecnica()
+        public ActionResult ListaPersonagens()
+        {
+            return View();
+        }
+
+        public ActionResult FichaTecnica(Personagem personagem)
         {
             var FichaTecnica = new FichaTecnicaModel();
-            FichaTecnica.Nome = "Blanka";
-            FichaTecnica.Imagem = "/Content/Images/blanka.png";
-            FichaTecnica.PrimeiraAparicao = "Street Fighter II The World Warrior (1991)";
-            FichaTecnica.DataNascimento = Convert.ToDateTime("12/02/1966");
-            FichaTecnica.Altura = 192;
-            FichaTecnica.Peso = 96;
-            FichaTecnica.Origem = "Brasil (lugar de nascença é provável como sendo Tailândia)";
-            FichaTecnica.GolpesEspeciais = "Electric Thunder,Rolling Attack.";
-            FichaTecnica.PersonagemOculto = true;
+            FichaTecnica.Nome = personagem.Nome;
+            FichaTecnica.Imagem = personagem.Imagem;
+            FichaTecnica.PrimeiraAparicao = personagem.PrimeiraAparicao;
+            FichaTecnica.DataNascimento = personagem.DataNascimento;
+            FichaTecnica.Altura = personagem.Altura;
+            FichaTecnica.Peso = personagem.Peso;
+            FichaTecnica.Origem = personagem.Origem;
+            FichaTecnica.GolpesEspeciais = personagem.GolpesEspeciais;
+            FichaTecnica.PersonagemOculto = personagem.PersonagemOculto;
             return View(FichaTecnica);
         }
 
