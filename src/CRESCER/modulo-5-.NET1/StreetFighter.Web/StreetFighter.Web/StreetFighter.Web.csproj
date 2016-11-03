@@ -114,7 +114,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CadastroModel.cs" />
     <Compile Include="Models\FichaTecnicaModel.cs" />
     <Compile Include="Models\SobreModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,7 +134,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Views\StreetFighter\Cadastro.cshtml" />
-    <Content Include="Views\StreetFighter\Detalhe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -145,6 +143,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StreetFighter.Aplicativo\StreetFighter.Aplicativo.csproj">
+      <Project>{a3b573f2-6fa0-4410-8ca9-6bec9335da00}</Project>
+      <Name>StreetFighter.Aplicativo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StreetFighter.Dominio\StreetFighter.Dominio.csproj">
+      <Project>{c1adce3e-6353-4c0e-8b1c-e9f9a115d044}</Project>
+      <Name>StreetFighter.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

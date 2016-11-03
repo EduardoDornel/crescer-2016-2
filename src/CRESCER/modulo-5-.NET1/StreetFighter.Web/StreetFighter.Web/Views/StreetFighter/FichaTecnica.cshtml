@@ -12,14 +12,10 @@
         <strong>Ficha Técnica</strong>
     </div>
     <div>
-        @{
-            string dataFormatada = Model.DataNascimento.Day + " de " + Model.DataNascimento.ToString("MMMM") + " de " + Model.DataNascimento.Year;
-        }
-
         <h1>@Model.Nome</h1> <br>
-        <img style="float:left;width: 250px" src="@Model.Imagem" alt="Personagem" />
+        <img style="float:left;width: 250px; height: 295px;" src="@Model.Imagem" alt="Personagem" />
         <strong>Primeira aparição:</strong> @Model.PrimeiraAparicao<br>
-        <strong>Nascimento:</strong> @dataFormatada<br>
+        <strong>Nascimento:</strong> @Model.DataNascimento.ToString("dd' de 'MMMM' de 'yyyy")<br>
         <strong>Altura:</strong> @Model.Altura cm.<br>
         <strong>Peso:</strong> @Model.Peso kg.<br>
         <strong>Origem:</strong> @Model.Origem.<br>

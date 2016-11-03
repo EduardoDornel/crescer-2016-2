@@ -16,17 +16,17 @@ namespace StreetFighter.Web.Controllers
 
         public ActionResult FichaTecnica()
         {
-            var FichaTec = new FichaTecnicaModel();
-            FichaTec.Nome = "Blanka";
-            FichaTec.Imagem = "/Content/Images/blanka.png";
-            FichaTec.PrimeiraAparicao = "Street Fighter II The World Warrior (1991)";
-            FichaTec.DataNascimento = Convert.ToDateTime("12/02/1966");
-            FichaTec.Altura = 192;
-            FichaTec.Peso = 96;
-            FichaTec.Origem = "Brasil (lugar de nascença é provável como sendo Tailândia)";
-            FichaTec.GolpesEspeciais = "Electric Thunder,Rolling Attack.";
-            FichaTec.PersonagemOculto = true;
-            return View(FichaTec);
+            var FichaTecnica = new FichaTecnicaModel();
+            FichaTecnica.Nome = "Blanka";
+            FichaTecnica.Imagem = "/Content/Images/blanka.png";
+            FichaTecnica.PrimeiraAparicao = "Street Fighter II The World Warrior (1991)";
+            FichaTecnica.DataNascimento = Convert.ToDateTime("12/02/1966");
+            FichaTecnica.Altura = 192;
+            FichaTecnica.Peso = 96;
+            FichaTecnica.Origem = "Brasil (lugar de nascença é provável como sendo Tailândia)";
+            FichaTecnica.GolpesEspeciais = "Electric Thunder,Rolling Attack.";
+            FichaTecnica.PersonagemOculto = true;
+            return View(FichaTecnica);
         }
 
         public ActionResult Cadastro()
@@ -36,14 +36,14 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-        public ActionResult Salvar(CadastroModel model)
+        public ActionResult Salvar(FichaTecnicaModel model)
         {
             AdicionarPaises();
 
             if (ModelState.IsValid)
             {
                 ViewBag.Mensagem = "Cadastro concluído com sucesso.";
-                return View("Detalhe", model);
+                return View("FichaTecnica", model);
             }
             else
             {
