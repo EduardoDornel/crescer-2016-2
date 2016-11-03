@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="~/Content/estilizar.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="menu">
+        <a href="~/StreetFighter/Index">
+            <Span>
+                <strong>Inicio</strong>
+            </Span>
+        </a>
+        <a href="~/StreetFighter/Cadastro">
+            <Span>
+                <strong>Cadastro</strong>
+            </Span>
+        </a>
+        <a href="~/StreetFighter/FichaTecnica">
+            <Span>
+                <strong>Ficha Técnica</strong>
+            </Span>
+        </a>
+        <a href="~/StreetFighter/Sobre">
+            <Span>
+                <strong>Sobre</strong>
+            </Span>
+        </a>
+    </div>
+
+        <div>
+            @RenderBody()
+        </div>
+
+</body>
+</html>
