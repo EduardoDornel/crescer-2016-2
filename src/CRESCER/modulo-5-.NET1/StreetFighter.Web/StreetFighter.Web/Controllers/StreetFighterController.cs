@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using StreetFighter.Web.Models;
 using StreetFighter.Dominio;
+using StreetFighter.Aplicativo;
 
 namespace StreetFighter.Web.Controllers
 {
@@ -16,7 +17,19 @@ namespace StreetFighter.Web.Controllers
         }
 
         public ActionResult ListaPersonagens()
+        {   
+
+            return View();
+        }
+
+        public ActionResult Pesquisar(string filtro)
         {
+
+            if (!String.IsNullOrEmpty(filtro))
+            {
+                return View(new PersonagemAplicativo().ListarPersonagens(filtro));
+            }
+
             return View();
         }
 
@@ -32,6 +45,7 @@ namespace StreetFighter.Web.Controllers
             FichaTecnica.Origem = personagem.Origem;
             FichaTecnica.GolpesEspeciais = personagem.GolpesEspeciais;
             FichaTecnica.PersonagemOculto = personagem.PersonagemOculto;
+            new PersonagemAplicativo().Salvar(personagem);
             return View(FichaTecnica);
         }
 
