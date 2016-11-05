@@ -17,6 +17,10 @@ namespace StreetFighter.Aplicativo
             this.repositorio = new PersonagemRepositorio();
         }
 
+        public List<Personagem> ListaRenderizadaNaTela()
+        {
+            return repositorio.FileToList();
+        }
         public List<Personagem> ListarPersonagens(string filtro)
         {
             return repositorio.ListarPersonagens(filtro);

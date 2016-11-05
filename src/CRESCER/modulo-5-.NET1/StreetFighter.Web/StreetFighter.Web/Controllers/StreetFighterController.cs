@@ -33,9 +33,9 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-        public ActionResult FichaTecnica(Personagem personagem)
+     /*  public ActionResult FichaTecnica(Personagem personagem)
         {
-            var FichaTecnica = new FichaTecnicaModel();
+        var FichaTecnica= new FichaTecnicaModel();
             FichaTecnica.Nome = personagem.Nome;
             FichaTecnica.Imagem = personagem.Imagem;
             FichaTecnica.PrimeiraAparicao = personagem.PrimeiraAparicao;
@@ -45,9 +45,8 @@ namespace StreetFighter.Web.Controllers
             FichaTecnica.Origem = personagem.Origem;
             FichaTecnica.GolpesEspeciais = personagem.GolpesEspeciais;
             FichaTecnica.PersonagemOculto = personagem.PersonagemOculto;
-            new PersonagemAplicativo().Salvar(personagem);
             return View(FichaTecnica);
-        }
+        }*/
 
         public ActionResult Cadastro()
         {
@@ -63,6 +62,20 @@ namespace StreetFighter.Web.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Mensagem = "Cadastro concluído com sucesso.";
+                PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
+                Personagem personagem = new Personagem(
+                        model.Nome,
+                        model.Origem,
+                        model.Id,
+                        model.GolpesEspeciais,
+                        model.DataNascimento,
+                        model.PrimeiraAparicao,
+                        model.Peso,
+                        model.Imagem,
+                        model.PersonagemOculto,
+                        model.Altura
+                    );
+                personagemAplicativo.Salvar(personagem);
                 return View("FichaTecnica", model);
             }
             else

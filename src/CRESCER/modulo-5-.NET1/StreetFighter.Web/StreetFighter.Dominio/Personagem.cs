@@ -8,20 +8,20 @@ namespace StreetFighter.Dominio
 {
     public class Personagem
     {
-        public int Id { get; private set; }
-        public string Imagem { get; private set; }
         public string Nome { get; private set; }
-        public string PrimeiraAparicao { get; private set; }
-        public DateTime DataNascimento { get; private set; }
-        public int Altura { get; private set; }
-        public decimal Peso { get; private set; }
         public string Origem { get; private set; }
+        public int Id { get; set; }
         public string GolpesEspeciais { get; private set; }
+        public DateTime DataNascimento { get; private set; }
+        public string PrimeiraAparicao { get; private set; }
+        public decimal Peso { get; private set; }
+        public string Imagem { get; private set; }
         public bool PersonagemOculto { get; private set; }
+        public int Altura { get; private set; }
 
-
-        public Personagem(string nome, DateTime nascimento, int altura, decimal peso, string origem, string golpesEspeciais, bool personagemOculto, string imagem)
+        public Personagem(string nome, string origem, int id, string golpesEspeciais, DateTime nascimento, string primeiraAparicao, decimal peso, string imagem, bool personagemOculto, int altura)
         {
+            this.Id = id;
             this.Nome = nome;
             this.DataNascimento = nascimento;
             this.Altura = altura;
@@ -30,12 +30,7 @@ namespace StreetFighter.Dominio
             this.GolpesEspeciais = golpesEspeciais;
             this.PersonagemOculto = personagemOculto;
             this.Imagem = imagem;
-        }
-
-        public Personagem(int id, string nome, DateTime nascimento, int altura, decimal peso, string origem, string golpesEspeciais, bool personagemOculto, string imagem)
-        : this(nome, nascimento, altura, peso, origem, golpesEspeciais, personagemOculto, imagem)
-        {
-            this.Id = id;
+            this.PrimeiraAparicao = primeiraAparicao;
         }
     }
 }
