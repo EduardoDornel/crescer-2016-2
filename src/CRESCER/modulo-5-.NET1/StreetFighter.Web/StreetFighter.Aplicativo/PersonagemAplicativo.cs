@@ -21,6 +21,7 @@ namespace StreetFighter.Aplicativo
         {
             return repositorio.FileToList();
         }
+
         public List<Personagem> ListarPersonagens(string filtro)
         {
             return repositorio.ListarPersonagens(filtro);

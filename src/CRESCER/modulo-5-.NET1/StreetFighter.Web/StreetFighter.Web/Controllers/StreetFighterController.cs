@@ -33,7 +33,7 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-     /*  public ActionResult FichaTecnica(Personagem personagem)
+        public ActionResult FichaTecnica(Personagem personagem)
         {
         var FichaTecnica= new FichaTecnicaModel();
             FichaTecnica.Nome = personagem.Nome;
@@ -46,7 +46,7 @@ namespace StreetFighter.Web.Controllers
             FichaTecnica.GolpesEspeciais = personagem.GolpesEspeciais;
             FichaTecnica.PersonagemOculto = personagem.PersonagemOculto;
             return View(FichaTecnica);
-        }*/
+        }
 
         public ActionResult Cadastro()
         {
