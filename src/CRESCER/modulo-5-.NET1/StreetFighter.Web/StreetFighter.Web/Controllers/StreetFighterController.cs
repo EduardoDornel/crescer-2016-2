@@ -17,12 +17,14 @@ namespace StreetFighter.Web.Controllers
         }
 
         public ActionResult ListaPersonagens()
-        {   
+        {
 
-            return View();
+            List<Personagem> personagem = new ListaPersonagensModel().ListaDePersonagens;
+
+            return View(personagem);
         }
 
-        public ActionResult Pesquisar(string filtro)
+      /* public ActionResult Pesquisar(string filtro)
         {
 
             if (!String.IsNullOrEmpty(filtro))
@@ -32,8 +34,8 @@ namespace StreetFighter.Web.Controllers
 
             return View();
         }
-
-        public ActionResult FichaTecnica(Personagem personagem)
+        */
+       public ActionResult FichaTecnica(Personagem personagem)
         {
         var FichaTecnica= new FichaTecnicaModel();
             FichaTecnica.Nome = personagem.Nome;

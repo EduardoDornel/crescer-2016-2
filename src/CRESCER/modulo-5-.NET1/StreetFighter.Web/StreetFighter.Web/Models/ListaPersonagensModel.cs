@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using StreetFighter.Dominio;
+using StreetFighter.Aplicativo;
+
 
 namespace StreetFighter.Web.Models
 {
@@ -10,9 +12,5 @@ namespace StreetFighter.Web.Models
     {
         public List<Personagem> ListaDePersonagens { get; set; }
 
-        public ListaPersonagensModel(List<Personagem> personagens)
-        {
-            this.ListaDePersonagens = personagens;
-        }
     }
 }

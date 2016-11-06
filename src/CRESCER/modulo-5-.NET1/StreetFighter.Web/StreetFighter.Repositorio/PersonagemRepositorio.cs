@@ -20,37 +20,38 @@ namespace StreetFighter.Repositorio
 
          public List<Personagem> FileToList()
         {
-            string line;
-            System.IO.StreamReader file = new System.IO.StreamReader(CaminhoArquivo);
-            while ((line = file.ReadLine()) != null)
+           // System.IO.StreamReader file = new System.IO.StreamReader(CaminhoArquivo);
+            var linhas = File.ReadLines(CaminhoArquivo);
+
+            foreach (var linha in linhas)
             {
-                string[] split = line.Split(';');
+                string[] split = linha.Split(';');
                 Personagens.Add(new Personagem(
                     split[0],
                     split[1],
                     Int32.Parse(split[2]),
                     split[3],
-                    DateTime.ParseExact(split[4], "dd-MM-yyyy HH:mm:ss,fff",
-                                       System.Globalization.CultureInfo.InvariantCulture),
+                    Convert.ToDateTime(split[4]),
                     split[5],
                     System.Convert.ToDecimal(split[6]),
                     split[7],
                     Convert.ToBoolean(split[8]),
                     Int32.Parse(split[9])
                     ));
+
             }
 
-            file.Close();
+         //   file.Close();
             return Personagens;
         }
         public List<Personagem> ListarPersonagens(string filtro)
         {
-            return FileToList().Where(personagem => personagem.Nome.Contains(filtro)).ToList();
+            return Personagens.Where(personagem => personagem.Nome.Contains(filtro)).ToList();
         }
 
         public void IncluirPersonagem(Personagem personagem)
         {
-           // int numeroLinhas = System.IO.File.ReadAllLines(CaminhoArquivo).Length;
+            // int numeroLinhas = System.IO.File.ReadAllLines(CaminhoArquivo).Length;
             Random randNum = new Random();
             personagem.Id = randNum.Next() / 250;
             Personagens.Add(personagem);
@@ -59,7 +60,14 @@ namespace StreetFighter.Repositorio
 
         public void EditarPersonagem(Personagem personagem)
         {
-            /////////////////
+            /*            int posicaoDaEdicao = this.Personagens.FindIndex(p => p.Id == personagem.Id);
+            this.Personagens.RemoveAt(posicaoDaEdicao);
+            this.Personagens.Insert(posicaoDaEdicao, personagem);
+            atualizarArquivo();*/
+            int posicaoDaEdicao = this.Personagens.FindIndex(p => p.Id == personagem.Id);
+            this.Personagens.RemoveAt(posicaoDaEdicao);
+            this.Personagens.Insert(posicaoDaEdicao, personagem);
+            File.WriteAllLines(CaminhoArquivo, this.Personagens.Select(p => p.ToString()));
         }
 
         public void ExcluirPersonagem(Personagem personagem)
