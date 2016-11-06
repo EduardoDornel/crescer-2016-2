@@ -60,10 +60,6 @@ namespace StreetFighter.Repositorio
 
         public void EditarPersonagem(Personagem personagem)
         {
-            /*            int posicaoDaEdicao = this.Personagens.FindIndex(p => p.Id == personagem.Id);
-            this.Personagens.RemoveAt(posicaoDaEdicao);
-            this.Personagens.Insert(posicaoDaEdicao, personagem);
-            atualizarArquivo();*/
             int posicaoDaEdicao = this.Personagens.FindIndex(p => p.Id == personagem.Id);
             this.Personagens.RemoveAt(posicaoDaEdicao);
             this.Personagens.Insert(posicaoDaEdicao, personagem);

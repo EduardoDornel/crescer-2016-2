@@ -17,25 +17,27 @@ namespace StreetFighter.Web.Controllers
         }
 
         public ActionResult ListaPersonagens()
-        {
+         {
 
-            List<Personagem> personagem = new ListaPersonagensModel().ListaDePersonagens;
 
-            return View(personagem);
-        }
 
-      /* public ActionResult Pesquisar(string filtro)
-        {
+             List<Personagem> personagem = new ListaPersonagensModel().ListaDePersonagens;
 
-            if (!String.IsNullOrEmpty(filtro))
-            {
-                return View(new PersonagemAplicativo().ListarPersonagens(filtro));
-            }
+             return View(personagem);
+         }
 
-            return View();
-        }
-        */
-       public ActionResult FichaTecnica(Personagem personagem)
+        /* public ActionResult Pesquisar(string filtro)
+          {
+
+              if (!String.IsNullOrEmpty(filtro))
+              {
+                  return View(new PersonagemAplicativo().ListarPersonagens(filtro));
+              }
+
+              return View();
+          }
+          */
+        public ActionResult FichaTecnica(Personagem personagem)
         {
         var FichaTecnica= new FichaTecnicaModel();
             FichaTecnica.Nome = personagem.Nome;
