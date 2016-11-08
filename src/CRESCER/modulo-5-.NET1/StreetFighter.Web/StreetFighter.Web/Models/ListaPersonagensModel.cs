@@ -10,7 +10,12 @@ namespace StreetFighter.Web.Models
 {
     public class ListaPersonagensModel
     {
-        public List<Personagem> ListaDePersonagens { get; set; }
+        private List<Personagem> ListaPersonagens { get; set; }
+
+        public ListaPersonagensModel(List<Personagem> listaPersonagens)
+        {
+            this.ListaPersonagens = listaPersonagens;
+        }
 
     }
 }

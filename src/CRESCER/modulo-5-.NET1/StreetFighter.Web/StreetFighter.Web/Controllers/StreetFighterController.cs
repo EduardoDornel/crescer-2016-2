@@ -11,32 +11,19 @@ namespace StreetFighter.Web.Controllers
 {
     public class StreetFighterController : Controller
     {
+        private readonly PersonagemAplicativo personagem;
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult ListaPersonagens()
-         {
+        public ActionResult ListaDePersonagens(string filtro)
+        {
+            var model = new PersonagemAplicativo().ListarPersonagens(filtro);
+            return View(model);
+        }
 
-
-
-             List<Personagem> personagem = new ListaPersonagensModel().ListaDePersonagens;
-
-             return View(personagem);
-         }
-
-        /* public ActionResult Pesquisar(string filtro)
-          {
-
-              if (!String.IsNullOrEmpty(filtro))
-              {
-                  return View(new PersonagemAplicativo().ListarPersonagens(filtro));
-              }
-
-              return View();
-          }
-          */
         public ActionResult FichaTecnica(Personagem personagem)
         {
         var FichaTecnica= new FichaTecnicaModel();
@@ -100,6 +87,27 @@ namespace StreetFighter.Web.Controllers
             SobreMim.Historia = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
             return View(SobreMim);
         }
+
+       /* public ActionResult Editar(Personagem personagem)
+        {
+            AdicionarPaises();
+
+            var model = new Personagem(
+            personagem.Nome,
+            personagem.Origem,
+            personagem.Id,
+            personagem.GolpesEspeciais,
+            personagem.DataNascimento,
+            personagem.PrimeiraAparicao,
+            personagem.Peso,
+            personagem.Imagem,
+            personagem.PersonagemOculto,
+            personagem.Altura);
+
+            new PersonagemAplicativo().Salvar(personagem);
+            return View("Cadastro");
+
+        }*/
 
         private void AdicionarPaises()
         {

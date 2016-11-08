@@ -1,19 +1,18 @@
-﻿@model StreetFighter.Web.Models.ListaPersonagensModel
+﻿@model List<StreetFighter.Dominio.Personagem>
 
 @{
     ViewBag.Title = "Lista de personagens";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="faixa">
-        <strong>@ViewBag.Title</strong>
-    </div>
-    <div>
-        <p>
-            <a href="~/StreetFighter/Cadastro">Cadastrar Personagem</a>
-        </p>
+<strong>@ViewBag.Title</strong>
 
-        </div>
-    </div>
-
+<p>
+    <a href="~/StreetFighter/Cadastro">Cadastrar Personagem</a>
+</p>
+     @foreach (var personagem in Model)
+     {
+        <tr>
+            <td><strong>@Html.ActionLink(personagem.Nome, "FichaTecnica", new { id = personagem.Id })</strong></td>
+        </tr>
+     }

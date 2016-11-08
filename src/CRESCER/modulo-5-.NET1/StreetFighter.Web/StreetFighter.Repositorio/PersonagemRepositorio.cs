@@ -20,51 +20,6 @@ namespace StreetFighter.Repositorio
         {
 
         }
-
-        public List<Personagem> FileToList()
-        {
-            string connectionString =
-                ConfigurationManager.ConnectionStrings["StreetFighterConnection"].ConnectionString;
-
-            List<Personagem> personagens = new List<Personagem>();
-
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string sql = $"SELECT * FROM Personagens";
-
-                var command = new SqlCommand(sql, connection);
-
-                SqlDataReader reader = command.ExecuteReader();
-                //command.Parameters.Add(new SqlParameter("param_title", title))
-
-                while (reader.Read())
-                {
-                    Personagem personagem = ConvertReaderToPersonagem(reader);
-
-                    personagens.Add(personagem);
-                }
-                connection.Close();
-            }
-            return personagens;
-        }
-
-        private Personagem ConvertReaderToPersonagem(SqlDataReader reader)
-        {
-            string nome = reader["Nome"].ToString();
-            int id = Convert.ToInt32(reader["Id"]);
-            string origem = reader["Origem"].ToString();
-            string golpesEspeciais = reader["GolpesEspeciais"].ToString();
-            DateTime dataNascimento = Convert.ToDateTime(reader["DataNascimento"]);
-            string primeiraAparicao = reader["PrimeiraAparicao"].ToString();
-            decimal peso = Convert.ToDecimal(reader["Peso"]);
-            string imagem = reader["Imagem"].ToString();
-            bool personagemOculto = Convert.ToBoolean(reader["PersonagemOculto"]);
-            int altura = Convert.ToInt32(reader["Altura"]);
-
-            return new Personagem(nome, origem, id, golpesEspeciais, dataNascimento, primeiraAparicao, peso, imagem, personagemOculto, altura);
-        }
        /* public List<Personagem> FileToList()
         {
            // System.IO.StreamReader file = new System.IO.StreamReader(CaminhoArquivo);
@@ -94,7 +49,30 @@ namespace StreetFighter.Repositorio
 
         public List<Personagem> ListarPersonagens(string filtro)
         {
-            return FileToList().Where(personagem => personagem.Nome.Contains(filtro)).ToList();
+            string connectionString =
+       ConfigurationManager.ConnectionStrings["StreetFighterConnection"].ConnectionString;
+
+            List<Personagem> personagens = new List<Personagem>();
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = $"SELECT * FROM Personagem WHERE Nome LIKE @param_nome";
+
+                var command = new SqlCommand(sql, connection);
+                command.Parameters.Add(new SqlParameter("param_nome", $"%{filtro}%"));
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Personagem personagem = ConvertReaderToPersonagem(reader);
+                    personagens.Add(personagem);
+                }
+                connection.Close();
+            }
+            return personagens;
         }
 
         public void ModificarPersonagem(Personagem personagem)
@@ -149,9 +127,9 @@ namespace StreetFighter.Repositorio
                     command.ExecuteNonQuery();
                     transaction.Complete();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    ////////
                 }
                 finally
                 {
@@ -163,6 +141,22 @@ namespace StreetFighter.Repositorio
         public void ExcluirPersonagem(Personagem personagem)
         {
             /////////////////
+        }
+
+        private Personagem ConvertReaderToPersonagem(SqlDataReader reader)
+        {
+            string nome = reader["Nome"].ToString();
+            int id = Convert.ToInt32(reader["Id"]);
+            string origem = reader["Origem"].ToString();
+            string golpesEspeciais = reader["GolpesEspeciais"].ToString();
+            DateTime dataNascimento = Convert.ToDateTime(reader["DataNascimento"]);
+            string primeiraAparicao = reader["PrimeiraAparicao"].ToString();
+            decimal peso = Convert.ToDecimal(reader["Peso"]);
+            string imagem = reader["Imagem"].ToString();
+            bool personagemOculto = Convert.ToBoolean(reader["PersonagemOculto"]);
+            int altura = Convert.ToInt32(reader["Altura"]);
+
+            return new Personagem(nome, origem, id, golpesEspeciais, dataNascimento, primeiraAparicao, peso, imagem, personagemOculto, altura);
         }
 
     }
