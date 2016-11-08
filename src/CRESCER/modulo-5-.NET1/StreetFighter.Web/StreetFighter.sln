@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetFighter.Repositorio",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetFighter.Testes", "StreetFighter.Testes\StreetFighter.Testes.csproj", "{4A705EB9-B4C4-471F-B6E2-CB2D80FEB543}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetFighter.RepositorioEF", "StreetFighter.RespositorioEF\StreetFighter.RepositorioEF.csproj", "{A0DF8237-5621-4175-A59C-3187D7CA835E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4A705EB9-B4C4-471F-B6E2-CB2D80FEB543}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A705EB9-B4C4-471F-B6E2-CB2D80FEB543}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A705EB9-B4C4-471F-B6E2-CB2D80FEB543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0DF8237-5621-4175-A59C-3187D7CA835E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DF8237-5621-4175-A59C-3187D7CA835E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DF8237-5621-4175-A59C-3187D7CA835E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DF8237-5621-4175-A59C-3187D7CA835E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

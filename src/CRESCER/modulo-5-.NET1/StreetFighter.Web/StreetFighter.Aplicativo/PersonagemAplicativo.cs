@@ -1,5 +1,5 @@
 ﻿using StreetFighter.Dominio;
-using StreetFighter.Repositorio;
+using StreetFighter.RepositorioEF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +22,14 @@ namespace StreetFighter.Aplicativo
             return repositorio.ListarPersonagens(filtro);
         }
 
+        public Personagem buscaPorId(int id)
+        {
+            return repositorio.BuscarPorId(id);
+        }
+
         public void Salvar(Personagem personagem)
         {
-            repositorio.ModificarPersonagem(personagem);
+            repositorio.SalvarPersonagem(personagem);
         }
     }
 }

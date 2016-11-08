@@ -11,8 +11,6 @@ namespace StreetFighter.Web.Controllers
 {
     public class StreetFighterController : Controller
     {
-        private readonly PersonagemAplicativo personagem;
-
         public ActionResult Index()
         {
             return View();

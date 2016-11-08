@@ -13,39 +13,11 @@ namespace StreetFighter.Repositorio
 {
     public class PersonagemRepositorio
     {
-        //public List<Personagem> Personagens { get; private set; } = new List<Personagem>();
-        //public static string CaminhoArquivo = @"~\StreetFighter.Repositorio\ListaPersonagens.csv";
-
+        
         public PersonagemRepositorio()
         {
 
         }
-       /* public List<Personagem> FileToList()
-        {
-           // System.IO.StreamReader file = new System.IO.StreamReader(CaminhoArquivo);
-            var linhas = File.ReadLines(CaminhoArquivo);
-
-            foreach (var linha in linhas)
-            {
-                string[] split = linha.Split(';');
-                Personagens.Add(new Personagem(
-                    split[0],
-                    split[1],
-                    Int32.Parse(split[2]),
-                    split[3],
-                    Convert.ToDateTime(split[4]),
-                    split[5],
-                    System.Convert.ToDecimal(split[6]),
-                    split[7],
-                    Convert.ToBoolean(split[8]),
-                    Int32.Parse(split[9])
-                    ));
-
-            }
-
-         //   file.Close();
-            return Personagens;
-        }*/
 
         public List<Personagem> ListarPersonagens(string filtro)
         {
@@ -128,7 +100,7 @@ namespace StreetFighter.Repositorio
                     command.ExecuteNonQuery();
                     transaction.Complete();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     ////////
                 }
