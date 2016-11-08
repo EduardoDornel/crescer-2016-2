@@ -89,34 +89,35 @@ namespace StreetFighter.Repositorio
 
                     string sql = "";
                     var parameters = new List<SqlParameter>();
-                    if (personagem.Id <= 0)
+                    if (personagem.Id > 0)
                     {
-                        sql = $"INSERT into Personagem(@param_Nome, @param_Origem, @param_GolpesEspeciais, @param_DataNascimento, @param_PrimeiraAparicao, " +
-                                        $"@param_Peso, @param_Imagem, @param_PersonagemOculto, @param_Altura)" +
-                                       $"VALUES({personagem.Nome},{personagem.Origem},{personagem.GolpesEspeciais},{personagem.DataNascimento},{personagem.PrimeiraAparicao},{personagem.Peso},{personagem.Imagem},{personagem.PersonagemOculto},{personagem.Altura} )";
+                        sql = $"UPDATE Personagem SET Nome=@param_Nome, PrimeiraAparicao=@param_PrimeiraAparicao, DataNascimento=@param_DataNascimento, Altura=@param_Altura, Peso=@param_Peso, Origem=@param_Origem, Imagem=@param_Imagem, GolpesEspeciais=@param_GolpesEspeciais, PersonagemOculto=@param_PersonagemOculto  WHERE Id = @param_Id";
+
                         parameters.Add(new SqlParameter("param_Nome", personagem.Nome));
-                        parameters.Add(new SqlParameter("param_Origem", personagem.Origem));
-                        parameters.Add(new SqlParameter("param_GolpesEspeciais", personagem.GolpesEspeciais));
-                        parameters.Add(new SqlParameter("param_DataNascimento", personagem.DataNascimento));
                         parameters.Add(new SqlParameter("param_PrimeiraAparicao", personagem.PrimeiraAparicao));
-                        parameters.Add(new SqlParameter("param_Peso", personagem.Peso));
-                        parameters.Add(new SqlParameter("param_Imagem", personagem.Imagem));
-                        parameters.Add(new SqlParameter("param_PersonagemOculto", personagem.PersonagemOculto));
+                        parameters.Add(new SqlParameter("param_DataNascimento", personagem.DataNascimento));
                         parameters.Add(new SqlParameter("param_Altura", personagem.Altura));
+                        parameters.Add(new SqlParameter("param_peso", personagem.Peso));
+                        parameters.Add(new SqlParameter("param_origem", personagem.Origem));
+                        parameters.Add(new SqlParameter("param_Imagem", personagem.Imagem));
+                        parameters.Add(new SqlParameter("param_GolpesEspeciais", personagem.GolpesEspeciais));
+                        parameters.Add(new SqlParameter("param_PersonagemOculto", personagem.PersonagemOculto));
+                        parameters.Add(new SqlParameter("param_Id", personagem.Id));
                     }
                     else
                     {
-                        sql = $"UPDATE Personagem SET Nome=@param_Nome, Origem=@param_Origem, GolpesEspeciais=@param_GolpesEspeciais, DataNascimento=@param_DataNascimento, PrimeiraAparicao=@param_PrimeiraAparicao, Peso=@param_Peso, Imagem=@param_Imagem, PersonagemOculto=@param_PersonagemOculto, Altura=@param_Altura WHERE Id = @param.Id";
-                        parameters.Add(new SqlParameter("param_Nome", personagem.Nome));
-                        parameters.Add(new SqlParameter("param_Origem", personagem.Origem));
-                        parameters.Add(new SqlParameter("param_GolpesEspeciais", personagem.GolpesEspeciais));
-                        parameters.Add(new SqlParameter("param_DataNascimento", personagem.DataNascimento));
+                        sql = $"INSERT INTO Personagem (Nome,PrimeiraAparicao,DataNascimento,Altura,Peso,Origem,Imagem,GolpesEspeciais,PersonagemOculto) VALUES (@param_Nome,@param_PrimeiraAparicao,@param_DataNascimento,@param_Altura,@param_Peso,@param_Origem,@param_Imagem,@param_GolpesEspeciais,@param_PersonagemOculto)";
+                        parameters.Add(new SqlParameter("param_nome", personagem.Nome));
                         parameters.Add(new SqlParameter("param_PrimeiraAparicao", personagem.PrimeiraAparicao));
-                        parameters.Add(new SqlParameter("param_Peso", personagem.Peso));
-                        parameters.Add(new SqlParameter("param_Imagem", personagem.Imagem));
-                        parameters.Add(new SqlParameter("param_PersonagemOculto", personagem.PersonagemOculto));
-                        parameters.Add(new SqlParameter("param_Altura", personagem.Altura));
+                        parameters.Add(new SqlParameter("param_dataNascimento", personagem.DataNascimento));
+                        parameters.Add(new SqlParameter("param_altura", personagem.Altura));
+                        parameters.Add(new SqlParameter("param_peso", personagem.Peso));
+                        parameters.Add(new SqlParameter("param_origem", personagem.Origem));
+                        parameters.Add(new SqlParameter("param_imagem", personagem.Imagem));
+                        parameters.Add(new SqlParameter("param_golpesEspeciais", personagem.GolpesEspeciais));
+                        parameters.Add(new SqlParameter("param_personagemOculto", personagem.PersonagemOculto));
                     }
+
 
 
                     var command = new SqlCommand(sql, connection);

@@ -18,9 +18,11 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-        public ActionResult ListaDePersonagens(string filtro)
+        public ActionResult ListaPersonagens(/*string filtro*/)
         {
-            var model = new PersonagemAplicativo().ListarPersonagens(filtro);
+            var model = new ListaPersonagensModel();
+
+            //var model = new PersonagemAplicativo().ListarPersonagens(filtro);
             return View(model);
         }
 

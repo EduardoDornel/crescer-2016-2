@@ -10,7 +10,7 @@ namespace StreetFighter.Dominio
     {
         public string Nome { get; private set; }
         public string Origem { get; private set; }
-        public int Id { get; set; }
+        public int Id { get; set; } = 0;
         public string GolpesEspeciais { get; private set; }
         public DateTime DataNascimento { get; private set; }
         public string PrimeiraAparicao { get; private set; }
