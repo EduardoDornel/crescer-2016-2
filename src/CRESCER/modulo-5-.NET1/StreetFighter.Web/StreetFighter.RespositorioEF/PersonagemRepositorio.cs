@@ -16,15 +16,17 @@ namespace StreetFighter.RepositorioEF
 
         }
 
-        public List<Personagem> ListarPersonagens(string filtro = null)
+        public List<Personagem> ListarPersonagens(string filtro = "")
         {
-            using (var context = new DatabaseContext())
+            try
             {
-                IQueryable<Personagem> query = context.Personagens.Where(p => p.Nome.Contains(filtro));
-                return query.ToList();
+                using (var context = new DatabaseContext())
+                {
+                    return context.Personagens.Where(p => p.Nome.Contains(filtro)).ToList();
+                }
             }
+            catch { return null;}
         }
-
         public Personagem BuscarPorId(int id)
         {
             using (var context = new DatabaseContext())

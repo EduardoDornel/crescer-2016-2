@@ -15,7 +15,8 @@
             <a href="~/StreetFighter/Cadastro">Cadastrar Personagem</a>
         </p>
 
-
+        @if (Model != null)
+        {
         <ul>
             @foreach (var personagem in Model.ListaPersonagens)
             {
@@ -23,6 +24,8 @@
                     <strong>@personagem.Nome</strong>
                 </li>
             }
-        </ul>    
+        </ul>
+        } 
+        else{ <span>Não há personagens cadastrados</span> } 
     </div>
 </div>

@@ -1,4 +1,4 @@
-namespace StreetFighter.RespositorioEF.Migrations
+namespace StreetFighter.RepositorioEF.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

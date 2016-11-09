@@ -9,6 +9,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace StreetFighter.RepositorioEF
 {
+    
     public class DatabaseContext : DbContext
     {
         public DatabaseContext() : base("StreetFighterConnection")

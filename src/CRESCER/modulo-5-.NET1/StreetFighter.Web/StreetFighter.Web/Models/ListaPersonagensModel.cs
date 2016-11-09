@@ -12,9 +12,9 @@ namespace StreetFighter.Web.Models
     {
         public List<Personagem> ListaPersonagens { get; set; }
 
-        public ListaPersonagensModel()
+        public ListaPersonagensModel(string filtro = null)
         {
-            this.ListaPersonagens = new PersonagemAplicativo().ListarPersonagens();
+            this.ListaPersonagens = new PersonagemAplicativo().ListarPersonagens(filtro);
         }
 
     }

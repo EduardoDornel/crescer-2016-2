@@ -16,14 +16,16 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
 
-        public ActionResult ListaPersonagens(/*string filtro*/)
+        public ActionResult ListaPersonagens(string filtro = "")
         {
-            var model = new ListaPersonagensModel();
+            List<Personagem> personagens = new ListaPersonagensModel(filtro).ListaPersonagens;
 
-            //var model = new PersonagemAplicativo().ListarPersonagens(filtro);
-            return View(model);
+                if (personagens != null)
+                {
+                    return View(personagens);
+                }
+            return View();
         }
-
         public ActionResult FichaTecnica(Personagem personagem)
         {
         var FichaTecnica= new FichaTecnicaModel();
