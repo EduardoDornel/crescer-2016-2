@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Loja.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Loja.Web.Servicos;
 
 namespace Loja.Web.Controllers
 {
@@ -25,6 +27,15 @@ namespace Loja.Web.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Produto()
+        {
+            ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
+
+            List<Produto> produto = produtoServico.listarProdutos();
+
+            return View(produto);
         }
     }
 }

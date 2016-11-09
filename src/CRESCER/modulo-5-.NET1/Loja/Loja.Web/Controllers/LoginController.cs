@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Loja.Web.Servicos;
 
 namespace Loja.Web.Controllers
 {
@@ -15,7 +16,7 @@ namespace Loja.Web.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+           return View();
         }
 
         [HttpPost]
@@ -24,9 +25,21 @@ namespace Loja.Web.Controllers
         {
             UsuarioServico usuarioServico = ServicoDeDependencias.MontarUsuarioServico();
 
-            Usuario usuario = usuarioServico.BuscarPorAutenticacao(email, senha);
-            
-            return null;
+            Usuario usuario = usuarioServico.BuscarPorAutenticacao(email, senha);                
+
+            if (usuario != null)
+                return View("Produto", "Home");
+            else
+                return View("Index");
         }
+
+        public ActionResult Salvar()
+        {
+            
+            RedirectToAction("Index", "HomeController");
+            return View();
+        }
+
+
     }
 }

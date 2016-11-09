@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Loja.Infraestrutura;
 
 namespace Loja.Repositorio
 {
@@ -16,5 +17,6 @@ namespace Loja.Repositorio
                 return context.Usuario.FirstOrDefault(u => u.Email.Equals(email));
             }
         }
+
     }
 }

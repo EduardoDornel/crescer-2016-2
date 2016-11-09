@@ -23,7 +23,7 @@ namespace Loja.Dominio
 
             string senhaCriptografada = this.servicoCriptografia.Criptografar(senha);
 
-            if(usuarioEncontrado != null && usuarioEncontrado.Senha.Equals(senhaCriptografada))
+            if (usuarioEncontrado != null && usuarioEncontrado.Senha.Equals(senhaCriptografada))
             {
                 return usuarioEncontrado;
             }

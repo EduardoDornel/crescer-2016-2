@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace Loja.Dominio
 {
-    public class Produto
+    public interface IProdutoRepositorio
     {
-        public int Id { get; set; }
+        void SalvarProduto(Produto produto);
 
-        public string Nome { get; set; }
-
-        public decimal Valor { get; set; }
-
+        List<Produto> listarProdutos();
 
     }
 }
