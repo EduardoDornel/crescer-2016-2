@@ -18,14 +18,10 @@ namespace StreetFighter.RepositorioEF
 
         public List<Personagem> ListarPersonagens(string filtro = "")
         {
-            try
-            {
                 using (var context = new DatabaseContext())
                 {
                     return context.Personagens.Where(p => p.Nome.Contains(filtro)).ToList();
-                }
-            }
-            catch { return null;}
+                }         
         }
         public Personagem BuscarPorId(int id)
         {
