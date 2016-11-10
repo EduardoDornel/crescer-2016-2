@@ -3,14 +3,21 @@
     ViewBag.Title = "Listar Produtos";
 }
 
-@foreach (var produto in Model.ProdutosModel)
-{
-    <div>
+<link href="~/Content/estilo.css" rel="stylesheet" />
 
-        <p>
+<p>
+    <a href="~/Produto/Cadastrar">Cadastrar Produto</a>
+</p>
+<div>
+    @foreach (var produto in Model.ProdutosModel)
+    {
+        <p class="paragrafo">
             <strong>@produto.Nome</strong>
             <br>
-            @produto.Valor
+            R$@produto.Valor
 
+                <a href="~/Produto/Editar?Id=@produto.Id">Editar</a>
+                <a href="~/Produto/Excluir?Id=@produto.Id">Excluir</a>
+            </p>
+    }
     </div>
-}

@@ -20,7 +20,7 @@ namespace Loja.Dominio
             produtoRepositorio.Salvar(produto);
         }
 
-        public List<Produto> ListarProdutos(string filtro)
+        public List<Produto> ListarProdutos(string filtro = null)
         {
             return produtoRepositorio.ListarProdutos(filtro);
         }
@@ -30,9 +30,9 @@ namespace Loja.Dominio
             produtoRepositorio.Editar(produto);
         }
 
-        public void Excluir(Produto produto)
+        public void Excluir(int id)
         {
-            produtoRepositorio.Excluir(produto);
+            produtoRepositorio.Excluir(id);
         }
 
         public Produto BuscarId(int id)

@@ -11,7 +11,7 @@ namespace Loja.Dominio
         List<Produto> ListarProdutos(string filtro);
         void Salvar(Produto produto);
         void Editar(Produto produto);
-        void Excluir(Produto produto);
+        void Excluir(int id);
         Produto BuscarId(int id);
     }
 }

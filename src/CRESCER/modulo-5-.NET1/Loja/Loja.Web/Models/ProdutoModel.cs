@@ -16,7 +16,7 @@ namespace Loja.Web.Models
         [Required]
         public decimal Valor { get; set; }
 
-        public List<ProdutoModel> ProdutosModel { get; set; }
+        public List<ProdutoModel> ProdutosModel { get; set; } = new List<ProdutoModel>();
 
         public ProdutoModel(int id, string nome, decimal valor)
         {
@@ -30,6 +30,11 @@ namespace Loja.Web.Models
             {
                 ProdutosModel.Add(new ProdutoModel(produto.Id, produto.Nome, produto.Valor));
             }
+        }
+
+        public ProdutoModel()
+        {
+
         }
     }
 }

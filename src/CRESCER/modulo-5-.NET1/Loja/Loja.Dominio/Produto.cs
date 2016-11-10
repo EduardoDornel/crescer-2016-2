@@ -8,6 +8,16 @@ namespace Loja.Dominio
 {
     public class Produto
     {
+        public Produto(string nome, decimal valor)
+        {
+            this.Nome = nome;
+            this.Valor = valor;
+        }
+
+        public Produto()
+        {
+                
+        }
         public int Id { get; set; }
 
         public string Nome { get; set; }

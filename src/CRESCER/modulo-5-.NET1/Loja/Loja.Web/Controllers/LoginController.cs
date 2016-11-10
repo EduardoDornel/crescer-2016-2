@@ -29,10 +29,10 @@ namespace Loja.Web.Controllers
 
             if (usuario != null)
             {
-                return RedirectToAction("Index", "Produto");
+                return RedirectToAction("ListarProdutos", "Produto");
             }
 
-            return null;
+            return View("Index");
         }
 
         public ActionResult Salvar()

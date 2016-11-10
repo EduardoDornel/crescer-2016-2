@@ -8,6 +8,10 @@ namespace Loja.Dominio
 {
     public class Usuario
     {
+        public Usuario()
+        {
+
+        }
         public int Id { get; set; }
 
         public string Email { get; set; }

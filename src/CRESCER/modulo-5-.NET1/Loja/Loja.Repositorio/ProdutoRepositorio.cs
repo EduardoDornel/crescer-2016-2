@@ -10,7 +10,7 @@ using System.Data.Entity;
 namespace Loja.Repositorio
 {
     public class ProdutoRepositorio : IProdutoRepositorio
-    { 
+    {
         public void Salvar(Produto produto)
         {
             using (var context = new ContextoDeDados())
@@ -48,11 +48,11 @@ namespace Loja.Repositorio
             }
         }
 
-        public void Excluir(Produto produto)
+        public void Excluir(int id)
         {
             using (var context = new ContextoDeDados())
             {
-                context.Entry<Produto>(produto).State = EntityState.Deleted;
+                context.Entry<Produto>(BuscarId(id)).State = EntityState.Deleted;
                 context.SaveChanges();
             }
         }
