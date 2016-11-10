@@ -52,7 +52,7 @@ namespace Loja.Web.Controllers
         {
             ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
 
-            Produto produto = new Produto(model.Nome, model.Valor);
+            Produto produto = new Produto(model.Nome, model.Valor, model.Id);
 
             if (produto.Id != 0)
                 produtoServico.Editar(produto);
