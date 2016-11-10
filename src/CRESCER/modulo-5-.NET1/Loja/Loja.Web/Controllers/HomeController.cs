@@ -29,13 +29,6 @@ namespace Loja.Web.Controllers
             return View();
         }
 
-        public ActionResult Produto()
-        {
-            ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
-
-            List<Produto> produto = produtoServico.listarProdutos();
-
-            return View(produto);
-        }
+       
     }
 }

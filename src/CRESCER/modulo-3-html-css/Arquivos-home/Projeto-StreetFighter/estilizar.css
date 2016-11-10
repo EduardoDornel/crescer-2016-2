@@ -1,0 +1,34 @@
+body{
+            background: url(imagens/E.Honda.jpg) top no-repeat;
+            font-family: sans-serif;
+}
+.menu{
+             background:rgba(163, 163, 163, 0.6);
+             color: white;
+             width: 530px;
+             padding: 20px;
+             margin: 250px auto;
+             margin-bottom: 80px;
+             border: 1px solid white;
+             border-radius: 10px;
+}
+.menu a{
+    color:white;
+    text-decoration: none;
+}
+.menu span{
+            padding: 32px;
+}
+.container{
+            background: rgb(237, 237, 237);
+            margin: 0px auto;
+            width: 650px;
+}
+.container div{
+            padding: 30px;
+}
+.faixa{
+            background:rgb(68, 68, 68);
+            color: rgb(237, 237, 237);
+            padding:30px;
+}

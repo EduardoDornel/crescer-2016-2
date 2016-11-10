@@ -1,0 +1,16 @@
+﻿@model Loja.Web.Models.ProdutoModel
+@{
+    ViewBag.Title = "Listar Produtos";
+}
+
+@foreach (var produto in Model.ProdutosModel)
+{
+    <div>
+
+        <p>
+            <strong>@produto.Nome</strong>
+            <br>
+            @produto.Valor
+
+    </div>
+}

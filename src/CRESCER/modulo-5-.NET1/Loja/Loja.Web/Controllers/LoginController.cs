@@ -25,12 +25,14 @@ namespace Loja.Web.Controllers
         {
             UsuarioServico usuarioServico = ServicoDeDependencias.MontarUsuarioServico();
 
-            Usuario usuario = usuarioServico.BuscarPorAutenticacao(email, senha);                
+            Usuario usuario = usuarioServico.BuscarPorAutenticacao(email, senha);
 
             if (usuario != null)
-                return View("Produto", "Home");
-            else
-                return View("Index");
+            {
+                return RedirectToAction("Index", "Produto");
+            }
+
+            return null;
         }
 
         public ActionResult Salvar()
