@@ -54,7 +54,10 @@ namespace Loja.Web.Controllers
 
             Produto produto = new Produto(model.Nome, model.Valor);
 
-            produtoServico.Salvar(produto);
+            if (produto.Id != 0)
+                produtoServico.Editar(produto);
+            else
+                produtoServico.Salvar(produto);
 
             return RedirectToAction("ListarProdutos");
         }
