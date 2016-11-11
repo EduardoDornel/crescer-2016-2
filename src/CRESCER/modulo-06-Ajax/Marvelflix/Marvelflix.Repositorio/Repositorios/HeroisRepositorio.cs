@@ -24,5 +24,14 @@ namespace Marvelflix.Repositorio
                     .SingleOrDefault(_ => _.Id == id);
             }
         }
+
+        public void Adicionar(Heroi heroi)
+        {
+            using (var contexto = new ContextoDeDados())
+            {
+                contexto.Heroi.Add(heroi);
+                contexto.SaveChanges();
+            }
+        }
     }
 }
