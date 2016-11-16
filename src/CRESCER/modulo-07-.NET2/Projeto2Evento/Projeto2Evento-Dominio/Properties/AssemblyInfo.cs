@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Projeto2Evento.Dominio")]
+[assembly: AssemblyTitle("Projeto2Evento-Dominio")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Projeto2Evento.Dominio")]
+[assembly: AssemblyProduct("Projeto2Evento-Dominio")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("af27e1f5-60df-4d1b-a23e-14de42b1764f")]
+[assembly: Guid("b5e39245-a44b-4e98-97f3-2a86e49ea3aa")]
 
 // Version information for an assembly consists of the following four values:
 //

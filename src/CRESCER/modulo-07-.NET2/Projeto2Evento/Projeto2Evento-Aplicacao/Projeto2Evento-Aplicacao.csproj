@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AF27E1F5-60DF-4D1B-A23E-14DE42B1764F}</ProjectGuid>
+    <ProjectGuid>{CF798560-75AF-4935-A769-654892B87FBC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Projeto2Evento.Dominio</RootNamespace>
-    <AssemblyName>Projeto2Evento.Dominio</AssemblyName>
+    <RootNamespace>Projeto2Evento_Aplicacao</RootNamespace>
+    <AssemblyName>Projeto2Evento-Aplicacao</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioAplicacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Projeto2Evento-Dominio\Projeto2Evento-Dominio.csproj">
+      <Project>{b5e39245-a44b-4e98-97f3-2a86e49ea3aa}</Project>
+      <Name>Projeto2Evento-Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projeto2Evento.Repositorio\Projeto2Evento.Repositorio.csproj">
+      <Project>{cb32aec7-d7f2-46f8-acca-a8c5b0a9ba62}</Project>
+      <Name>Projeto2Evento.Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

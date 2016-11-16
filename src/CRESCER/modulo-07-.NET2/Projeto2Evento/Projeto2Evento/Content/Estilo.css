@@ -1,0 +1,42 @@
+﻿body {
+    background: url('http://www.mrvnoesporte.com.br/wp-content/uploads/2015/12/linhas-gramado.jpg') no-repeat center top fixed;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: "gothic";
+    src: url("/Content/Font/gothic/gothic.ttf") format("truetype");
+}
+
+.gothic-font{
+    font-family: "gothic";
+}
+
+.titulo{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+.confronto{
+    text-align: center;
+    font-size: 35px;
+    padding: 10px;
+    display: table;
+    border-radius: 20px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.gremio{
+    color: darkblue;
+}
+
+#versus{
+    color: red;
+}
+
+.atletico{
+    color: black;
+}

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto2Evento.Dominio
+namespace Projeto2Evento_Dominio
 {
     public class Usuario
     {
@@ -13,10 +13,13 @@ namespace Projeto2Evento.Dominio
 
         }
 
+        public int Id { get; set; }
         public string Nome { get; set; }
-        public string Email { get; set; }
+        public string Email{ get; set; }
         public string Telefone { get; set; }
         public DateTime DataNascimento { get; set; }
-        public string Documento { get; set;}
+        public string Documento { get; set; }
+        public bool Aprovado { get; set; }
+        public DateTime DataAprovacao { get; set; }
     }
 }
