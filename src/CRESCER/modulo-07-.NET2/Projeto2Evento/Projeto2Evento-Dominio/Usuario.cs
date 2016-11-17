@@ -13,6 +13,15 @@ namespace Projeto2Evento_Dominio
 
         }
 
+        public Usuario(string nome, string email, string telefone, DateTime dataNascimento, string documento)
+        {
+            this.Nome = nome;
+            this.Email = email;
+            this.Telefone = telefone;
+            this.DataNascimento = dataNascimento;
+            this.Documento = documento;
+        }
+
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Email{ get; set; }

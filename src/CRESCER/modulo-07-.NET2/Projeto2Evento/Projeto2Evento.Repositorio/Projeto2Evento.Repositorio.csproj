@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminRepositorio.cs" />
     <Compile Include="ContextoDeDados.cs" />
     <Compile Include="Migrations\201611161846464_Criar tabela usuario e admin.cs" />
     <Compile Include="Migrations\201611161846464_Criar tabela usuario e admin.Designer.cs">
