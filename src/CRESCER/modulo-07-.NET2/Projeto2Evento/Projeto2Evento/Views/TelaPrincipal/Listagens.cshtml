@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div id="lista-pre-inscritos">
+    <table class="table">
+        <thead id="descricao">
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Data de nascimento</th>
+                <th>Nº documento</th>
+            </tr>
+        </thead>
+        <tbody class="tabela">
+            {{#each admin}}
+            <tr id="{{ id }}">
+                <th class="nome">{{ nome }}</th>
+                <td class="email">{{ email }}</td>
+                <td class="telefone">{{ telefone }}</td>
+                <td class="dificuldade">{{ dataNascimento }}</td>
+                <td class="documento">{{ documento }}</td>
+                <td><input type="button" id="btn-excluirInscrito" value="{{id}}"/> </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+  </div>
+
+    <div id="lista-inscritos">
+        <table class="table">
+            <thead id="descricao">
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Data de nascimento</th>
+                    <th>Nº documento</th>
+                </tr>
+            </thead>
+            <tbody class="tabela">
+                {{#each admin}}
+                <tr id="{{ id }}">
+                    <th class="nome">{{ nome }}</th>
+                    <td class="email">{{ email }}</td>
+                    <td class="telefone">{{ telefone }}</td>
+                    <td class="dificuldade">{{ dataNascimento }}</td>
+                    <td class="documento">{{ documento }}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>

@@ -1,4 +1,5 @@
-﻿using Projeto2Evento.Repositorio;
+﻿using Infraestrutura;
+using Projeto2Evento.Repositorio;
 using Projeto2Evento_Dominio;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,16 @@ namespace Projeto2Evento_Aplicacao
 {
     public class AdminAplicacao
     {
-        private readonly AdminRepositorio AdminRepositorio;
+        private readonly AdminRepositorio Repositorio;
+        public AdminAplicacao()
+        {
+            this.Repositorio = new AdminRepositorio();
+        }
 
         public Admin BuscarPorAutenticacao(string email, string senha)
         {
-            return AdminRepositorio.BuscarPorAutenticacao(email, senha);
+            
+            return Repositorio.BuscarPorAutenticacao(email, new ServicoDeCriptografia().Criptografar(senha));
         }
 
     }

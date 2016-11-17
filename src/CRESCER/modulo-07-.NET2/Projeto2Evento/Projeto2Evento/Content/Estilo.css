@@ -16,7 +16,8 @@
 .titulo{
     margin-top: 20px;
     text-align: center;
-    color: white;
+    color: black;
+    text-decoration: underline;
     font-size: 30px;
 }
 
@@ -27,7 +28,7 @@
     display: table;
     border-radius: 20px;
     margin: 0 auto;
-    background-color: rgba(255,255,255, 0.3);
+    background-color: rgba(15,110,30, 0.6);
 }
 
 .gremio{
@@ -56,6 +57,40 @@
 #titulo-cadastro{
      text-align: center;
      margin-top: 60px; 
-     color: paleturquoise;
+     color: black;
+     text-decoration: underline;
      font-size: 40px;
+}
+
+.box-vagas{
+    background-color: rgba(255,255,255,0.5);
+    display: table;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+#box-inscrever{
+    background-color: rgba(255,255,255,0.5);
+    display: table;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+#link-escrever{
+    text-decoration: none;
+    color: black;
+}
+
+#texto-chamada{
+    text-align: center;
+    display: table;
+    padding: 10px;
+    background-color: rgba(15,110,30,0.8);
+    border-radius: 15px;
+}
+
+#n-vagas{
+    display: inline;
 }

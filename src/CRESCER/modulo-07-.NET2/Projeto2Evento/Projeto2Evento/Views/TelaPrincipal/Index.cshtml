@@ -1,8 +1,27 @@
-﻿
+﻿@using System.Configuration;
+
 @{
     ViewBag.Title = "TelaPrincipal";
 }
 <link href="~/Content/Estilo.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Login", "TelaPrincipal", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Login</button>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("Listagens", "TelaPrincipal", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Listagem de inscritos</button>
+        </div>
+    </div>
+}
 
 <div id="pagina" class="gothic-font">
     <div class="titulo">
@@ -13,6 +32,24 @@
         <span id="versus"> X </span>
         <span class="atletico">Atlético-MG</span>
     </div>
+    <p id="texto-chamada">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+         esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    </p>
+  <!--<script>
+        var varName= 'ARROBA System.Configuration.ConfigurationManager.AppSettings["VagasRestantes"]';
+    </script>-->  
+    <div id="inscricao">
+        <span id="n-vagas" class="box-vagas">Nº de vagas restantes: @ConfigurationManager.AppSettings["VagasRestantes"]</span>
+        <span id="box-inscrever">
+            <a id="link-escrever" href="~/TelaPrincipal/Cadastro">Quero me inscrever</a>
+        </span>
+    </div>
+
     <!-- <div>
        <img 
             src="https://1.bp.blogspot.com/-B67Tgb896nc/V0d2eptIR8I/AAAAAAAAI5U/wAnVNrtxUcIP9Lz5G4Kp4cNL_rTDT85ngCLcB/s1600/gr%25C3%25AAmio-x-galo.jpg"

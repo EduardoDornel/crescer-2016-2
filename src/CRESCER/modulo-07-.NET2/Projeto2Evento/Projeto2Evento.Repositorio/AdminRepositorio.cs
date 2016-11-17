@@ -9,12 +9,20 @@ namespace Projeto2Evento.Repositorio
 {
     public class AdminRepositorio
     {
+        public AdminRepositorio()
+        {
+
+        }
         public Admin BuscarPorAutenticacao(string email, string senha)
         {
             using (var contexto = new ContextoDeDados())
             {
                 Admin admin = contexto.Admin.FirstOrDefault(u => u.Email == email);
-                if (admin.Senha.Equals(senha))
+                if (admin == null)
+                {
+                    return null;
+                }
+                else if (admin.Senha.Equals(senha))
                 {
                     return admin;
                 }

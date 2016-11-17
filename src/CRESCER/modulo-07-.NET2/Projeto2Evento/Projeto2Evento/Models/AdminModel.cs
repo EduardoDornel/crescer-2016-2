@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Projeto2Evento_Dominio
+namespace Projeto2Evento.Models
 {
-    public class Admin
+    public class AdminModel
     {
-        public Admin()
+        public AdminModel()
         {
 
         }
 
-        public Admin(string email, string senha)
+        public AdminModel(string email)
         {
             this.Email = email;
-            this.Senha = senha;
         }
 
         public int Id { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public string Nome { get; set;}
+        public string Nome { get; set; }
     }
 }
