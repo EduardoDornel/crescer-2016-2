@@ -10,18 +10,22 @@ namespace Projeto2Evento_Aplicacao
 {
     public class UsuarioAplicacao
     {
-        private readonly UsuarioRepositorio UsuarioRepositorio;
-
-        public void SalvarUsuario(Usuario usuario)
+        private readonly UsuarioRepositorio Repositorio;
+        public UsuarioAplicacao()
         {
-            UsuarioRepositorio.SalvarUsuario(usuario);
+            this.Repositorio = new UsuarioRepositorio();
+        }
+
+        public void SalvarUsuario(Usuario usuario = null)
+        {
+            if(usuario != null)
+                Repositorio.SalvarUsuario(usuario);
         }
 
         public List<Usuario> ListarUsuarios(bool aprovado)
         {
-            return UsuarioRepositorio.ListarUsuarios(aprovado);
+            return Repositorio.ListarUsuarios(aprovado);
         }
-
 
     }
 }

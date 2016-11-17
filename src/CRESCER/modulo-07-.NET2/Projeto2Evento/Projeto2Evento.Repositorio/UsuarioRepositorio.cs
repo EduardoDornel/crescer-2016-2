@@ -10,11 +10,16 @@ namespace Projeto2Evento.Repositorio
 {
     public class UsuarioRepositorio
     {
+        public UsuarioRepositorio()
+        {
+
+        }
         public void SalvarUsuario(Usuario usuario)
         {
+            usuario.DataAprovacao = new DateTime(2000, 1, 1);
             using (var contexto = new ContextoDeDados())
             {
-                contexto.Entry<Usuario>(usuario).State = EntityState.Added;
+                contexto.Usuario.Add(usuario);
                 contexto.SaveChanges();
             }
         }

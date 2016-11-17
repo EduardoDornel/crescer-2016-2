@@ -1,6 +1,7 @@
 ﻿body {
     background: url('http://www.mrvnoesporte.com.br/wp-content/uploads/2015/12/linhas-gramado.jpg') no-repeat center top fixed;
     background-size: cover;
+    font-family: "gothic";
 }
 
 @font-face {
@@ -44,4 +45,17 @@
 #vagas{
     text-align: center;
     font-size: 20px;
+}
+
+.form-horizontal{
+    width: 50%;
+    margin: 0 auto;
+    color: white;
+}
+
+#titulo-cadastro{
+     text-align: center;
+     margin-top: 60px; 
+     color: paleturquoise;
+     font-size: 40px;
 }

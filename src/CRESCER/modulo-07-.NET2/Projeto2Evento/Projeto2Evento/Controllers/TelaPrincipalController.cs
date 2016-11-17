@@ -12,18 +12,17 @@ namespace Projeto2Evento.Controllers
 {
     public class TelaPrincipalController : Controller
     {
-        [HttpPost]
-        public ActionResult TelaPrincipal()
+        public ActionResult Index()
         {            
             return View();
         }
 
-     /*   public ActionResult Cadastro()
+     public ActionResult Cadastro()
         {
             return View();
         }
-        */
-      /*  public ActionResult Salvar(UsuarioModel model)
+        
+      public ActionResult Salvar(UsuarioModel model)
         {
             if (ModelState.IsValid)
             {
@@ -36,13 +35,13 @@ namespace Projeto2Evento.Controllers
                         model.Documento
                     );
                 usuarioAplicacao.SalvarUsuario(usuario);
-                return View("TelaPrincipal");
+                return View("Index");
             }
             else
             {
                 ModelState.AddModelError("", "Algo de errado não está certo!");
                 return View("Cadastro");
             }
-        }*/
+        }
     }
 }

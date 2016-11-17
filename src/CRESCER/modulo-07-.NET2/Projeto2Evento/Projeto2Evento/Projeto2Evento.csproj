@@ -238,7 +238,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Usuario\TelaPrincipal.cshtml" />
+    <Content Include="Views\TelaPrincipal\Index.cshtml" />
+    <Content Include="Views\TelaPrincipal\Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

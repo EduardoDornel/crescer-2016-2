@@ -1,0 +1,84 @@
+﻿@model Projeto2Evento.Models.UsuarioModel
+
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Estilo.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 id="titulo-cadastro" class="gothic-font">Cadastre-se no evento</h1>
+    <div id="cadastro">
+        @using (Html.BeginForm("Salvar", "TelaPrincipal", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nome, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Nome)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DataNascimento, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.DataNascimento, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DataNascimento)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Telefone, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Telefone)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Documento, new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.Documento, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Documento)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Salvar</button>
+                    </div>
+                </div>
+        }
+    </div>
+
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script type="text/javascript">
+        $.validator.methods.number = function (value, element) {
+            var regex = /^(\d*)(\,\d{1,2})?$/; //99999,99
+            return this.optional(element) || regex.test(value);
+        }
+
+        $.validator.methods.date = function (value, element) {
+            var date = new Date(value.replace(/(\d{2})[/](\d{2})[/](\d{4})/, "$2/$1/$3")); //31/12/2016
+            return this.optional(element) || !/Invalid|NaN/.test(date.toString());
+        }
+    </script>
+</body>
+</html>
