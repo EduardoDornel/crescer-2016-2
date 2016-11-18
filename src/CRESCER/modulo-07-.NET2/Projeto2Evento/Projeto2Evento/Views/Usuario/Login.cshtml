@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<link href="~/Content/Estilo.css" rel="stylesheet" />
+
+<body>
+    <h2 class="title-login">Login</h2>
+    @using (Html.BeginForm("Entrar", "Usuario", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.TextBox("email", "", new { placeholder = "email" })
+        @Html.Password("senha", "", new { placeholder = "senha" })
+
+        <div >
+            <div >
+                <button type="submit" class="btn-entrar">Entrar</button>
+            </div>
+        </div>
+    }
+</body>

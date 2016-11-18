@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TelaPrincipalController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filter\Autorizador.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,6 +195,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\App\listagem.js" />
+    <Content Include="Scripts\App\listaInscritos.js" />
     <Content Include="Scripts\App\listaPreInscritos.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -255,8 +257,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\TelaPrincipal\Index.cshtml" />
     <Content Include="Views\TelaPrincipal\Cadastro.cshtml" />
-    <Content Include="Views\TelaPrincipal\Login.cshtml" />
-    <Content Include="Views\TelaPrincipal\Listagens.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Usuario\Listagens.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

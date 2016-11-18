@@ -11,9 +11,6 @@
 
         this.$btnExcluirPre = $('#btn-excluirPre');
         this.$btnExcluirPre.on('click', this.excluirPre.bind(this));
-
-        this.$btnExcluirInscrito = $('#btn-excluirInscrito');
-        this.$btnExcluirInscrito.on('click', this.excluirInscrito.bind(this));
     }
 
     adicionar() {
@@ -21,11 +18,7 @@
     }
 
     excluirPre() {
-
-    }
-
-    excluirInscrito() {
-        let id = this.$btnExcluirInscrito.val();
+        let id = this.$btnExcluirPre.val();
     }
 
     renderizarListaPreInscritos() {

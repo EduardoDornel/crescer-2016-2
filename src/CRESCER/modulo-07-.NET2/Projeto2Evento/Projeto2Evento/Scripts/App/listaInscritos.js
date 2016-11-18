@@ -1,6 +1,6 @@
 ﻿$(function () {
     $.ajax({
-        url: "ListarPreInscritos",
+        url: "ListarInscritos",
         dataType: 'json',
         type: "GET",
         success: function (preInscritos) {
@@ -14,16 +14,7 @@
                           + '</td><td>' + '<button onclick="aprovar(inscrito.Id)" class="btn-aprovar">Aprovar</button>'
                           + '<button onclick="reprovar(inscrito.Id)" Id="btn-reprovar">Reprovar</button></td>' + '</tr>'
             });
-            $('#pendentes').html(tBodyHTML);
+            $('#aprovados').html(tBodyHTML);
         }
     });
 });
-
-listagem.registrarBindEventos()
-
-this.$btnExcluirPre = $('#btn-reprovar');
-this.$btnExcluirPre.on('click', this.reprovar.bind(this));
-
-/*function reprovar(id){
-    return $.post('/api/', id);
-}*/

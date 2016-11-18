@@ -76,6 +76,9 @@
     padding: 10px;
     border-radius: 10px;
     margin: 0 auto;
+    position: relative;
+    bottom: 32px;
+    left:110px;
 }
 
 #link-escrever{
@@ -93,4 +96,56 @@
 
 #n-vagas{
     display: inline;
+    margin-left: 470px;
+}
+
+.title-login{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 35px;
+}
+
+input{
+    margin: 0 auto;
+    display: table;
+}
+
+.btn-entrar{
+    margin: 0 auto;
+    display: table;
+    font-size:22px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.5);
+    padding: 10px;
+}
+
+#email{
+    font-size:25px;
+}
+
+#senha {
+    font-size: 25px;
+}
+
+#btn-login{
+    margin: 0 auto;
+    font-size:22px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.5);
+    padding: 10px;
+    position: relative;
+    top: 50px;
+    width: 200px;
+}
+
+#btn-inscritos{
+     margin: 0 auto;
+     margin-left: 400px;
+    font-size:22px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.5);
+    padding: 10px;
 }

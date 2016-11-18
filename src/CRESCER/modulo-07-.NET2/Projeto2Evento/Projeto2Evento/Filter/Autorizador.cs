@@ -18,7 +18,7 @@ namespace Projeto2Evento.Filters
         }
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            filterContext.Result = new RedirectResult("Index");
+            filterContext.Result = new RedirectResult("Login");
         }
     }
 }

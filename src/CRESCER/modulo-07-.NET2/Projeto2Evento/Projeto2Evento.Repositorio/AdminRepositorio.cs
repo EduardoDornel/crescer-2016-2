@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Projeto2Evento_Dominio;
 using System.Data.Entity;
+using System.Configuration;
 
 namespace Projeto2Evento.Repositorio
 {
@@ -35,6 +36,7 @@ namespace Projeto2Evento.Repositorio
         {
             using (var contexto = new ContextoDeDados())
             {
+                ConfigurationManager.AppSettings.Set("VagasRestantes", Convert.ToString(Convert.ToInt32(ConfigurationManager.AppSettings["VagasRestantes"]) - 1));
                 usuario.Aprovado = true;
                 usuario.DataAprovacao = DateTime.Now;
                 contexto.Entry<Usuario>(usuario).State = EntityState.Modified;
