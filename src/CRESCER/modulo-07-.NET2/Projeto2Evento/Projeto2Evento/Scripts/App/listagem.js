@@ -1,43 +1,42 @@
 ﻿class Listagem {
 
-  constructor(seletor) {
-    this.$elem = $(seletor);
-    this.renderizarEstadoInicial();
-  }
+    constructor(seletor) {
+        this.$elem = $(seletor);
+        this.renderizarEstadoInicial();
+    }
 
-  registrarBindsEventos() {
-    this.$btnAdicionar = $('#btn-adicionar');
-    this.$btnAdicionar.on('click', this.adicionar.bind(this));
+    registrarBindsEventos() {
+        this.$btnAdicionar = $('#btn-adicionar');
+        this.$btnAdicionar.on('click', this.adicionar.bind(this));
 
-    this.$btnExcluirPre = $('#btn-excluirPre');
-    this.$btnExcluirPre.on('click', this.excluirPre.bind(this));
+        this.$btnExcluirPre = $('#btn-excluirPre');
+        this.$btnExcluirPre.on('click', this.excluirPre.bind(this));
 
-    this.$btnExcluirInscrito = $('#btn-excluirInscrito');
-    this.$btnExcluirInscrito.on('click', this.excluirInscrito.bind(this));
-  }
+        this.$btnExcluirInscrito = $('#btn-excluirInscrito');
+        this.$btnExcluirInscrito.on('click', this.excluirInscrito.bind(this));
+    }
 
-  adicionar() {
+    adicionar() {
 
-  }
+    }
 
-  excluirPre() {
+    excluirPre() {
 
-  }
+    }
 
-  excluirInscrito() {
-    let id = this.$btnExcluirInscrito.val();
-  }
+    excluirInscrito() {
+        let id = this.$btnExcluirInscrito.val();
+    }
 
-  renderizarListaPreInscritos() {
+    renderizarListaPreInscritos() {
+    }
 
-  }
+    renderizarListaInscritos() {
 
-  renderizarListaInscritos() {
+    }
 
-  }
-
-  renderizarEstadoInicial() {
-    this.$elem.show();
-    this.registrarBindsEventos();
-  }
+    renderizarEstadoInicial() {
+        this.$elem.show();
+        this.registrarBindsEventos();
+    }
 }

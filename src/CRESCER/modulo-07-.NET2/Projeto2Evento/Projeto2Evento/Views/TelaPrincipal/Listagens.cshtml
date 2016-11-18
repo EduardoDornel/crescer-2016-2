@@ -3,7 +3,10 @@
     Layout = null;
 }
 
-<div id="lista-pre-inscritos">
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+
+<div id="tabela-pre">
     <table class="table">
         <thead id="descricao">
             <tr>
@@ -14,42 +17,10 @@
                 <th>Nº documento</th>
             </tr>
         </thead>
-        <tbody class="tabela">
-            {{#each admin}}
-            <tr id="{{ id }}">
-                <th class="nome">{{ nome }}</th>
-                <td class="email">{{ email }}</td>
-                <td class="telefone">{{ telefone }}</td>
-                <td class="dificuldade">{{ dataNascimento }}</td>
-                <td class="documento">{{ documento }}</td>
-                <td><input type="button" id="btn-excluirInscrito" value="{{id}}"/> </td>
-            </tr>
-            {{/each}}
-        </tbody>
+        <tbody id="pendentes"></tbody>
     </table>
   </div>
 
-    <div id="lista-inscritos">
-        <table class="table">
-            <thead id="descricao">
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Data de nascimento</th>
-                    <th>Nº documento</th>
-                </tr>
-            </thead>
-            <tbody class="tabela">
-                {{#each admin}}
-                <tr id="{{ id }}">
-                    <th class="nome">{{ nome }}</th>
-                    <td class="email">{{ email }}</td>
-                    <td class="telefone">{{ telefone }}</td>
-                    <td class="dificuldade">{{ dataNascimento }}</td>
-                    <td class="documento">{{ documento }}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
+    
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/App/listaPreInscritos.js"></script>

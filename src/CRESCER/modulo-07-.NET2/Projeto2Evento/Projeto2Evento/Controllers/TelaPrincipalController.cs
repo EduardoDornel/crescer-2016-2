@@ -72,5 +72,11 @@ namespace Projeto2Evento.Controllers
         {
             return View();
         }
+
+        public JsonResult ListarPreInscritos()
+        {
+            List<Usuario> usuariosPreInscritos = new UsuarioAplicacao().ListarUsuarios(false);
+            return Json(usuariosPreInscritos, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -18,9 +18,18 @@ namespace Projeto2Evento_Aplicacao
         }
 
         public Admin BuscarPorAutenticacao(string email, string senha)
-        {
-            
+        {           
             return Repositorio.BuscarPorAutenticacao(email, new ServicoDeCriptografia().Criptografar(senha));
+        }
+
+        public void ConfirmarUsuario(Usuario usuario)
+        {
+            Repositorio.ConfirmarUsuario(usuario);
+        }
+
+        public void ReprovarUsuario(Usuario usuario)
+        {
+            Repositorio.ReprovarUsuario(usuario);
         }
 
     }
