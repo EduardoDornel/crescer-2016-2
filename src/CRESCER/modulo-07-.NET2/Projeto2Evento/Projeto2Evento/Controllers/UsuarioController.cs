@@ -48,10 +48,13 @@ namespace Projeto2Evento.Controllers
             if (admin != null)
             {
                 ServicoDeAutenticacao.Autenticar(new AdminModel(admin.Email));
+                TempData["Mensagem"] = "Logado com sucesso";
                 return RedirectToAction("Index", "TelaPrincipal");
             }
 
+            TempData["Mensagem"] = "Usuário ou senha incorretos";
             return RedirectToAction("Login");
         }
+
     }
 }

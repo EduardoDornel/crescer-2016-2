@@ -13,7 +13,8 @@
 
         @Html.TextBox("email", "", new { placeholder = "email" })
         @Html.Password("senha", "", new { placeholder = "senha" })
-
+        
+        <h2>@TempData["Mensagem"]</h2>
         <div >
             <div >
                 <button type="submit" class="btn-entrar">Entrar</button>
