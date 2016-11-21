@@ -39,6 +39,12 @@ namespace Projeto2Evento.Controllers
             return Json(usuariosInscritos, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult AprovarUsuario(int id)
+        {
+            Usuario usuario = new AdminAplicacao().ConfirmarUsuario(id);
+            return Json(new { id = usuario.Id });
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Entrar(string email, string senha)

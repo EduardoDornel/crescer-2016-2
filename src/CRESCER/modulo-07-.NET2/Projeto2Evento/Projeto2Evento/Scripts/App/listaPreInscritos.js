@@ -1,4 +1,4 @@
-﻿$(function () {
+﻿/*$(function () {
     $.ajax({
         url: "ListarPreInscritos",
         dataType: 'json',
@@ -18,9 +18,9 @@
             $('#pendentes').html(tBodyHTML);
         }
     });
-});
+});*/
 
-$(function () {
+/*$(function () {
   let $botoes = $('#botoes');
   ['aprovar', 'desaprovar'].forEach(item => {
     let $novoBotao = $('<button>');
@@ -30,4 +30,30 @@ $(function () {
     $novoBotao.text(item);
     $botoes.append($novoBotao);
   })
+});*/
+
+$(() => {
+  $('#btn-aprovar').click(() => {
+    let idAprovado = usuario.Id;
+    $.post('/Usuario/ListarInscritos', idAprovado)
+      .done(() => {
+        $.get('/home/listarInscritos', { id: usuario.Id })
+        .done(htmlAprovado => {
+          let $td = $('<td>').html(htmlAprovado);
+          $tr.append($td);
+        })
+      }
+     );
+  });
+  let $tr = $('#lista-pre-inscritos');
+  $.get('home/ListarPreInscritos')
+    .then(response => {
+      response.usuario.forEach(usuario => {
+        $.get('home/ListarPreInscritos', { id: usuario.id })
+          .done(htmlUsuario => {
+            let $td = $('<td>').html(htmlUsuario);
+            $tr.append($td);
+          })
+      });
+    })
 });
