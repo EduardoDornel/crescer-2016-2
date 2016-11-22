@@ -3,9 +3,9 @@
         url: "ListarInscritos",
         dataType: 'json',
         type: "GET",
-        success: function (preInscritos) {
+        success: function (inscritos) {
             var tBodyHTML = '';
-            $.each(preInscritos, function (i, inscrito) {
+            $.each(inscritos, function (i, inscrito) {
                 tBodyHTML += '<tr>' + '<td>' + inscrito.Nome
                           + '</td><td>' + inscrito.Email
                           + '</td><td>' + inscrito.Telefone
