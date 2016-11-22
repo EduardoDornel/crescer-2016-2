@@ -22,9 +22,9 @@ namespace Projeto2Evento_Aplicacao
             return Repositorio.BuscarPorAutenticacao(email, new ServicoDeCriptografia().Criptografar(senha));
         }
 
-        public void ConfirmarUsuario(Usuario usuario)
+        public Usuario ConfirmarUsuario(int id)
         {
-            Repositorio.ConfirmarUsuario(usuario);
+            return Repositorio.ConfirmarUsuario(id);
         }
 
         public void ReprovarUsuario(Usuario usuario)

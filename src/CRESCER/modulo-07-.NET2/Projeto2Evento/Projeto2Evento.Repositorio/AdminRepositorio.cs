@@ -32,16 +32,22 @@ namespace Projeto2Evento.Repositorio
             }
         }
 
-        public void ConfirmarUsuario(Usuario usuario)
+        public Usuario ConfirmarUsuario(int id)
         {
             using (var contexto = new ContextoDeDados())
             {
-                ConfigurationManager.AppSettings.Set("VagasRestantes", Convert.ToString(Convert.ToInt32(ConfigurationManager.AppSettings["VagasRestantes"]) - 1));
-                usuario.Aprovado = true;
-                usuario.DataAprovacao = DateTime.Now;
-                contexto.Entry<Usuario>(usuario).State = EntityState.Modified;
-                contexto.SaveChanges();
+                Usuario usuario = contexto.Usuario.FirstOrDefault(_ => _.Id == id);
+                if (usuario != null)
+                {
+                    ConfigurationManager.AppSettings.Set("VagasRestantes", Convert.ToString(Convert.ToInt32(ConfigurationManager.AppSettings["VagasRestantes"]) - 1));
+                    usuario.Aprovado = true;
+                    usuario.DataAprovacao = DateTime.Now;
+                    contexto.Entry<Usuario>(usuario).State = EntityState.Modified;
+                    contexto.SaveChanges();
+                    return usuario;
+                }
             }
+            return null;
         }
 
         public void ReprovarUsuario(Usuario usuario)
