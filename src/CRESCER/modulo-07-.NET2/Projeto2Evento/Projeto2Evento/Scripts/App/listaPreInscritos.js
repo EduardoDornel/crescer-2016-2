@@ -1,4 +1,36 @@
-﻿/*$(function () {
+﻿
+function aprovar(id) {
+    $('#btn-aprovar').click(() => {
+    $.post('AprovarUsuario', id)
+      .done(() => {
+          window.listarInscrito;
+      })
+    })
+}
+
+$(function () {
+    $.ajax({
+        url: "ListarPreInscritos",
+        dataType: 'json',
+        Type: "GET",
+        success: function (preInscritos) {
+            var listaPre = '';
+            $.each(preInscritos, function (i, preInscrito) {
+                var date = new Date(parseInt(preInscrito.DataNascimento.substr(6)));
+                listaPre += '<tr>' + '<td>' + preInscrito.Nome
+                 + '</td><td>' + preInscrito.Email
+                 + '</td><td>' + preInscrito.Telefone
+                 + '</td><td>' + date.getDay() + '/' + date.getMonth() + '/' + date.getYear()
+                 + '</td><td>' + preInscrito.Documento
+                 + '</td><td>' + '<button onclick="aprovar('+preInscrito.Id+')" id="btn-aprovar">Aprovar</button>'
+                 + '<button onclick="reprovar('+preInscrito.Id+')" id="btn-reprovar">Reprovar</button></td>' + '</tr>'
+            });
+            $('#pre-inscritos').html(listaPre);
+        }
+    });
+});
+
+/*$(function () {
     $.ajax({
         url: "ListarPreInscritos",
         dataType: 'json',
@@ -32,12 +64,14 @@
   })
 });*/
 
-$(() => {
+
+//FUNCAO BERNARDO
+/*$(() => {
   $('#btn-aprovar').click(() => {
     let idAprovado = usuario.Id;
-    $.post('/Usuario/ListarInscritos', idAprovado)
+    $.post('/usuario/listarinscritos', idAprovado)
       .done(() => {
-        $.get('/home/listarInscritos', { id: usuario.Id })
+        $.get('/usuario/listarinscritos', { id: usuario.Id })
         .done(htmlAprovado => {
           let $td = $('<td>').html(htmlAprovado);
           $tr.append($td);
@@ -46,14 +80,14 @@ $(() => {
      );
   });
   let $tr = $('#lista-pre-inscritos');
-  $.get('home/ListarPreInscritos')
+  $.get('/usuario/ListarPreInscritos')
     .then(response => {
       response.usuario.forEach(usuario => {
-        $.get('home/ListarPreInscritos', { id: usuario.id })
+        $.get('/usuario/ListarPreInscritos', { id: usuario.id })
           .done(htmlUsuario => {
             let $td = $('<td>').html(htmlUsuario);
             $tr.append($td);
           })
       });
     })
-});
+});*/
