@@ -27,22 +27,22 @@ namespace Projeto2Evento.Controllers
         {
             return View();
         }
-        public JsonResult ListarPreInscritos()
+        public PartialViewResult ListarPreInscritos()
         {
-            List<Usuario> usuariosPreInscritos = new UsuarioAplicacao().ListarUsuarios(false);
-            return Json(usuariosPreInscritos, JsonRequestBehavior.AllowGet);
+            UsuarioModel usuarioModel = new UsuarioModel(false);
+            return PartialView("_ListaPreInscritos", usuarioModel.ListaUsuarios);
         }
 
-        public JsonResult ListarInscritos()
+        public PartialViewResult ListarInscritos()
         {
-            List<Usuario> usuariosInscritos = new UsuarioAplicacao().ListarUsuarios(true);
-            return Json(usuariosInscritos, JsonRequestBehavior.AllowGet);
+            UsuarioModel usuarioModel = new UsuarioModel(true);
+            return PartialView("_ListaPreInscritos", usuarioModel.ListaUsuarios);
         }
 
-        public JsonResult AprovarUsuario(int id)
+        public PartialViewResult Aprovar(int id)
         {
             Usuario usuario = new AdminAplicacao().ConfirmarUsuario(id);
-            return Json(new { id = usuario.Id });
+            return ListarInscritos();
         }
 
         [HttpPost]

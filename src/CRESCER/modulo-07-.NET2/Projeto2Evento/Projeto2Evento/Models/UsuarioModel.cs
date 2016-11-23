@@ -16,12 +16,26 @@ namespace Projeto2Evento.Models
 
         }
 
-        public UsuarioModel(bool aprovado)
+        public UsuarioModel(string nome, string email, string telefone, DateTime dataNascimento, string documento)
         {
-            ListaUsuarios = new UsuarioAplicacao().ListarUsuarios(aprovado);
+            this.Nome = nome;
+            this.Email = email;
+            this.Telefone = telefone;
+            this.DataNascimento = dataNascimento;
+            this.Documento = documento;
         }
 
-        public List<Usuario> ListaUsuarios { get; set; }
+        public UsuarioModel(bool aprovado)
+        {
+            ListaUsuarios = new List<UsuarioModel>();    
+            List<Usuario> usuario = new UsuarioAplicacao().ListarUsuarios(aprovado);
+            foreach (var item in usuario)
+            {
+                ListaUsuarios.Add(new UsuarioModel(item.Nome, item.Email, item.Telefone, item.DataNascimento, item.Documento));
+            }
+        }
+
+        public List<UsuarioModel> ListaUsuarios { get; set; }
 
         public int Id { get; set; }
 

@@ -195,7 +195,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\App\listagem.js" />
-    <Content Include="Scripts\App\listaInscritos.js" />
     <Content Include="Scripts\App\listaPreInscritos.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -259,6 +258,7 @@
     <Content Include="Views\TelaPrincipal\Cadastro.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Usuario\Listagens.cshtml" />
+    <Content Include="Views\Usuario\_ListaPreInscritos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,35 +1,51 @@
-﻿class Listagem {
+﻿var listagemUsuario = {};
 
-    constructor(seletor) {
-        this.$elem = $(seletor);
-        this.renderizarEstadoInicial();
+listagemUsuario.listarPreInscritos = function () {
+    $.ajax({
+        url: '/Usuario/ListarPreInscritos',
+        type: 'GET'
+    })
+        .done(function (resultado) {
+            $('#lista-pre').html(resultado);
+        })
+        .fail(function (erro) {
+            console.error(erro);
+        });
+}
+
+listagemUsuario.listarAprovados = function () {
+    $.ajax({
+        url: '/Usuario/ListarInscritos',
+        type: 'GET'
+    })
+    .done(function (resultado) {
+        $('#lista-aprovados').html(resultado);
+    });
+}
+
+listagemUsuario.aprovar = function (id) {
+    $.ajax({
+        url: '/Usuario/Aprovar',
+        type: 'POST',
+        data: {
+            id: id
+        }
+    })
+        .then(function (resultado) {
+            $('#lista-aprovados').html(resultado);
+        })
+}
+
+listagemUsuario.configurarBotoes = function (id) {
+    if (id !== 0) {
+      listagemUsuario.$btnAprovar.click(listagemUsuario.aprovar(id));
     }
+}
 
-    registrarBindsEventos() {
-        this.$btnAdicionar = $('#btn-adicionar');
-        this.$btnAdicionar.on('click', this.adicionar.bind(this));
+listagemUsuario.iniciar = function () {
+    listagemUsuario.$btnAprovar = $("#btn-aprovar");
+  //  listagemUsuario.$btnReprovar = $("#btn-reprovar");
 
-        this.$btnExcluirPre = $('#btn-excluirPre');
-        this.$btnExcluirPre.on('click', this.excluirPre.bind(this));
-    }
-
-    adicionar() {
-
-    }
-
-    excluirPre() {
-        let id = this.$btnExcluirPre.val();
-    }
-
-    renderizarListaPreInscritos() {
-    }
-
-    renderizarListaInscritos() {
-
-    }
-
-    renderizarEstadoInicial() {
-        this.$elem.show();
-        this.registrarBindsEventos();
-    }
+    listagemUsuario.listarPreInscritos();
+    listagemUsuario.listarAprovados();
 }

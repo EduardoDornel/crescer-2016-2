@@ -1,0 +1,39 @@
+﻿@model List<Projeto2Evento.Models.UsuarioModel>
+@using Projeto2Evento.Models
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Data de nascimento</th>
+            <th>Documento</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (UsuarioModel item in Model)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Email</td>
+                    <td>@item.Telefone</td>
+                    <td>@item.DataNascimento</td>
+                    <td>@item.Documento</td>
+                    @if (!item.Aprovado)
+                    {
+                        <td><button id="btn-aprovar" onclick="configurarBotoes(item.Id)">Aprovar</button></td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@section js {
+    <script>
+        listagemUsuario.configurarBotoes(id);
+    </script>
+}
