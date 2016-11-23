@@ -24,28 +24,19 @@ listagemUsuario.listarAprovados = function () {
 }
 
 listagemUsuario.aprovar = function (id) {
-    $.ajax({
-        url: '/Usuario/Aprovar',
-        type: 'POST',
-        data: {
-            id: id
-        }
-    })
-        .then(function (resultado) {
-            $('#lista-aprovados').html(resultado);
-        })
-}
-
-listagemUsuario.configurarBotoes = function (id) {
-    if (id !== 0) {
-      listagemUsuario.$btnAprovar.click(listagemUsuario.aprovar(id));
+  $.ajax({
+    url: '/Usuario/Aprovar',
+    type: 'POST',
+    data: {
+      id: id
     }
+  })
+      .done(function (resultado) {
+        $('#lista-aprovados').html(resultado);
+      });
 }
 
 listagemUsuario.iniciar = function () {
-    listagemUsuario.$btnAprovar = $("#btn-aprovar");
-  //  listagemUsuario.$btnReprovar = $("#btn-reprovar");
-
     listagemUsuario.listarPreInscritos();
     listagemUsuario.listarAprovados();
 }

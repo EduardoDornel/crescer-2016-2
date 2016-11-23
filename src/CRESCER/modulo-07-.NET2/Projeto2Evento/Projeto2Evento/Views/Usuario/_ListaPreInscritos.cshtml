@@ -22,18 +22,12 @@
                     <td>@item.Telefone</td>
                     <td>@item.DataNascimento</td>
                     <td>@item.Documento</td>
-                    @if (!item.Aprovado)
+                    @if (item.Aprovado == false)
                     {
-                        <td><button id="btn-aprovar" onclick="configurarBotoes(item.Id)">Aprovar</button></td>
+                        <td>@Html.ActionLink("Aprovar", "Aprovar", "Usuario", new {id = item.Id }, new {})</td>
                     }
                 </tr>
             }
         }
     </tbody>
 </table>
-
-@section js {
-    <script>
-        listagemUsuario.configurarBotoes(id);
-    </script>
-}
