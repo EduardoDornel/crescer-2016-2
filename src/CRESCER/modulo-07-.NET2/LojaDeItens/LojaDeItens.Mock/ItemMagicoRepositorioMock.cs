@@ -82,7 +82,8 @@ namespace LojaDeItens.Mock
 
         public void Atualizar(ItemMagicoEntidade item)
         {
-            throw new NotImplementedException();
+            int index = itens.IndexOf(itens.First(i => i.Id == item.Id));
+            itens[index] = item;
         }
 
         public ItemMagicoEntidade BuscarPorId(int? id)

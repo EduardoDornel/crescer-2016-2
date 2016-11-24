@@ -42,10 +42,10 @@ namespace LojaDeItens.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public void Salvar(ItemParaEdicaoViewModel model)
+        public ActionResult Salvar(ItemParaEdicaoViewModel model)
         {
             itemMagicoServico.Salvar(new ItemMagicoEntidade(model.Id, model.Nome, model.Descricao, model.Preco, model.Estoque,model.Raro));
-            RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]

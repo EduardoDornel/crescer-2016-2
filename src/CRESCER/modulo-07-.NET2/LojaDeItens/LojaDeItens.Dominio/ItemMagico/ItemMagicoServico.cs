@@ -82,6 +82,8 @@ namespace LojaDeItens.Dominio.ItemMagico
             else
             {
                 item.DataCriacao = item.DataUltimaAtualizacao = DateTime.Now;
+                Random randNum = new Random();
+                item.Id = randNum.Next();
                 this.itemMagicoRepositorio.Criar(item);
             }
         }
