@@ -5,6 +5,8 @@
  */
 package br.com.cwi.crescer.aula1;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 /**
@@ -23,7 +25,24 @@ public class MeuCalendarioUtil {
         return calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, locale);  
     }
     
-    public Date calcularDiferencaData(Date date){
-        return null;
+    public Date calcularDiferencaData(LocalDate date){
+        LocalDate now = LocalDate.now();
+        
+        //long diferencaAnos = ((now.getTime() - date.getTime()) / (1000*60*60*24) / 30) / 12;
+        //long diferenca = now.getDay() - date.getDay();
+        //int tempoDia = 1000 * 60 * 60 * 24;
+        //long diferencaEmDias = ChronoUnit.DAYS.between(now, date);
+       // long diferencaEmMes = ChronoUnit.MONTHS.between(now, date);
+       //long diferencaEmAnos = ChronoUnit.YEARS.between(now, date);
+        //if(diferencaEmDias >= 365){
+            
+        //}
+        
+        return new Date(12, 02, 1997);
+    }
+    
+    public void main(){
+        System.out.println("Dia da semana que nasceu/n"+
+                           "Calcular tempo decorrido a partir de uma data");
     }
 }

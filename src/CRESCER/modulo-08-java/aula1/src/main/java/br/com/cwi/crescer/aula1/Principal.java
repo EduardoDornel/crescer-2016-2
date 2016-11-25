@@ -13,9 +13,7 @@ import java.util.*;
  */
 public class Principal {
     public static void main(String [] args){
-       // System.out.println(new java.util.Date());
-        
-        Date date = new Date(12, 02, 1997);
+       
 
     }
 }
