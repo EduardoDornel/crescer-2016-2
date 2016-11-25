@@ -11,7 +11,10 @@ package br.com.cwi.crescer.aula1;
  */
 public class MeuStringUtil {
     public boolean validarString(String texto){
-        return texto.length() > 0;
+        if(texto != null){
+            return texto.length() > 0;
+        }
+        return false;
     }
     
     public int calcularVogais(String texto){
@@ -46,7 +49,7 @@ public class MeuStringUtil {
     public boolean identificarPalindromo(String texto){
         return texto.equals(inverterString(texto));
     }
-    
+        
     public void main(){
         System.out.println("Validar String\n"
                          + "Calcular Vogais\n"

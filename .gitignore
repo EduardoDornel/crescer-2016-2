@@ -325,3 +325,5 @@ __pycache__/
 # Cake - Uncomment if you are using it
 # tools/
 /src/CRESCER/modulo-08-java/aula1/target/
+/src/CRESCER/modulo-08-java/aula2/nbproject/private/
+/src/CRESCER/modulo-08-java/aula2/target/

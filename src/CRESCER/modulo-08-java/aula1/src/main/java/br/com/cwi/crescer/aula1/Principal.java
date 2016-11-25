@@ -14,6 +14,10 @@ import java.util.*;
  */
 public class Principal {
     public static void main(String [] args){
-
-    }
+       Parcelator p = new Parcelator();
+       MeuCalendarioUtil m = new MeuCalendarioUtil();
+       
+       System.out.println(m.diaDaSemana(new Date()));
+       System.out.println(p.jurosSimples(1000, 10, 10, new Date()));
+      }
 }
