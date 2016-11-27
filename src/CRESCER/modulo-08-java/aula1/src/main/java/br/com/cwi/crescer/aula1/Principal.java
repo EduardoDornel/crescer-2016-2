@@ -5,6 +5,7 @@
  */
 package br.com.cwi.crescer.aula1;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -14,6 +15,11 @@ import java.util.*;
  */
 public class Principal {
     public static void main(String [] args){
+        String nome = "eduardo/bin/args.";
+        String extensao = nome.substring(nome.lastIndexOf("."), nome.length());
+        System.out.println(extensao);
+        
+        
        Parcelator p = new Parcelator();
        MeuCalendarioUtil m = new MeuCalendarioUtil();
        

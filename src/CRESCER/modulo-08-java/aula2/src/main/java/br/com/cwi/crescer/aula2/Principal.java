@@ -5,18 +5,15 @@
  */
 package br.com.cwi.crescer.aula2;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-
 /**
  *
- * @author eduardo.ribas
+ * @author Eduardo
  */
-public class Exemplo5 {
-
+public class Principal {
     public static void main(String[] args) {
-
-         
-
-        }
+        MeuWriterUtils m = new MeuWriterUtils();
+        
+        String texto = "Nycoli sua feia";
+        m.escreveArquivo("teste.txt", texto);
     }
+}
