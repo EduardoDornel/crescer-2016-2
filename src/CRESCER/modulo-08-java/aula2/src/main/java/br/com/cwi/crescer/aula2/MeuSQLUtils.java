@@ -66,8 +66,7 @@ public class MeuSQLUtils {
                 break;
             }
         }
-        String select = "";
-        select += System.out.format("SELECT * FROM %s", nomeTabela);
+        String select = "SELECT * FROM " + nomeTabela;
         
         try (
                 final Connection connection = ConnectionUtils.getConnection();
