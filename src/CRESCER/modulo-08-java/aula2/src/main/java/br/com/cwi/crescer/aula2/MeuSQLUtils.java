@@ -36,8 +36,6 @@ public class MeuSQLUtils {
                         textoDoArquivo += linha;
                         linha = bufferReader.readLine();
                     }
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
                 } catch (IOException e) {
                     System.out.println("Erro na leitura de " + arquivo + ".");
                 }
@@ -54,9 +52,45 @@ public class MeuSQLUtils {
                 final Statement statement = connection.createStatement();
             ) {
                 statement.executeQuery(query);
-                //statement.close();
             } catch (final SQLException e) {
             System.err.format("SQLException: %s", e);
         }
+    }
+    
+    public void receberInstrucao(String query){
+        String[] arrayQuery = query.split(" ");
+        String nomeTabela = "";
+        for(int i = 0; i < arrayQuery.length; i++){
+            if(arrayQuery[i].equalsIgnoreCase("from")){
+                nomeTabela = arrayQuery[i+1];
+                break;
+            }
+        }
+        String select = "";
+        select += System.out.format("SELECT * FROM %s", nomeTabela);
+        
+        try (
+                final Connection connection = ConnectionUtils.getConnection();
+                final Statement statement = connection.createStatement();
+            ) 
+        {
+            try (final ResultSet resultSet = statement.executeQuery(select)) {
+                
+                while(resultSet.next()) {
+                    final long id = resultSet.getLong("ID");
+                    final String nome = resultSet.getString("NOME");
+                    final int idade = resultSet.getInt("IDADE");
+                    
+                    System.out.format("ID: %s NOME: %s IDADE: %s \n", id, nome, idade);
+                }
+                
+                
+            } catch (final SQLException e) {
+                System.err.format("SQLException: %s", e);
+            }
+        } catch (final SQLException e) {
+            System.err.format("SQLException: %s", e);
+        }
+                
     }
 }
