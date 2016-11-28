@@ -61,7 +61,7 @@ public class MeuSQLUtils {
         String[] arrayQuery = query.split(" ");
         String nomeTabela = "";
         for(int i = 0; i < arrayQuery.length; i++){
-            if(arrayQuery[i].equalsIgnoreCase("from")){
+            if(arrayQuery[i].equalsIgnoreCase("from") || arrayQuery[i].equalsIgnoreCase("into")){
                 nomeTabela = arrayQuery[i+1];
                 break;
             }
@@ -89,7 +89,14 @@ public class MeuSQLUtils {
             }
         } catch (final SQLException e) {
             System.err.format("SQLException: %s", e);
-        }
-                
+        }              
+    }
+    
+    public void importarCSV(){
+        
+    }
+    
+    public void exportarCSV(){
+        
     }
 }
