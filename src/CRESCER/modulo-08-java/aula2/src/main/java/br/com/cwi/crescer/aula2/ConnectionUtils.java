@@ -13,9 +13,9 @@ import java.sql.*;
  */
 public class ConnectionUtils {
 
-    private static final String URL = "jdbc:oracle:thin:@10.99.2.45:1521:xe";
-    private static final String USER = "cwi";
-    private static final String PASS = "cwi";
+    private static final String URL = /*"jdbc:oracle:thin:@10.99.2.45:1521:xe"*/ "jdbc:oracle:thin:@localhost:1521:xe";
+    private static final String USER = /*"cwi"*/ "system";
+    private static final String PASS = /*"cwi"*/ "crescer";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASS);

@@ -5,15 +5,16 @@
  */
 package br.com.cwi.crescer.aula2;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Eduardo
  */
 public class Principal {
-    public static void main(String[] args) {
-        MeuWriterUtils m = new MeuWriterUtils();
+    public static void main(String[] args) throws SQLException {
+        MeuSQLUtils m = new MeuSQLUtils();
         
-        String texto = "Nycoli sua feia";
-        m.escreveArquivo("teste.txt", texto);
+        m.executarSQLDeArquivo("teste.sql");
     }
 }
