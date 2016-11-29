@@ -18,23 +18,46 @@ import javax.servlet.http.HttpServletResponse;
 public class PessoaServlet extends HttpServlet {
 
     @EJB
-    private PessoaBean bean;
+    private PessoaBean pessoaBean;
 
-    List<String> nomes = new ArrayList<>();
+    List<String> nomes = new ArrayList<String>();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String parameter = request.getParameter("nome");
-        if (parameter != null) {
-            nomes.add(parameter);
-        }
-        try (PrintWriter writer = response.getWriter();) {
+        response.setContentType("text/html");
+        try (final PrintWriter out = response.getWriter();) {
+            out.append("<!DOCTYPE html>");
+            out.append("<html>");
+            out.append("<head>");
+            out.append("<title>Java - aula5</title>");
+            out.append("<meta charset=\"UTF-8\">");
+            out.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+            out.append("</head>");
+            out.append("<body>");
+            out.append("<h1>Pessoa</h1>");
 
-            for (String s : nomes) {
-                writer.append(s).append("<br/>");
-            };
-        }
+            out.append("<table>");
+            out.append("<thead>");
+            out.append("<tr>");
+            out.append("<th>");
+            out.append("Nome");
+            out.append("</th>");        
+            out.append("</tr>");
+            out.append("<thead>");
+            out.append("<tbody>");
+            pessoaBean.findAll().forEach(p -> {
+                out.append("<tr>");
 
+                out.append("<td>").append(p.getNmPessoa()).append("</td>");
+
+                out.append("</tr>");
+            });
+            out.append("</tbody>");
+            out.append("</table>");
+
+            out.append("</body>");
+            out.append("</html>");
+        }
     }
 
 }
