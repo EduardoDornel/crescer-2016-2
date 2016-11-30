@@ -42,7 +42,9 @@ public class Contract implements Serializable{
     private String nmContract;
     
     @ManyToOne(cascade = ALL)
-    private Client ClientDao;    
+    private Client ClientDao;   
+    
+    
 
     public Long getIdContract() {
         return idContract;
