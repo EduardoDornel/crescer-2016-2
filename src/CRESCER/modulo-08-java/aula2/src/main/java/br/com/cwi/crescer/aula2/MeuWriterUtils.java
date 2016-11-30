@@ -21,7 +21,7 @@ public class MeuWriterUtils {
         if(extensao == null){
             System.out.println("Você não passou o arquivo corretamente.");
         }
-        else if(!extensao.equals(".txt")){
+        else if(!extensao.equals(".txt") && !extensao.equals(".csv")){
             System.out.println("Arquivo incompatível.");
         }
         else{

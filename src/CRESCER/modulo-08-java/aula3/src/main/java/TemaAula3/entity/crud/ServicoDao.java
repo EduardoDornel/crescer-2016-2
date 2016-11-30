@@ -5,55 +5,46 @@
  */
 package TemaAula3.entity.crud;
 
-import static org.hibernate.criterion.MatchMode.ANYWHERE;
-
-import TemaAula3.entity.dao.Client;
+import TemaAula3.entity.dao.Servico;
 import java.util.List;
 import javax.persistence.EntityManager;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Example;
-import org.hibernate.criterion.Restrictions;
 
 /**
  *
  * @author Eduardo
  */
-public class ClientDao implements IDao<Client> {
-
+public class ServicoDao implements IDao<Servico>{
     final EntityManager entityManager;
 
-    public ClientDao(EntityManager entityManager) {
+    public ServicoDao(EntityManager entityManager) {
         this.entityManager = entityManager;
-    }
-
-    @Override
-    public void insert(Client client) {
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(client);
-            entityManager.getTransaction().commit();
-        } catch (Exception e) {
-            entityManager.getTransaction().rollback();
-        }
     }
     
     @Override
-    public void delete(Client client) {
+    public void insert(Servico servico) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.remove(client);
+            entityManager.persist(servico);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
-        }
-    }
+        }    }
 
     @Override
-    public void update(Client client) {
+    public void delete(Servico servico) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.merge(client);
+            entityManager.remove(servico);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+        }    }
+
+    @Override
+    public void update(Servico servico) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(servico);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
@@ -61,8 +52,8 @@ public class ClientDao implements IDao<Client> {
     }
 
     @Override
-    public List<Client> listar() {
-        return entityManager.createQuery("select c from CLIENT c").getResultList();
+    public List<Servico> listar() {
+        return entityManager.createQuery("select c from SERVICO c").getResultList();
     }
-
+    
 }

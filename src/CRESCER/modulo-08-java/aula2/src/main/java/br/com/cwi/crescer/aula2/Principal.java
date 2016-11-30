@@ -5,6 +5,7 @@
  */
 package br.com.cwi.crescer.aula2;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 /**
@@ -12,7 +13,7 @@ import java.sql.SQLException;
  * @author Eduardo
  */
 public class Principal {
-    public static void main(String[] args) throws SQLException {
-
+    public static void main(String[] args) throws SQLException, IOException {
+        new MeuSQLUtils().exportarCSV();
     }
 }

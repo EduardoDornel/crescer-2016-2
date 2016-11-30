@@ -5,64 +5,55 @@
  */
 package TemaAula3.entity.crud;
 
-import static org.hibernate.criterion.MatchMode.ANYWHERE;
-
-import TemaAula3.entity.dao.Client;
+import TemaAula3.entity.dao.ContractValue;
 import java.util.List;
 import javax.persistence.EntityManager;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Example;
-import org.hibernate.criterion.Restrictions;
 
 /**
  *
  * @author Eduardo
  */
-public class ClientDao implements IDao<Client> {
-
+public class ContractValueDao implements IDao<ContractValue>{
     final EntityManager entityManager;
 
-    public ClientDao(EntityManager entityManager) {
+    public ContractValueDao(EntityManager entityManager) {
         this.entityManager = entityManager;
-    }
-
-    @Override
-    public void insert(Client client) {
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.persist(client);
-            entityManager.getTransaction().commit();
-        } catch (Exception e) {
-            entityManager.getTransaction().rollback();
-        }
     }
     
     @Override
-    public void delete(Client client) {
+    public void insert(ContractValue contract) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.remove(client);
+            entityManager.persist(contract);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
-        }
-    }
+        }    }
 
     @Override
-    public void update(Client client) {
+    public void delete(ContractValue contract) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.merge(client);
+            entityManager.remove(contract);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
-        }    
+        }   
     }
 
     @Override
-    public List<Client> listar() {
-        return entityManager.createQuery("select c from CLIENT c").getResultList();
-    }
+    public void update(ContractValue contract) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(contract);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+        }     }
 
+    @Override
+    public List<ContractValue> listar() {
+        return entityManager.createQuery("select c from CONTRACT_VALUE c").getResultList();
+    }
+    
 }

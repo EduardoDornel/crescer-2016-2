@@ -5,44 +5,27 @@
  */
 package TemaAula3.entity.crud;
 
-import static org.hibernate.criterion.MatchMode.ANYWHERE;
-
-import TemaAula3.entity.dao.Client;
+import TemaAula3.entity.dao.Cotacao;
 import java.util.List;
 import javax.persistence.EntityManager;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Example;
-import org.hibernate.criterion.Restrictions;
 
 /**
  *
  * @author Eduardo
  */
-public class ClientDao implements IDao<Client> {
+public class CotacaoDao implements IDao<Cotacao> {
 
     final EntityManager entityManager;
 
-    public ClientDao(EntityManager entityManager) {
+    public CotacaoDao(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
-    public void insert(Client client) {
+    public void insert(Cotacao cotacao) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(client);
-            entityManager.getTransaction().commit();
-        } catch (Exception e) {
-            entityManager.getTransaction().rollback();
-        }
-    }
-    
-    @Override
-    public void delete(Client client) {
-        try {
-            entityManager.getTransaction().begin();
-            entityManager.remove(client);
+            entityManager.persist(cotacao);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
@@ -50,19 +33,30 @@ public class ClientDao implements IDao<Client> {
     }
 
     @Override
-    public void update(Client client) {
+    public void delete(Cotacao cotacao) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.merge(client);
+            entityManager.remove(cotacao);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
             entityManager.getTransaction().rollback();
-        }    
+        }
     }
 
     @Override
-    public List<Client> listar() {
-        return entityManager.createQuery("select c from CLIENT c").getResultList();
+    public void update(Cotacao cotacao) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.merge(cotacao);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+        }        
+    }
+
+    @Override
+    public List<Cotacao> listar() {
+        return entityManager.createQuery("select c from COTACAO c").getResultList();
     }
 
 }

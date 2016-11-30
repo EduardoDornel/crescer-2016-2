@@ -49,54 +49,71 @@ public class MeuSQLUtils {
     private void executarComando(String query) throws SQLException {
         try (
                 final Connection connection = ConnectionUtils.getConnection();
-                final Statement statement = connection.createStatement();
-            ) {
-                statement.executeQuery(query);
-            } catch (final SQLException e) {
+                final Statement statement = connection.createStatement();) {
+            statement.executeQuery(query);
+        } catch (final SQLException e) {
             System.err.format("SQLException: %s", e);
         }
     }
-    
-    public void receberInstrucao(String query){
+
+    public void receberInstrucao(String query) {
         String[] arrayQuery = query.split(" ");
         String nomeTabela = "";
-        for(int i = 0; i < arrayQuery.length; i++){
-            if(arrayQuery[i].equalsIgnoreCase("from") || arrayQuery[i].equalsIgnoreCase("into")){
-                nomeTabela = arrayQuery[i+1];
+        for (int i = 0; i < arrayQuery.length; i++) {
+            if (arrayQuery[i].equalsIgnoreCase("from") || arrayQuery[i].equalsIgnoreCase("into")) {
+                nomeTabela = arrayQuery[i + 1];
                 break;
             }
         }
         String select = "SELECT * FROM " + nomeTabela;
-        
+
         try (
                 final Connection connection = ConnectionUtils.getConnection();
-                final Statement statement = connection.createStatement();
-            ) 
-        {
+                final Statement statement = connection.createStatement();) {
             try (final ResultSet resultSet = statement.executeQuery(select)) {
-                
-                while(resultSet.next()) {
+
+                while (resultSet.next()) {
                     final long id = resultSet.getLong("ID");
                     final String nome = resultSet.getString("NOME");
                     final int idade = resultSet.getInt("IDADE");
-                    
+
                     System.out.format("ID: %s NOME: %s IDADE: %s \n", id, nome, idade);
                 }
-                
-                
+
             } catch (final SQLException e) {
                 System.err.format("SQLException: %s", e);
             }
         } catch (final SQLException e) {
             System.err.format("SQLException: %s", e);
-        }              
+        }
     }
-    
-    public void importarCSV(){
-        
+
+    public void importarCSV() {
+
     }
-    
-    public void exportarCSV(){
-        
+
+    public void exportarCSV() throws IOException {
+        File file = new File("teste.csv");
+        file.createNewFile();
+        StringBuilder tabela = new StringBuilder();
+
+        try (
+                final Connection connection = ConnectionUtils.getConnection();
+                final Statement statement = connection.createStatement();) {
+            try (final ResultSet resultSet = statement.executeQuery("SELECT * FROM PESSOAS")) {
+
+                while (resultSet.next()) {
+                    final long id = resultSet.getLong("ID");
+                    final String nome = resultSet.getString("NOME");
+                    final int idade = resultSet.getInt("IDADE");
+                    tabela.append("ID: "+id+" NOME: "+nome+" IDADE: "+idade+";\n");
+                }
+                new MeuWriterUtils().escreveArquivo(file.getName(), tabela.toString());
+            } catch (final SQLException e) {
+                System.err.format("SQLException: %s", e);
+            }
+        } catch (final SQLException e) {
+            System.err.format("SQLException: %s", e);
+        }
     }
 }
