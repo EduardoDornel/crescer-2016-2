@@ -14,6 +14,6 @@ import java.sql.SQLException;
  */
 public class Principal {
     public static void main(String[] args) throws SQLException, IOException {
-        new MeuSQLUtils().exportarCSV();
+       // new MeuSQLUtils().importarCSV("C:\\Users\\Eduardo.Dornel.000\\EDUARDO-crescer-2016-02\\src\\CRESCER\\modulo-08-java\\aula2\\teste.csv");
     }
 }

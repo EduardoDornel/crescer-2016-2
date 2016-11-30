@@ -57,15 +57,8 @@ public class MeuSQLUtils {
     }
 
     public void receberInstrucao(String query) {
-        String[] arrayQuery = query.split(" ");
-        String nomeTabela = "";
-        for (int i = 0; i < arrayQuery.length; i++) {
-            if (arrayQuery[i].equalsIgnoreCase("from") || arrayQuery[i].equalsIgnoreCase("into")) {
-                nomeTabela = arrayQuery[i + 1];
-                break;
-            }
-        }
-        String select = "SELECT * FROM " + nomeTabela;
+
+        String select = "SELECT * FROM " + descobrirNomeTabela(query);
 
         try (
                 final Connection connection = ConnectionUtils.getConnection();
@@ -88,27 +81,57 @@ public class MeuSQLUtils {
         }
     }
 
-    public void importarCSV() {
-
+    private String descobrirNomeTabela(String query) {
+        String[] arrayQuery = query.split(" ");
+        String nomeTabela = "";
+        for (int i = 0; i < arrayQuery.length; i++) {
+            if (arrayQuery[i].equalsIgnoreCase("from") || arrayQuery[i].equalsIgnoreCase("into")) {
+                nomeTabela = arrayQuery[i + 1];
+                return nomeTabela;
+            }
+        }
+        return null;
     }
 
-    public void exportarCSV() throws IOException {
+    public void importarCSV(String arquivo) {
+        try {
+            final Reader reader = new FileReader(arquivo);
+            final BufferedReader bufferReader = new BufferedReader(reader);
+
+            String propriedades[];
+            String linha = bufferReader.readLine();
+            while (linha != null) {
+                propriedades = linha.split(";");
+                executarComando(propriedades);
+                linha = bufferReader.readLine();
+            }
+        } catch (Exception e) {
+
+        }
+    }
+    private void executarComando(String array[]) throws SQLException{
+        for (int i = 0; i < array.length; i++) {
+            executarComando(array[i]);
+        }
+    }
+
+    public void exportarCSV(String nomeTabela) throws IOException {
         File file = new File("teste.csv");
         file.createNewFile();
-        StringBuilder tabela = new StringBuilder();
+        String tabela = "";
 
         try (
                 final Connection connection = ConnectionUtils.getConnection();
                 final Statement statement = connection.createStatement();) {
-            try (final ResultSet resultSet = statement.executeQuery("SELECT * FROM PESSOAS")) {
+            try (final ResultSet resultSet = statement.executeQuery("SELECT * FROM " + nomeTabela)) {
 
                 while (resultSet.next()) {
                     final long id = resultSet.getLong("ID");
                     final String nome = resultSet.getString("NOME");
                     final int idade = resultSet.getInt("IDADE");
-                    tabela.append("ID: "+id+" NOME: "+nome+" IDADE: "+idade+";\n");
+                    tabela += String.format("ID: %s NOME: %s IDADE: %s;\n", id, nome, idade);
                 }
-                new MeuWriterUtils().escreveArquivo(file.getName(), tabela.toString());
+                new MeuWriterUtils().escreveArquivo(file.getName(), tabela);
             } catch (final SQLException e) {
                 System.err.format("SQLException: %s", e);
             }
