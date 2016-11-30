@@ -17,7 +17,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
  */
 @Entity
 @Table(name = "CONTRACT")
-public class ContractDao implements Serializable{
+public class Contract implements Serializable{
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_CONTRACT")
     @SequenceGenerator(name = "SEQ_CONTRACT", sequenceName = "SEQ_CONTRACT", allocationSize = 1) 
@@ -42,7 +42,7 @@ public class ContractDao implements Serializable{
     private String nmContract;
     
     @ManyToOne(cascade = ALL)
-    private ClientDao ClientDao;    
+    private Client ClientDao;    
 
     public Long getIdContract() {
         return idContract;
@@ -84,11 +84,11 @@ public class ContractDao implements Serializable{
         this.nmContract = nmContract;
     }
 
-    public ClientDao getClientDao() {
+    public Client getClientDao() {
         return ClientDao;
     }
 
-    public void setClientDao(ClientDao ClientDao) {
+    public void setClientDao(Client ClientDao) {
         this.ClientDao = ClientDao;
     }
             

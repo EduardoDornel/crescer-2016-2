@@ -5,7 +5,7 @@
  */
 package TemaAula3.entity.crud;
 
-import TemaAula3.entity.dao.ClientDao;
+import TemaAula3.entity.dao.Client;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -19,7 +19,7 @@ public class Principal {
         final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ORACLE XE LOCAL");
         final EntityManager em = emf.createEntityManager();
 
-        final ClientCrud clientCrud = new ClientCrud(em);
+        final ClientDao clientCrud = new ClientDao(em);
         
         /*final ClientDao client = new ClientDao();
         

@@ -21,7 +21,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
         @UniqueConstraint(columnNames = "DS_USER_NAME")
     }
 )
-public class UsuarioDao implements Serializable{
+public class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_USUARIO")
     @SequenceGenerator(name = "SEQ_USUARIO", sequenceName = "SEQ_USUARIO", allocationSize = 1) 

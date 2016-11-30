@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Eduardo
  */
-public interface IDaoCrud<T> {
+public interface IDao<T> {
     void insert(T t);
     
     void delete(T t);

@@ -21,7 +21,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
     }
 )
 
-public class ClientDao implements Serializable{
+public class Client implements Serializable{
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_CLIENT")
     @SequenceGenerator(name = "SEQ_CLIENT", sequenceName = "SEQ_CLIENT", allocationSize = 1) 

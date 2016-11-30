@@ -16,7 +16,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
  */
 @Entity
 @Table(name = "CURRENCY_EXCHAGNGE")
-public class CurrencyExchangeDao implements Serializable{
+public class CurrencyExchange implements Serializable{
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_CURRENCY_EXCHANGE")
     @SequenceGenerator(name = "SEQ_CURRENCY_EXCHANGE", sequenceName = "SEQ_CURRENCY_EXCHANGE", allocationSize = 1) 

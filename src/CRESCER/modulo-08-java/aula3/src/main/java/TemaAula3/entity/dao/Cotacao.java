@@ -16,7 +16,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
  */
 @Entity
 @Table(name = "COTACAO")
-public class CotacaoDao implements Serializable{
+public class Cotacao implements Serializable{
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_COTACAO")
     @SequenceGenerator(name = "SEQ_COTACAO", sequenceName = "SEQ_COTACAO", allocationSize = 1) 

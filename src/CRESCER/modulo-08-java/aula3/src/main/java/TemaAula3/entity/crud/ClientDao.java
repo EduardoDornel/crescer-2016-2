@@ -7,7 +7,7 @@ package TemaAula3.entity.crud;
 
 import static org.hibernate.criterion.MatchMode.ANYWHERE;
 
-import TemaAula3.entity.dao.ClientDao;
+import TemaAula3.entity.dao.Client;
 import java.util.List;
 import javax.persistence.EntityManager;
 import org.hibernate.Criteria;
@@ -19,16 +19,16 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author Eduardo
  */
-public class ClientCrud implements IDaoCrud<ClientDao> {
+public class ClientDao implements IDao<Client> {
 
     final EntityManager entityManager;
 
-    public ClientCrud(EntityManager entityManager) {
+    public ClientDao(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
-    public void insert(ClientDao client) {
+    public void insert(Client client) {
         try {
             entityManager.getTransaction().begin();
             entityManager.persist(client);
@@ -39,7 +39,7 @@ public class ClientCrud implements IDaoCrud<ClientDao> {
     }
     
     @Override
-    public void delete(ClientDao client) {
+    public void delete(Client client) {
         try {
             entityManager.getTransaction().begin();
             entityManager.remove(client);
@@ -50,7 +50,7 @@ public class ClientCrud implements IDaoCrud<ClientDao> {
     }
 
     @Override
-    public void update(ClientDao client) {
+    public void update(Client client) {
         try {
             entityManager.getTransaction().begin();
             entityManager.merge(client);
@@ -60,7 +60,7 @@ public class ClientCrud implements IDaoCrud<ClientDao> {
         }    }
 
     @Override
-    public List<ClientDao> listar() {
+    public List<Client> listar() {
         return entityManager.createQuery("select c from CLIENT c").getResultList();
     }
 

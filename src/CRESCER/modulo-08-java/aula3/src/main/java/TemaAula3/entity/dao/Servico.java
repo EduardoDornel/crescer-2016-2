@@ -16,7 +16,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
  */
 @Entity
 @Table(name = "SERVICO")
-public class ServicoDao implements Serializable{
+public class Servico implements Serializable{
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "SEQ_SERVICO")
     @SequenceGenerator(name = "SEQ_SERVICO", sequenceName = "SEQ_SERVICO", allocationSize = 1) 
@@ -57,7 +57,7 @@ public class ServicoDao implements Serializable{
     private Long vlTotalServico;    
     
     @ManyToOne(cascade = ALL)
-    private UsuarioDao usuarioDao;
+    private Usuario usuarioDao;
 
     public Long getIdServico() {
         return idServico;
@@ -131,11 +131,11 @@ public class ServicoDao implements Serializable{
         this.vlTotalServico = vlTotalServico;
     }
 
-    public UsuarioDao getUsuarioDao() {
+    public Usuario getUsuarioDao() {
         return usuarioDao;
     }
 
-    public void setUsuarioDao(UsuarioDao usuarioDao) {
+    public void setUsuarioDao(Usuario usuarioDao) {
         this.usuarioDao = usuarioDao;
     }
     
