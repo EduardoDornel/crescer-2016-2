@@ -30,4 +30,30 @@ public class Classificacao implements Serializable{
     @Basic(optional = true)
     @Column(name = "IDADE_CLASSIFICACAO")
     private String idadeClassificacao;   
+
+    public Long getIdClassificacao() {
+        return idClassificacao;
+    }
+
+    public void setIdClassificacao(Long idClassificacao) {
+        this.idClassificacao = idClassificacao;
+    }
+
+    public String getDescricaoClassificacao() {
+        return descricaoClassificacao;
+    }
+
+    public void setDescricaoClassificacao(String descricaoClassificacao) {
+        this.descricaoClassificacao = descricaoClassificacao;
+    }
+
+    public String getIdadeClassificacao() {
+        return idadeClassificacao;
+    }
+
+    public void setIdadeClassificacao(String idadeClassificacao) {
+        this.idadeClassificacao = idadeClassificacao;
+    }
+    
+    
 }

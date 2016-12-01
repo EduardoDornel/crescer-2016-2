@@ -13,29 +13,29 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Eduardo
+ * @author eduardo.ribas
  */
 @Stateless
-public class AtorBean extends AbstractDao<Ator, Long>{
-
+public class ElencoBean extends AbstractDao<Elenco, Long>{
     @PersistenceContext(unitName = "crescer")
     private EntityManager entityManager;
 
-   public AtorBean() {
-        super(Ator.class);
+    public ElencoBean() {
+        super(Elenco.class);
     }
-
+    
     @Override
     public EntityManager getEntityManager() {
         return this.entityManager;
     }
-    
+
     @Override
-    public List<Ator> findAll() {
-        return this.getEntityManager().createQuery("select a from Ator a").getResultList();
+    public List<Elenco> findAll() {
+        return this.getEntityManager().createQuery("select e from Elenco e").getResultList();
     }
     
-    public void insert(Ator ator){
-        this.getEntityManager().merge(ator);
+    @Override
+    public void insert(Elenco elenco) {
+        this.getEntityManager().merge(elenco);
     }
 }

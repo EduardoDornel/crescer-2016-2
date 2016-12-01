@@ -40,13 +40,13 @@ public class Filme implements Serializable{
     @Column(name = "DATA_LANCAMENTO")
     private Date dataLancamento;
     
-    @OneToMany(cascade = ALL)
+    @ManyToOne(cascade = ALL)
     private Elenco elenco;
     
-    @OneToMany(cascade = ALL)
+    @ManyToOne(cascade = ALL)
     private Classificacao classificacao;
     
-    @OneToMany(cascade = ALL)
+    @ManyToOne(cascade = ALL)
     private Idioma idioma;
 
     public String getDiretor() {

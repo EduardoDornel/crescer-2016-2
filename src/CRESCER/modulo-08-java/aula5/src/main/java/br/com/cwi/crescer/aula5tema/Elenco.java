@@ -25,9 +25,23 @@ public class Elenco implements Serializable{
     @Column(name = "ID_ELENCO")
     private Long idElenco; 
     
-    @OneToMany (cascade = ALL)
-    private List<Ator> listaDeAtores;
+    @Basic(optional = false)
+    @Column(name = "NOME_ELENCO")
+    private String nomeElenco;
+    
+    @OneToMany
+    @Basic(optional = false)
+    @Column(name = "ID_ELENCO")    
+    private List<Ator> atores;
 
+    public List<Ator> getAtores() {
+        return atores;
+    }
+
+    public void setAtores(List<Ator> atores) {
+        this.atores = atores;
+    }
+    
     public Long getIdElenco() {
         return idElenco;
     }
@@ -36,13 +50,12 @@ public class Elenco implements Serializable{
         this.idElenco = idElenco;
     }
 
-    public List<Ator> getListaDeAtores() {
-        return listaDeAtores;
+    public String getNomeElenco() {
+        return nomeElenco;
     }
 
-    public void setListaDeAtores(List<Ator> listaDeAtores) {
-        this.listaDeAtores = listaDeAtores;
+    public void setNomeElenco(String nomeElenco) {
+        this.nomeElenco = nomeElenco;
     }
-    
-    
+
 }

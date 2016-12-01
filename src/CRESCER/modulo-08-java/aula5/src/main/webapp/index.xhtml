@@ -11,35 +11,102 @@
     <ui:define name="form">
 
         <div class="form-group"> 
-            <h:outputLabel for="nome" value="#{bundle.pessoa_nome}"></h:outputLabel>
-            <h:inputText id="nome" value="#{hello.pessoa.nmPessoa}" styleClass="form-control"/>
+            <h:outputLabel for="nome" value="#{bundle.ator_nome}"></h:outputLabel>
+            <h:inputText id="nome" value="#{atorCadastro.ator.nomeAtor}" styleClass="form-control"/>
         </div>
 
-        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{hello.adicionar}">    
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{atorCadastro.adicionar}">    
             <f:ajax execute="@form" render="@form" />
         </h:commandButton>
 
-        <h:dataTable id="pessoas" value="#{hello.pessoas}" var="pessoa" styleClass="table table-hover">
+        <h:dataTable id="ator" value="#{atorCadastro.atores}" var="ator" styleClass="table table-hover">
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="#{bundle.pessoa_id}"/>
+                    <h:outputText value="#{bundle.ator_id}"/>
                 </f:facet>
-                <h:outputText value="#{pessoa.idPessoa}"/>
+                <h:outputText value="#{ator.idAtor}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="#{bundle.pessoa_nome}"/>
+                    <h:outputText value="#{bundle.ator_nome}"/>
                 </f:facet>
-                <h:outputText value="#{pessoa.nmPessoa}"/>
+                <h:outputText value="#{ator.nomeAtor}"/>
             </h:column>
 
         </h:dataTable>
 
-        <h:messages id="messages">
-
-        </h:messages>
 
 
+        <div class="form-group"> 
+            <h:outputLabel for="classificacao" value="#{bundle.classificacao_nome}"></h:outputLabel>
+            <h:inputText id="classificacao" value="#{classificacaoCadastro.classificacao.descricaoClassificacao}" styleClass="form-control"/>
+        </div>
+        <div class="form-group">
+            <h:outputLabel for="classificacao-idade" value="#{bundle.classificacao_idade}"></h:outputLabel>
+            <h:inputText id="classificacao-idade" value="#{classificacaoCadastro.classificacao.idadeClassificacao}" styleClass="form-control"/>
+        </div>
+
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{classificacaoCadastro.adicionar}">    
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+
+        <h:dataTable id="classificacao-table" value="#{classificacaoCadastro.classificacoes}" var="classificacao" styleClass="table table-hover">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.classificacao_id}"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.idClassificacao}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.classificacao_nome}"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.descricaoClassificacao}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.classificacao_idade}"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.idadeClassificacao}"/>
+            </h:column>
+
+        </h:dataTable>
+
+
+        <div class="form-group"> 
+            <h:outputLabel for="elenco" value="#{bundle.classificacao_nome}"></h:outputLabel>
+            <h:inputText id="elenco" value="#{classificacaoCadastro.classificacao.descricaoClassificacao}" styleClass="form-control"/>
+        </div>
+        <div class="form-group">
+            <h:outputLabel for="classificacao-idade" value="#{bundle.classificacao_idade}"></h:outputLabel>
+            <h:inputText id="classificacao-idade" value="#{classificacaoCadastro.classificacao.idadeClassificacao}" styleClass="form-control"/>
+        </div>
+
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{classificacaoCadastro.adicionar}">    
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+
+        <h:dataTable id="classificacao-table" value="#{classificacaoCadastro.classificacoes}" var="classificacao" styleClass="table table-hover">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.classificacao_id}"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.idClassificacao}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.classificacao_nome}"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.descricaoClassificacao}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.classificacao_idade}"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.idadeClassificacao}"/>
+            </h:column>
+
+        </h:dataTable>
     </ui:define>
 
 </ui:composition>

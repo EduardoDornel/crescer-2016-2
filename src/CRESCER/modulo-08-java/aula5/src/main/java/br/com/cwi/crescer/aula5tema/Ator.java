@@ -26,4 +26,35 @@ public class Ator implements Serializable {
     @Basic(optional = false)
     @Column(name = "NOME_ATOR")
     private String nomeAtor; 
+    
+    @ManyToOne
+    @Basic(optional = false)
+    @Column(name = "ID_ELENCO")
+    private long idElenco;
+
+    public long getIdElenco() {
+        return idElenco;
+    }
+
+    public void setIdElenco(long idElenco) {
+        this.idElenco = idElenco;
+    }
+
+    public Long getIdAtor() {
+        return idAtor;
+    }
+
+    public void setIdAtor(Long idAtor) {
+        this.idAtor = idAtor;
+    }
+
+    public String getNomeAtor() {
+        return nomeAtor;
+    }
+
+    public void setNomeAtor(String nomeAtor) {
+        this.nomeAtor = nomeAtor;
+    }
+    
+    
 }

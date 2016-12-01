@@ -1,5 +1,14 @@
-package br.com.cwi.crescer.aula4;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.com.cwi.crescer.aula5tema.cadastros;
 
+/**
+ *
+ * @author eduardo.ribas
+ */
 import javax.persistence.EntityManager;
 
 /**
