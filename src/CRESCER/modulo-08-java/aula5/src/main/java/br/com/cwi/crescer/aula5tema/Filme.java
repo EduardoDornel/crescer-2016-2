@@ -6,6 +6,7 @@
 package br.com.cwi.crescer.aula5tema;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
 import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -31,6 +32,65 @@ public class Filme implements Serializable{
     @ManyToOne(cascade = ALL)
     private Genero genero;
 
+    @Basic(optional = false)
+    @Column(name = "DIRETOR")
+    private String diretor;
+    
+    @Basic(optional = true)
+    @Column(name = "DATA_LANCAMENTO")
+    private Date dataLancamento;
+    
+    @OneToMany(cascade = ALL)
+    private Elenco elenco;
+    
+    @OneToMany(cascade = ALL)
+    private Classificacao classificacao;
+    
+    @OneToMany(cascade = ALL)
+    private Idioma idioma;
+
+    public String getDiretor() {
+        return diretor;
+    }
+
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
+    }
+
+    public Date getDataLancamento() {
+        return dataLancamento;
+    }
+
+    public void setDataLancamento(Date dataLancamento) {
+        this.dataLancamento = dataLancamento;
+    }
+
+    public Elenco getElenco() {
+        return elenco;
+    }
+
+    public void setElenco(Elenco elenco) {
+        this.elenco = elenco;
+    }
+
+    public Classificacao getClassificacao() {
+        return classificacao;
+    }
+
+    public void setClassificacao(Classificacao classificacao) {
+        this.classificacao = classificacao;
+    }
+
+    public Idioma getIdioma() {
+        return idioma;
+    }
+
+    public void setIdioma(Idioma idioma) {
+        this.idioma = idioma;
+    }
+    
+    
+    
     public Genero getGenero() {
         return genero;
     }
