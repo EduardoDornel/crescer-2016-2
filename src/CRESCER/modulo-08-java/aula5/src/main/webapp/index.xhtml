@@ -14,6 +14,10 @@
             <h:outputLabel for="nome" value="#{bundle.ator_nome}"></h:outputLabel>
             <h:inputText id="nome" value="#{atorCadastro.ator.nomeAtor}" styleClass="form-control"/>
         </div>
+        <div class="form-group"> 
+            <h:outputLabel for="ator-id-elenco" value="#{bundle.ator_idElenco}"></h:outputLabel>
+            <h:inputText id="ator-id-elenco" value="#{atorCadastro.ator.idElenco}" styleClass="form-control"/>
+        </div>
 
         <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{atorCadastro.adicionar}">    
             <f:ajax execute="@form" render="@form" />
@@ -28,6 +32,12 @@
             </h:column>
             <h:column>
                 <f:facet name="header">
+                    <h:outputText value="#{bundle.ator_idElenco}"/>
+                </f:facet>
+                <h:outputText value="#{ator.idElenco}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
                     <h:outputText value="#{bundle.ator_nome}"/>
                 </f:facet>
                 <h:outputText value="#{ator.nomeAtor}"/>
@@ -36,6 +46,7 @@
         </h:dataTable>
 
 
+        <div style="background-color: brown; height: 10px; margin-bottom: 40px; margin-top: 40px;"></div>
 
         <div class="form-group"> 
             <h:outputLabel for="classificacao" value="#{bundle.classificacao_nome}"></h:outputLabel>
@@ -71,6 +82,105 @@
             </h:column>
 
         </h:dataTable>
+
+        <div style="background-color: brown; height: 10px; margin-bottom: 40px; margin-top: 40px;"></div>
+
+        <div class="form-group"> 
+            <h:outputLabel for="elenco" value="#{bundle.elenco_nome}"></h:outputLabel>
+            <h:inputText id="elenco" value="#{elencoCadastro.elenco.nomeElenco}" styleClass="form-control"/>
+        </div>
+
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{elencoCadastro.adicionar}">    
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+
+        <h:dataTable id="elenco-table" value="#{elencoCadastro.elencos}" var="elenco" styleClass="table table-hover">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.elenco_id}"/>
+                </f:facet>
+                <h:outputText value="#{elenco.idElenco}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.elenco_nome}"/>
+                </f:facet>
+                <h:outputText value="#{elenco.nomeElenco}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.elenco_listaAtores}"/>
+                </f:facet>
+                <div class="form-group"> 
+                    <h:selectManyListbox id="elenco-atores"
+                                         value="#{elencoCadastro.idAtores}" styleClass="form-control">
+                        <f:selectItems value="#{elencoCadastro.atores}" var="ator"
+                                       itemLabel="#{ator.nomeAtor}" itemValue="#{ator.idAtor}" />
+                    </h:selectManyListbox>
+                </div>          
+            </h:column>
+
+        </h:dataTable>
+
+        <div style="background-color: brown; height: 10px; margin-bottom: 40px; margin-top: 40px;"></div>
+
+
+        <div class="form-group"> 
+            <h:outputLabel for="genero" value="#{bundle.genero_nome}"></h:outputLabel>
+            <h:inputText id="genero" value="#{generoCadastro.genero.descricao}" styleClass="form-control"/>
+        </div>
+
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{generoCadastro.adicionar}">    
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+
+        <h:dataTable id="genero-table" value="#{generoCadastro.generos}" var="genero" styleClass="table table-hover">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.genero_id}"/>
+                </f:facet>
+                <h:outputText value="#{genero.idGenero}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.genero_nome}"/>
+                </f:facet>
+                <h:outputText value="#{genero.descricao}"/>
+            </h:column>
+
+        </h:dataTable>
+
+        <div style="background-color: brown; height: 10px; margin-bottom: 40px; margin-top: 40px;"></div>
+
+        <div class="form-group"> 
+            <h:outputLabel for="idioma" value="#{bundle.idioma_descricao}"></h:outputLabel>
+            <h:inputText id="idioma" value="#{idiomaCadastro.idioma.nomeIdioma}" styleClass="form-control"/>
+        </div>
+
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{idiomaCadastro.adicionar}">    
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+
+        <h:dataTable id="idioma-table" value="#{idiomaCadastro.idiomas}" var="idioma" styleClass="table table-hover">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.idioma_id}"/>
+                </f:facet>
+                <h:outputText value="#{idioma.idIdioma}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{bundle.idioma_descricao}"/>
+                </f:facet>
+                <h:outputText value="#{idioma.nomeIdioma}"/>
+            </h:column>
+
+        </h:dataTable>
+
+        <div style="background-color: brown; height: 10px; margin-bottom: 40px; margin-top: 40px;"></div>
+        
+        
+
     </ui:define>
 
 </ui:composition>

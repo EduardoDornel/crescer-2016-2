@@ -29,9 +29,7 @@ public class Elenco implements Serializable{
     @Column(name = "NOME_ELENCO")
     private String nomeElenco;
     
-    @OneToMany
-    @Basic(optional = false)
-    @Column(name = "ELENCO_ATORES")    
+    @OneToMany   
     private List<Ator> atores;
 
     public List<Ator> getAtores() {

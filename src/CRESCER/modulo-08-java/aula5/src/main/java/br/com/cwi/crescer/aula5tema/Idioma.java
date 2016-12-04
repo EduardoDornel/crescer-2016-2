@@ -26,5 +26,22 @@ public class Idioma implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "NOME_IDIOMA")
-    private Long nomeIdioma;
+    private String nomeIdioma;
+
+    public Long getIdIdioma() {
+        return idIdioma;
+    }
+
+    public void setIdIdioma(Long idIdioma) {
+        this.idIdioma = idIdioma;
+    }
+
+    public String getNomeIdioma() {
+        return nomeIdioma;
+    }
+
+    public void setNomeIdioma(String nomeIdioma) {
+        this.nomeIdioma = nomeIdioma;
+    }   
+    
 }
