@@ -62,18 +62,18 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <h:outputLabel for="username-login" value="#{bundle.login_username}"/>
-                            <h:inputText id="username-login" styleClass="form-control" value="#{cadastroMBean.entity.nome}" required="true"/>
+                            <h:inputText id="username-login" styleClass="form-control" value="#{usuarioMBean.entity.nome}" required="true"/>
                         </div>
                         <div class="form-group">
                             <h:outputLabel for="email-login" value="#{bundle.login_email}"/>
-                            <h:inputText id="email-login" styleClass="form-control" value="#{cadastroMBean.entity.email}" required="true" validator="emailValidator"/>
+                            <h:inputText id="email-login" styleClass="form-control" value="#{usuarioMBean.entity.email}" required="true" validator="emailValidator"/>
                         </div>
                         <div class="form-group">
                             <h:outputLabel for="password-login" value="#{bundle.login_password}"/>
-                            <h:inputSecret id="password-login" styleClass="form-control" label="#{bundle['page.template.password']}" value="#{cadastroMBean.entity.senha}" required="true"/>
+                            <h:inputSecret id="password-login" styleClass="form-control" label="#{bundle['page.template.password']}" value="#{usuarioMBean.entity.senha}" required="true"/>
                         </div>
                         <div class="form-group">
-                            <h:commandButton type="submit" styleClass="btn btn-success" value="Cadastrar" action="#{cadastroMBean.adicionar}"/>
+                            <h:commandButton type="submit" styleClass="btn btn-success" value="Cadastrar" action="#{usuarioMBean.adicionar}"/>
                         </div>
                         <div class="messages">
                             <h:messages errorClass="alert alert-danger"/>
