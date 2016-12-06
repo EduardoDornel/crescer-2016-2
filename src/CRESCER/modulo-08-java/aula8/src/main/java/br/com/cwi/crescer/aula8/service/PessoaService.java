@@ -8,6 +8,7 @@ package br.com.cwi.crescer.aula8.service;
 import br.com.cwi.crescer.aula8.dominio.Pessoa;
 import org.springframework.stereotype.Service;
 import br.com.cwi.crescer.aula8.repository.PessoaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -16,10 +17,10 @@ import br.com.cwi.crescer.aula8.repository.PessoaRepository;
 @Service
 public class PessoaService {
     
-  //  private List<Pessoa> pessoas;
+    @Autowired
     private PessoaRepository pessoas;
     
-    public Iterable<Pessoa> list() {
+    public Iterable<Pessoa> listAll() {
         return pessoas.findAll();
     }   
     

@@ -12,5 +12,9 @@ and open the template in the editor.
     </head>
     <body>
         <h1 th:text="${name}"></h1>
+
+        <div th:each="i : ${pessoas}">
+            <div th:text="${i.nome}"></div>
+        </div>
     </body>
 </html>

@@ -24,15 +24,16 @@ import br.com.cwi.crescer.aula8.service.PessoaService;
 public class PessoaController {
 
     @Autowired
-    PessoaService pessoas;
+    private PessoaService service;
 
-    @RequestMapping(value = "/pessoa", method = GET)
+    @RequestMapping(value = "/pessoa.json", method = GET)
     public Iterable<Pessoa> list() {
-        return pessoas.list();
+        return service.listAll();
     }
-    
-    @RequestMapping(value = "/pessoa", method = POST)
-    void add(@RequestBody Pessoa pessoa){
-        pessoas.add(pessoa);
+
+    @RequestMapping(value = "/pessoa.json", method = POST)
+    public Iterable<Pessoa> list(@RequestBody Pessoa pessoa) {
+        service.add(pessoa);
+        return service.listAll();
     }
 }
