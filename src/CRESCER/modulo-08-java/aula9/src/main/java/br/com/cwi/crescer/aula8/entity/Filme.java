@@ -14,6 +14,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * @author Carlos H. Nonnemacher
@@ -41,8 +44,10 @@ public class Filme implements Serializable {
     @Column(name = "NM_DIRETOR")
     private String diretor;
 
-    @Temporal(DATE)
-    @Basic(optional = true)
+    @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(value = TemporalType.DATE)
+    @Basic(optional = false)
     @Column(name = "DT_LANCAMENTO")
     private Date lancamento;
 
